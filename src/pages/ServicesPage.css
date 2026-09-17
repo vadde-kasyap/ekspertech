@@ -28,13 +28,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--r-md);
-  background: var(--white);
-  border: 1px solid var(--stone-200);
-  color: var(--ink-secondary);
+  border: 1px solid transparent;
   margin-bottom: 20px;
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+
+.services-page__card:hover .services-page__card-icon {
+  transform: scale(1.08);
 }
 
 .services-page__card-title {
@@ -53,26 +56,18 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 24px;
+  padding: 0;
 }
 
 .services-page__features li {
   font-size: 0.8125rem;
   color: var(--ink-secondary);
-  padding-left: 16px;
-  position: relative;
-}
-
-.services-page__features li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--ember);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
 }
 
 @media (max-width: 992px) {

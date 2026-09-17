@@ -4,7 +4,10 @@ import { ArrowRight, GraduationCap, Building2, ShieldCheck, Database, FileCheck,
 
 const DEPLOYMENT_TYPES = [
   {
-    icon: <GraduationCap size={24} />,
+    icon: <GraduationCap size={28} strokeWidth={2.2} />,
+    color: '#1D4ED8',
+    bg: 'rgba(29, 78, 216, 0.08)',
+    border: 'rgba(29, 78, 216, 0.22)',
     title: 'Institutional Governance & Examination Security Platforms',
     subtitle: 'Comprehensive governance architectures for large-scale institutional administration',
     desc: 'End-to-end digital platforms for large public institutions handling tens of thousands of candidates, multi-faculty departments, and confidential evaluations.',
@@ -17,13 +20,16 @@ const DEPLOYMENT_TYPES = [
       'Ph.D. scholar lifecycle tracking, research guide allocation, and thesis defense milestones',
     ],
     deployments: [
-      'University of Mysore (70+ PG departments, 100+ affiliated centres)',
-      'Kadi Sarva Vishwavidyalaya (KSV) & constituent institutions',
-      'GNITS Hyderabad & autonomous institutions',
+      { name: 'University of Mysore (70+ PG departments, 100+ affiliated centres)', logo: '/images/Mysore_University_logo.png' },
+      { name: 'Kadi Sarva Vishwavidyalaya (KSV) & constituent institutions' },
+      { name: 'GNITS Hyderabad & autonomous institutions', logo: '/images/gnits_logo.png' },
     ],
   },
   {
-    icon: <Building2 size={24} />,
+    icon: <Building2 size={28} strokeWidth={2.2} />,
+    color: '#0D9488',
+    bg: 'rgba(13, 148, 136, 0.08)',
+    border: 'rgba(13, 148, 136, 0.22)',
     title: 'State e-Governance & Public Administration Systems',
     subtitle: 'Directorate-level high-throughput admissions and statutory administrative engines',
     desc: 'Large-scale workflow engines engineered for state government departments, directorates, and statutory bodies with strict reservation quotas and regulatory audit mandates.',
@@ -35,12 +41,15 @@ const DEPLOYMENT_TYPES = [
       'Audit-ready audit trails compliant with CAG and State Vigilance guidelines',
     ],
     deployments: [
-      'State Technical Education & Polytechnic Directorate (DET)',
-      'State Secretariat Central Records Branch (GAD)',
+      { name: 'State Technical Education & Polytechnic Directorate (DET)' },
+      { name: 'State Secretariat Central Records Branch (GAD)', logo: '/images/gad-logo.jpg' },
     ],
   },
   {
-    icon: <ShieldCheck size={24} />,
+    icon: <ShieldCheck size={28} strokeWidth={2.2} />,
+    color: '#D97706',
+    bg: 'rgba(217, 119, 6, 0.08)',
+    border: 'rgba(217, 119, 6, 0.22)',
     title: 'Enterprise Operational & Financial Backbones',
     subtitle: 'Single-database architectures unifying accounting, payroll, and asset management',
     desc: 'Mission-critical institutional operations platforms replacing error-prone spreadsheets with unified, tamper-evident transactional backbones.',
@@ -51,30 +60,42 @@ const DEPLOYMENT_TYPES = [
       'Role-based granular access control (RBAC) with complete cryptographic logging',
     ],
     deployments: [
-      'State institutional administrative finance wings',
-      'Multi-branch organizational networks',
+      { name: 'State institutional administrative finance wings' },
+      { name: 'Multi-branch organizational networks' },
     ],
   },
 ];
 
 const ARCHITECTURE_PILLARS = [
   {
-    icon: <Database size={20} />,
+    icon: <Database size={22} strokeWidth={2.2} />,
+    color: '#2563EB',
+    bg: 'rgba(37, 99, 235, 0.08)',
+    border: 'rgba(37, 99, 235, 0.2)',
     title: 'Single-Database Architecture',
     desc: 'Eliminates data silos across admissions, academic records, finance, and exams. A unified institutional ledger ensures absolute consistency.',
   },
   {
-    icon: <FileCheck size={20} />,
+    icon: <FileCheck size={22} strokeWidth={2.2} />,
+    color: '#059669',
+    bg: 'rgba(5, 150, 105, 0.08)',
+    border: 'rgba(5, 150, 105, 0.2)',
     title: 'Statutory & Audit Compliance',
     desc: 'Built ground-up around state regulations, public governance councils, and CAG double-entry standards. Ready for statutory review.',
   },
   {
-    icon: <Users size={20} />,
+    icon: <Users size={22} strokeWidth={2.2} />,
+    color: '#7C3AED',
+    bg: 'rgba(124, 58, 237, 0.08)',
+    border: 'rgba(124, 58, 237, 0.2)',
     title: 'High-Concurrency Scaling',
     desc: 'Tested to sustain extreme traffic surges during state admission counselling rounds and statewide result publications without downtime.',
   },
   {
-    icon: <Award size={20} />,
+    icon: <Award size={22} strokeWidth={2.2} />,
+    color: '#E11D48',
+    bg: 'rgba(225, 29, 72, 0.08)',
+    border: 'rgba(225, 29, 72, 0.2)',
     title: 'Confidential Exam Security',
     desc: 'Barcode dummy indexing and masked evaluation workflows guarantee complete integrity from evaluation centers to degree conferral.',
   },
@@ -114,14 +135,15 @@ export default function EnterprisePlatformsPage() {
                   boxShadow: '0 4px 20px -4px rgba(0, 0, 0, 0.04)',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 20 }}>
                   <div
                     style={{
-                      width: 48,
-                      height: 48,
+                      width: 56,
+                      height: 56,
                       borderRadius: 'var(--r-md)',
-                      background: 'var(--stone-100)',
-                      color: 'var(--ember)',
+                      background: type.bg,
+                      color: type.color,
+                      border: `1px solid ${type.border}`,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -141,29 +163,33 @@ export default function EnterprisePlatformsPage() {
                 </p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 28 }}>
-                  <div style={{ background: 'var(--stone-50)', padding: '24px', borderRadius: 'var(--r-md)' }}>
-                    <h4 style={{ fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--ink-faint)', marginBottom: 14 }}>
+                  <div style={{ background: 'var(--stone-50)', padding: '24px', borderRadius: 'var(--r-md)', border: '1px solid var(--stone-200)' }}>
+                    <h4 style={{ fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--ink-muted)', marginBottom: 14 }}>
                       Key Capabilities
                     </h4>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
                       {type.capabilities.map((cap, i) => (
-                        <li key={i} style={{ fontSize: '0.875rem', color: 'var(--ink)', lineHeight: 1.5, display: 'flex', alignItems: 'flex-start', gap: 8 }}>
-                          <span style={{ color: 'var(--ember)', fontWeight: 700 }}>•</span>
+                        <li key={i} style={{ fontSize: '0.875rem', color: 'var(--ink)', lineHeight: 1.5, display: 'flex', alignItems: 'flex-start', gap: 10 }}>
+                          <span style={{ color: type.color, fontWeight: 700 }}>•</span>
                           <span>{cap}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div style={{ background: 'var(--stone-50)', padding: '24px', borderRadius: 'var(--r-md)', display: 'flex', flexDirection: 'column' }}>
-                    <h4 style={{ fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--ember)', marginBottom: 14 }}>
+                  <div style={{ background: 'var(--stone-50)', padding: '24px', borderRadius: 'var(--r-md)', border: '1px solid var(--stone-200)', display: 'flex', flexDirection: 'column' }}>
+                    <h4 style={{ fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: type.color, marginBottom: 14 }}>
                       Proven Deployments & Scale
                     </h4>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 14 }}>
                       {type.deployments.map((dep, i) => (
-                        <li key={i} style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--ink-secondary)', display: 'flex', alignItems: 'flex-start', gap: 8 }}>
-                          <span style={{ color: 'var(--ink-faint)' }}>✓</span>
-                          <span>{dep}</span>
+                        <li key={i} style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: 10 }}>
+                          {dep.logo ? (
+                            <img src={dep.logo} alt="" style={{ width: 22, height: 22, objectFit: 'contain', borderRadius: 3, flexShrink: 0 }} />
+                          ) : (
+                            <span style={{ color: type.color, fontWeight: 700 }}>✓</span>
+                          )}
+                          <span>{dep.name}</span>
                         </li>
                       ))}
                     </ul>
@@ -191,7 +217,20 @@ export default function EnterprisePlatformsPage() {
                   padding: 24,
                 }}
               >
-                <div style={{ color: 'var(--ember)', marginBottom: 12 }}>{p.icon}</div>
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: 44,
+                  height: 44,
+                  borderRadius: 'var(--r-md)',
+                  background: p.bg,
+                  color: p.color,
+                  border: `1px solid ${p.border}`,
+                  marginBottom: 16
+                }}>
+                  {p.icon}
+                </div>
                 <h4 style={{ fontSize: '1.05rem', marginBottom: 8 }}>{p.title}</h4>
                 <p style={{ fontSize: '0.875rem', color: 'var(--ink-muted)', lineHeight: 1.6, margin: 0 }}>
                   {p.desc}

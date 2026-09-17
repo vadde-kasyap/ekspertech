@@ -26,6 +26,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/digital-transformation" element={<Navigate to="/services#digital-transformation" replace />} />
           <Route path="/enterprise-platforms" element={<EnterprisePlatformsPage />} />
           <Route path="/services/enterprise-platforms" element={<Navigate to="/enterprise-platforms" replace />} />
           <Route path="/ai-healthcare" element={<AiHealthcarePage />} />
