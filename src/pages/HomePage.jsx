@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Landmark, Activity, GraduationCap, Leaf, Check, Copy } from 'lucide-react';
+import { ArrowRight, Landmark, Activity, GraduationCap, Leaf, Check, Copy, Laptop, BarChart3, Layers, Headphones } from 'lucide-react';
 import './HomePage.css';
 
 const DOMAIN_SECTORS = [
@@ -444,15 +444,18 @@ export default function HomePage() {
 
           <div className="capabilities-grid">
             <div className="capability-card">
-              <div className="capability-card__media">
+              <div className="capability-card__icon-badge" aria-hidden="true">
+                <Laptop size={18} strokeWidth={2.2} />
+              </div>
+              <div className="capability-card__visual">
                 <img
-                  src="/images/capabilities/card-visual-1@2x.png"
-                  alt="Digital Transformation - Modernising legacy systems into platforms that work"
-                  className="capability-card__img"
+                  src="/images/capabilities/digital-transformation.png"
+                  alt="Digital Transformation — legacy servers/data flowing into modern glass-like platforms"
+                  className="capability-card__visual-img"
                   loading="lazy"
                 />
               </div>
-              <div className="capability-card__body">
+              <div className="capability-card__content">
                 <h3 className="capability-card__title">Digital Transformation</h3>
                 <p className="capability-card__desc">
                   Modernising legacy systems into platforms that work.
@@ -461,15 +464,18 @@ export default function HomePage() {
             </div>
 
             <div className="capability-card">
-              <div className="capability-card__media">
+              <div className="capability-card__icon-badge" aria-hidden="true">
+                <BarChart3 size={18} strokeWidth={2.2} />
+              </div>
+              <div className="capability-card__visual">
                 <img
-                  src="/images/capabilities/card-visual-2@2x.png"
-                  alt="Data & AI - Built into operations, not bolted on"
-                  className="capability-card__img"
+                  src="/images/capabilities/data-ai.png"
+                  alt="Data & AI — AI processor surrounded by analytics/data visualizations"
+                  className="capability-card__visual-img"
                   loading="lazy"
                 />
               </div>
-              <div className="capability-card__body">
+              <div className="capability-card__content">
                 <h3 className="capability-card__title">Data & AI</h3>
                 <p className="capability-card__desc">
                   Data platforms, analytics and AI built into operations, not bolted on.
@@ -478,15 +484,18 @@ export default function HomePage() {
             </div>
 
             <div className="capability-card">
-              <div className="capability-card__media">
+              <div className="capability-card__icon-badge" aria-hidden="true">
+                <Layers size={18} strokeWidth={2.2} />
+              </div>
+              <div className="capability-card__visual">
                 <img
-                  src="/images/capabilities/card-visual-3@2x.png"
-                  alt="Enterprise Platforms - ERP, e-Governance, LMS & Campus Management"
-                  className="capability-card__img"
+                  src="/images/capabilities/enterprise-platforms.png"
+                  alt="Enterprise Platforms — layered ERP, e-Governance, LMS and campus-management systems"
+                  className="capability-card__visual-img"
                   loading="lazy"
                 />
               </div>
-              <div className="capability-card__body">
+              <div className="capability-card__content">
                 <h3 className="capability-card__title">Enterprise Platforms</h3>
                 <p className="capability-card__desc">
                   ERP, e-Governance and campus management at institutional scale.
@@ -495,15 +504,18 @@ export default function HomePage() {
             </div>
 
             <div className="capability-card">
-              <div className="capability-card__media">
+              <div className="capability-card__icon-badge" aria-hidden="true">
+                <Headphones size={18} strokeWidth={2.2} />
+              </div>
+              <div className="capability-card__visual">
                 <img
-                  src="/images/capabilities/card-visual-4@2x.png"
-                  alt="Run & Support - 24/7 Operations and Observability"
-                  className="capability-card__img"
+                  src="/images/capabilities/run-support.png"
+                  alt="Run & Support — enterprise monitoring dashboard with support/resolve/operate concepts"
+                  className="capability-card__visual-img"
                   loading="lazy"
                 />
               </div>
-              <div className="capability-card__body">
+              <div className="capability-card__content">
                 <h3 className="capability-card__title">Run & Support</h3>
                 <p className="capability-card__desc">
                   We stay on after go-live.
