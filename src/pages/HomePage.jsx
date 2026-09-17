@@ -707,111 +707,228 @@ export default function HomePage() {
       </section>
 
       {/* 5. SELECTED WORK */}
-      <section className="section section--stone" id="selected-work">
+      <section className="selected-work-section section--stone" id="selected-work">
         <div className="container">
-          <div className="section-intro">
-            <h2 className="section-title">Selected work</h2>
+          <div className="selected-work-header">
+            <div className="selected-work-header__left">
+              <div className="selected-work-header__eyebrow">
+                <span className="selected-work-header__dot" />
+                <span>SELECTED WORK</span>
+              </div>
+              <h2 className="selected-work-header__title">Real partners. Real progress.</h2>
+              <p className="selected-work-header__sub">
+                Solving complex challenges with technology, at scale.
+              </p>
+            </div>
+            <div className="selected-work-header__right">
+              <div className="selected-work-header__tagline">
+                <span>INDUSTRY EXPERTISE.</span>
+                <span>TANGIBLE OUTCOMES.</span>
+              </div>
+            </div>
           </div>
 
-          <div className="work-list">
-            <article className="work-row">
-              <div className="work-client">
-                <span className="work-index">01</span>
-                <div>
-                  <div className="work-name-wrap">
-                    <strong className="work-name">NMDC</strong>
-                    <div className="work-logo-badge" title="NMDC">
-                      <svg viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
-                        <rect x="2" y="5" width="28" height="28" rx="4" fill="#003366" />
-                        <path d="M7 25L14 11L18 20L22 14L25 25" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                        <circle cx="21" cy="11" r="2" fill="#E05A2B" />
-                        <text x="38" y="25" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="19" fontWeight="800" fill="currentColor" letterSpacing="0.06em">NMDC</text>
-                      </svg>
-                    </div>
+          <div className="case-studies-list">
+            {/* Case Study 01: NMDC */}
+            <article className="case-study-row">
+              <div className="case-study__content">
+                <div className="case-study__header">
+                  <span className="case-study__num">01</span>
+                  <span className="case-study__divider" />
+                  <strong className="case-study__client-name">NMDC</strong>
+                  <div className="work-logo-badge" title="NMDC">
+                    <svg viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
+                      <rect x="2" y="5" width="28" height="28" rx="4" fill="#003366" />
+                      <path d="M7 25L14 11L18 20L22 14L25 25" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle cx="21" cy="11" r="2" fill="#E05A2B" />
+                      <text x="38" y="25" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="19" fontWeight="800" fill="currentColor" letterSpacing="0.06em">NMDC</text>
+                    </svg>
                   </div>
-                  <span className="work-sector">Mining & Public Sector</span>
+                  <span className="case-study__sector">Mining &amp; Public Sector</span>
+                </div>
+
+                <div className="case-study__narrative">
+                  <p>
+                    <b className="case-study__label">Problem</b> — Production dispatch, weighbridge capture, and statutory filings operated through disconnected spreadsheets and manual logs.
+                  </p>
+                  <p>
+                    <b className="case-study__label case-study__label--accent">What changed</b> — Centralized telemetry, automated weighbridge data acquisition, and real-time statutory reporting across production units.
+                  </p>
+                </div>
+
+                <div className="case-study__cta-wrap">
+                  <a href="#contact" onClick={scrollToContact} className="case-study__cta-btn">
+                    View case study <ArrowRight size={14} className="case-study__cta-arrow" />
+                  </a>
+                </div>
+
+                <div className="case-study__metrics">
+                  <div className="case-study__metric">
+                    <span className="case-study__metric-val">100%</span>
+                    <span className="case-study__metric-lbl">Digital logs</span>
+                  </div>
+                  <div className="case-study__metric">
+                    <span className="case-study__metric-val">Real-time</span>
+                    <span className="case-study__metric-lbl">Compliance</span>
+                  </div>
+                  <div className="case-study__metric">
+                    <span className="case-study__metric-val">Higher</span>
+                    <span className="case-study__metric-lbl">Throughput</span>
+                  </div>
                 </div>
               </div>
-              <div className="work-copy">
-                <p>
-                  <b className="work-label">Problem</b> — Production dispatch, weighbridge capture, and statutory filings operated through disconnected spreadsheets and manual logs.
-                </p>
-                <p>
-                  <b className="work-label work-label--accent">What changed</b> — Centralized telemetry, automated weighbridge data acquisition, and real-time statutory reporting across production units.
-                </p>
+
+              <div className="case-study__visual">
+                <div className="case-study__visual-inner">
+                  <img
+                    src="/images/work/nmdc-case-study.png"
+                    srcSet="/images/work/nmdc-case-study@2x.png 2x"
+                    alt="NMDC Production Telemetry and Statutory Reporting Case Study"
+                    className="case-study__visual-img"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </article>
 
-            <article className="work-row">
-              <div className="work-client">
-                <span className="work-index">02</span>
-                <div>
-                  <div className="work-name-wrap">
-                    <strong className="work-name">Greenko</strong>
-                    <div className="work-logo-badge" title="Greenko">
-                      <svg viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
-                        <circle cx="16" cy="19" r="12" fill="#059669" fillOpacity="0.15" />
-                        <path d="M12 24C12 18 16 13 22 13C22 19 18 24 12 24Z" fill="#059669" />
-                        <path d="M14 20C17 18 19 16 20 14" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
-                        <text x="36" y="24" fontFamily="'Inter', sans-serif" fontSize="18" fontWeight="700" fill="currentColor" letterSpacing="-0.02em">greenko</text>
-                      </svg>
-                    </div>
+            {/* Case Study 02: Greenko (Reversed layout) */}
+            <article className="case-study-row case-study-row--reversed">
+              <div className="case-study__content">
+                <div className="case-study__header">
+                  <span className="case-study__num">02</span>
+                  <span className="case-study__divider" />
+                  <strong className="case-study__client-name">Greenko</strong>
+                  <div className="work-logo-badge" title="Greenko">
+                    <svg viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
+                      <circle cx="16" cy="19" r="12" fill="#059669" fillOpacity="0.15" />
+                      <path d="M12 24C12 18 16 13 22 13C22 19 18 24 12 24Z" fill="#059669" />
+                      <path d="M14 20C17 18 19 16 20 14" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+                      <text x="36" y="24" fontFamily="'Inter', sans-serif" fontSize="18" fontWeight="700" fill="currentColor" letterSpacing="-0.02em">greenko</text>
+                    </svg>
                   </div>
-                  <span className="work-sector">Energy & Utilities</span>
+                  <span className="case-study__sector">Energy &amp; Utilities</span>
+                </div>
+
+                <div className="case-study__narrative">
+                  <p>
+                    <b className="case-study__label">Problem</b> — Operational data from distributed renewable generation assets was fragmented across disparate plant-level systems.
+                  </p>
+                  <p>
+                    <b className="case-study__label case-study__label--accent">What changed</b> — Unified generation telemetry and asset performance data into a single real-time operational platform.
+                  </p>
+                </div>
+
+                <div className="case-study__cta-wrap">
+                  <a href="#contact" onClick={scrollToContact} className="case-study__cta-btn">
+                    View case study <ArrowRight size={14} className="case-study__cta-arrow" />
+                  </a>
+                </div>
+
+                <div className="case-study__metrics">
+                  <div className="case-study__metric">
+                    <span className="case-study__metric-val">1,000+ MW</span>
+                    <span className="case-study__metric-lbl">Monitored</span>
+                  </div>
+                  <div className="case-study__metric">
+                    <span className="case-study__metric-val">Real-time</span>
+                    <span className="case-study__metric-lbl">Telemetry</span>
+                  </div>
+                  <div className="case-study__metric">
+                    <span className="case-study__metric-val">Higher</span>
+                    <span className="case-study__metric-lbl">Availability</span>
+                  </div>
                 </div>
               </div>
-              <div className="work-copy">
-                <p>
-                  <b className="work-label">Problem</b> — Operational data from distributed renewable generation assets was fragmented across disparate plant-level systems.
-                </p>
-                <p>
-                  <b className="work-label work-label--accent">What changed</b> — Unified generation telemetry and asset performance data into a single real-time operational platform.
-                </p>
+
+              <div className="case-study__visual">
+                <div className="case-study__visual-inner">
+                  <img
+                    src="/images/work/greenko-case-study.png"
+                    srcSet="/images/work/greenko-case-study@2x.png 2x"
+                    alt="Greenko Renewable Generation Asset Intelligence Case Study"
+                    className="case-study__visual-img"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </article>
 
-            <article className="work-row">
-              <div className="work-client">
-                <span className="work-index">03</span>
-                <div>
-                  <div className="work-name-wrap">
-                    <strong className="work-name">US Healthcare</strong>
-                    <div className="work-logo-badge-group">
-                      <div className="work-logo-badge" title="interwell health">
-                        <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
-                          <circle cx="14" cy="19" r="11" stroke="#0284C7" strokeWidth="2.5" />
-                          <circle cx="20" cy="19" r="7" stroke="#0D9488" strokeWidth="2" />
-                          <text x="36" y="24" fontFamily="'Inter', sans-serif" fontSize="16" fontWeight="600" fill="currentColor" letterSpacing="-0.01em">
-                            interwell <tspan fontWeight="400" fill="#0284C7">health</tspan>
-                          </text>
-                        </svg>
-                      </div>
-                      <div className="work-logo-badge" title="Geisinger">
-                        <svg viewBox="0 0 135 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
-                          <path d="M6 10H16M11 10V28M8 28H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                          <text x="24" y="24" fontFamily="'Inter', sans-serif" fontSize="18" fontWeight="700" fill="currentColor" letterSpacing="-0.03em">Geisinger</text>
-                        </svg>
-                      </div>
-                      <div className="work-logo-badge" title="CVS Health">
-                        <svg viewBox="0 0 145 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
-                          <path d="M4 14L10 20L16 14L12 10L10 12L8 10L4 14Z" fill="#CC0000" />
-                          <text x="22" y="23" fontFamily="'Inter', sans-serif" fontSize="17" fontWeight="800" fill="currentColor" letterSpacing="-0.02em">
-                            CVS<tspan fontWeight="400">Health</tspan>
-                          </text>
-                        </svg>
-                      </div>
+            {/* Case Study 03: US Healthcare */}
+            <article className="case-study-row">
+              <div className="case-study__content">
+                <div className="case-study__header">
+                  <span className="case-study__num">03</span>
+                  <span className="case-study__divider" />
+                  <strong className="case-study__client-name">US Healthcare</strong>
+                  <div className="work-logo-badge-group">
+                    <div className="work-logo-badge" title="interwell health">
+                      <svg viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
+                        <circle cx="14" cy="19" r="11" stroke="#0284C7" strokeWidth="2.5" />
+                        <circle cx="20" cy="19" r="7" stroke="#0D9488" strokeWidth="2" />
+                        <text x="36" y="24" fontFamily="'Inter', sans-serif" fontSize="16" fontWeight="600" fill="currentColor" letterSpacing="-0.01em">
+                          interwell <tspan fontWeight="400" fill="#0284C7">health</tspan>
+                        </text>
+                      </svg>
+                    </div>
+                    <div className="work-logo-badge" title="Geisinger">
+                      <svg viewBox="0 0 135 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
+                        <path d="M6 10H16M11 10V28M8 28H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <text x="24" y="24" fontFamily="'Inter', sans-serif" fontSize="18" fontWeight="700" fill="currentColor" letterSpacing="-0.03em">Geisinger</text>
+                      </svg>
+                    </div>
+                    <div className="work-logo-badge" title="CVS Health">
+                      <svg viewBox="0 0 145 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
+                        <path d="M4 14L10 20L16 14L12 10L10 12L8 10L4 14Z" fill="#CC0000" />
+                        <text x="22" y="23" fontFamily="'Inter', sans-serif" fontSize="17" fontWeight="800" fill="currentColor" letterSpacing="-0.02em">
+                          CVS<tspan fontWeight="400">Health</tspan>
+                        </text>
+                      </svg>
                     </div>
                   </div>
-                  <span className="work-sector">Healthcare & Clinical AI</span>
+                  <span className="case-study__sector">Healthcare &amp; Clinical AI</span>
+                </div>
+
+                <div className="case-study__narrative">
+                  <p>
+                    <b className="case-study__label">Problem</b> — Clinical, EHR, and claims data resided in disconnected systems, delaying risk stratification and care team workflows.
+                  </p>
+                  <p>
+                    <b className="case-study__label case-study__label--accent">What changed</b> — Built FHIR-compliant ingestion pipelines and automated cohort analytics integrated directly into care management operations.
+                  </p>
+                </div>
+
+                <div className="case-study__cta-wrap">
+                  <a href="#contact" onClick={scrollToContact} className="case-study__cta-btn">
+                    View case study <ArrowRight size={14} className="case-study__cta-arrow" />
+                  </a>
+                </div>
+
+                <div className="case-study__metrics">
+                  <div className="case-study__metric">
+                    <span className="case-study__metric-val">3+</span>
+                    <span className="case-study__metric-lbl">Enterprise partners</span>
+                  </div>
+                  <div className="case-study__metric">
+                    <span className="case-study__metric-val">Faster</span>
+                    <span className="case-study__metric-lbl">Stratification</span>
+                  </div>
+                  <div className="case-study__metric">
+                    <span className="case-study__metric-val">Improved</span>
+                    <span className="case-study__metric-lbl">Intervention</span>
+                  </div>
                 </div>
               </div>
-              <div className="work-copy">
-                <p>
-                  <b className="work-label">Problem</b> — Clinical, EHR, and claims data resided in disconnected systems, delaying risk stratification and care team workflows.
-                </p>
-                <p>
-                  <b className="work-label work-label--accent">What changed</b> — Built FHIR-compliant ingestion pipelines and automated cohort analytics integrated directly into care management operations.
-                </p>
+
+              <div className="case-study__visual">
+                <div className="case-study__visual-inner">
+                  <img
+                    src="/images/work/healthcare-case-study.png"
+                    srcSet="/images/work/healthcare-case-study@2x.png 2x"
+                    alt="US Healthcare Clinical AI & Data Pipelines Case Study"
+                    className="case-study__visual-img"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </article>
           </div>
