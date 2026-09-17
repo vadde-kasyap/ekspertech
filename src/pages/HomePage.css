@@ -74,213 +74,37 @@
   z-index: 5;
 }
 
-/* DOMAIN COMPOSITION (Layer 3 — Desktop: One Seamless Cinematic Visual) */
-.hero-domains-container {
+/* DOMAIN COMPOSITION (Layer 3 — Desktop: Single Merged Artwork Visual) */
+.hero-desktop-merged {
   position: absolute;
   top: 50%;
-  right: -20px;
+  right: clamp(-10px, 1.5vw, 24px);
   transform: translateY(-50%);
-  width: clamp(580px, 52vw, 840px);
-  height: clamp(540px, 74vh, 680px);
-  z-index: 3;
+  width: clamp(560px, 50vw, 840px);
+  max-width: 54%;
   pointer-events: none;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* Organic outer feather mask fading into hero background and concentric waves */
-  -webkit-mask-image: radial-gradient(ellipse 72% 70% at 56% 50%, #000 52%, rgba(0, 0, 0, 0.7) 72%, transparent 100%);
-  mask-image: radial-gradient(ellipse 72% 70% at 56% 50%, #000 52%, rgba(0, 0, 0, 0.7) 72%, transparent 100%);
 }
 
-.hero-domains-grid {
-  position: relative;
+.hero-desktop-merged__img {
   width: 100%;
-  height: 100%;
-  max-width: 840px;
-}
-
-/* Base card reset on Desktop — NO BORDER, NO SHADOW, NO RECTANGULAR FRAME */
-.hero-domain-card {
-  position: absolute;
-  inset: 0;
-  border-radius: 0;
-  border: none;
-  background: transparent;
-  box-shadow: none;
-  overflow: visible;
-  pointer-events: none;
-}
-
-/* Individual Image Layers — Organic Sizing & Controlled Feathered Overlap */
-.hero-domain-card__image-box {
-  position: absolute;
-  overflow: hidden;
-  border-radius: 0;
-  border: none;
-  background: transparent;
-  box-shadow: none;
-  pointer-events: auto;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
-}
-
-/* Government: Upper/Right-Central Anchor */
-.hero-domain-card--government .hero-domain-card__image-box {
-  top: 0;
-  left: 10%;
-  width: 66%;
-  height: 56%;
-  z-index: 2;
-  -webkit-mask-image: radial-gradient(ellipse 76% 72% at 52% 46%, #000 28%, rgba(0, 0, 0, 0.8) 55%, transparent 95%);
-  mask-image: radial-gradient(ellipse 76% 72% at 52% 46%, #000 28%, rgba(0, 0, 0, 0.8) 55%, transparent 95%);
-}
-
-/* Healthcare: Right/Upper-Middle, overlaps Government */
-.hero-domain-card--healthcare .hero-domain-card__image-box {
-  top: 14%;
-  right: 0;
-  width: 54%;
-  height: 54%;
-  z-index: 3;
-  -webkit-mask-image: radial-gradient(ellipse 76% 72% at 50% 50%, #000 30%, rgba(0, 0, 0, 0.8) 56%, transparent 95%);
-  mask-image: radial-gradient(ellipse 76% 72% at 50% 50%, #000 30%, rgba(0, 0, 0, 0.8) 56%, transparent 95%);
-}
-
-/* Education: Left/Lower-Middle, overlaps Government & Healthcare */
-.hero-domain-card--education .hero-domain-card__image-box {
-  bottom: 6%;
-  left: 0;
-  width: 58%;
-  height: 56%;
-  z-index: 4;
-  -webkit-mask-image: radial-gradient(ellipse 76% 72% at 48% 52%, #000 30%, rgba(0, 0, 0, 0.8) 56%, transparent 95%);
-  mask-image: radial-gradient(ellipse 76% 72% at 48% 52%, #000 30%, rgba(0, 0, 0, 0.8) 56%, transparent 95%);
-}
-
-/* Energy & Mining: Lower/Right Anchor */
-.hero-domain-card--energy-mining .hero-domain-card__image-box {
-  bottom: 0;
-  right: 0;
-  width: 64%;
-  height: 56%;
-  z-index: 5;
-  -webkit-mask-image: radial-gradient(ellipse 76% 72% at 52% 52%, #000 32%, rgba(0, 0, 0, 0.8) 58%, transparent 95%);
-  mask-image: radial-gradient(ellipse 76% 72% at 52% 52%, #000 32%, rgba(0, 0, 0, 0.8) 58%, transparent 95%);
-}
-
-.hero-domain-card__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 82vh;
+  object-fit: contain;
   display: block;
-  transform: scale(1.01);
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  opacity: 0.98;
+  mix-blend-mode: multiply;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 4%, black 14%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 4%, black 14%);
+  filter: contrast(1.02) brightness(1.01);
 }
 
-.hero-domain-card:hover .hero-domain-card__img {
-  transform: scale(1.04);
-}
-
-/* Ambient tone overlay */
-.hero-domain-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, transparent 40%, rgba(235, 245, 255, 0.15) 100%);
-  pointer-events: none;
-  mix-blend-mode: soft-light;
-}
-
-/* DOMAIN LABELS — Floating translucent glass pills over imagery */
-.hero-domain-card__badge {
-  position: absolute;
-  padding: 8px 14px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.12),
-              0 2px 6px rgba(0, 0, 0, 0.04);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 8;
-  max-width: 250px;
-  pointer-events: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hero-domain-card__badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.18);
-}
-
-/* Precise Anchor Positions for Floating Labels matching TARGET */
-.hero-domain-card--government .hero-domain-card__badge {
-  top: 10%;
-  left: 14%;
-}
-
-.hero-domain-card--healthcare .hero-domain-card__badge {
-  top: 18%;
-  right: 6%;
-}
-
-.hero-domain-card--education .hero-domain-card__badge {
-  bottom: 24%;
-  left: 26%;
-}
-
-.hero-domain-card--energy-mining .hero-domain-card__badge {
-  bottom: 16%;
-  right: 4%;
-}
-
-.hero-domain-card__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  background: rgba(240, 246, 252, 0.95);
-  flex-shrink: 0;
-}
-
-.hero-domain-card__info {
-  min-width: 0;
-  flex: 1;
-}
-
-.hero-domain-card__title {
-  display: block;
-  font-size: 0.84rem;
-  font-weight: 700;
-  color: var(--ink);
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.hero-domain-card__desc {
-  display: block;
-  font-size: 0.70rem;
-  color: var(--ink-secondary);
-  line-height: 1.25;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-top: 1px;
-}
-
-/* Luminous SVG Orbital Flow — Layered between image layers and labels */
-.hero-domains__orbital {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 6;
+/* On Desktop, hide the multi-item container since desktop uses the pre-merged visual */
+.hero-domains-container {
+  display: none;
 }
 
 /* BOTTOM METRICS BAR */
@@ -969,8 +793,13 @@
     justify-content: center;
   }
 
-  /* Tablet: 4 images displayed as separate tiles in a 2x2 grid */
+  /* Hide desktop pre-merged visual, show 4 separated tiles in 2x2 grid */
+  .hero-desktop-merged {
+    display: none !important;
+  }
+
   .hero-domains-container {
+    display: block !important;
     position: static;
     order: 2;
     width: 100%;
@@ -1111,8 +940,13 @@
     justify-content: flex-start;
   }
 
-  /* Mobile: 4 images as small thumbnails/cards in a compact vertical list */
+  /* Hide desktop pre-merged visual, show 4 compact thumbnails on mobile */
+  .hero-desktop-merged {
+    display: none !important;
+  }
+
   .hero-domains-container {
+    display: block !important;
     position: static;
     order: 2;
     width: 100%;

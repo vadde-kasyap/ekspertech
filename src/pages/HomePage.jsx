@@ -69,7 +69,17 @@ export default function HomePage() {
           <div className="ripple-ring"></div>
         </div>
 
-        {/* Layer 3: 4 Core Domain Images (Desktop: Blended / Tablet: Tiles / Mobile: Thumbnails) */}
+        {/* Layer 3A: Desktop Pre-merged Composition Visual */}
+        <div className="hero-desktop-merged" aria-hidden="true">
+          <img
+            src="/images/domains/desktop-merged.jpg"
+            alt="Government, Healthcare, Education, Energy & Mining digital transformation"
+            className="hero-desktop-merged__img"
+            loading="eager"
+          />
+        </div>
+
+        {/* Layer 3B: Tablet & Mobile Responsive Domains (Tiles on Tablet, Compact on Mobile) */}
         <div className="hero-domains-container" aria-label="Core Industry Domains">
           <div className="hero-domains-grid">
             {DOMAIN_SECTORS.map((sector) => (
@@ -94,59 +104,6 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-
-            {/* Desktop Luminous Ribbons & Ambient Energy Arcs */}
-            <svg className="hero-domains__orbital" viewBox="0 0 800 650" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              {/* Outer Halo Arc crowning the composition */}
-              <path d="M 80 340 C 140 120, 420 20, 680 80 C 760 100, 790 180, 760 260" 
-                    stroke="url(#luminousGlow1)" strokeWidth="2.4" opacity="0.85" filter="url(#glowFilter)" />
-              <path d="M 80 340 C 140 120, 420 20, 680 80 C 760 100, 790 180, 760 260" 
-                    stroke="url(#luminousGlow1)" strokeWidth="1.2" opacity="0.95" />
-
-              {/* S-curve sweeping through and connecting the scenes */}
-              <path d="M 740 220 C 620 280, 500 290, 440 330 C 370 380, 390 460, 480 490 C 580 520, 680 490, 720 530" 
-                    stroke="url(#luminousGlow2)" strokeWidth="2" opacity="0.75" filter="url(#glowFilter)" />
-              <path d="M 740 220 C 620 280, 500 290, 440 330 C 370 380, 390 460, 480 490 C 580 520, 680 490, 720 530" 
-                    stroke="url(#luminousGlow2)" strokeWidth="1.1" opacity="0.9" />
-
-              {/* Lower ambient arc around education & energy */}
-              <path d="M 120 480 C 220 560, 440 590, 640 570" 
-                    stroke="url(#luminousGlow3)" strokeWidth="1.6" strokeDasharray="6 5" opacity="0.6" />
-
-              {/* Ambient energy nodes */}
-              <circle cx="280" cy="180" r="4.5" fill="#38BDF8" opacity="0.9" filter="url(#glowFilter)" />
-              <circle cx="560" cy="120" r="4.5" fill="#0284C7" opacity="0.9" filter="url(#glowFilter)" />
-              <circle cx="430" cy="340" r="5" fill="#38BDF8" opacity="0.95" filter="url(#glowFilter)" />
-              <circle cx="620" cy="380" r="4" fill="#0D9488" opacity="0.85" filter="url(#glowFilter)" />
-              <circle cx="490" cy="495" r="4.5" fill="#F59E0B" opacity="0.8" filter="url(#glowFilter)" />
-
-              <defs>
-                <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="3.5" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <linearGradient id="luminousGlow1" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#38BDF8" stopOpacity="0.1" />
-                  <stop offset="30%" stopColor="#0284C7" stopOpacity="0.85" />
-                  <stop offset="70%" stopColor="#60A5FA" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="#38BDF8" stopOpacity="0.2" />
-                </linearGradient>
-                <linearGradient id="luminousGlow2" x1="100%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#0284C7" stopOpacity="0.2" />
-                  <stop offset="40%" stopColor="#38BDF8" stopOpacity="0.9" />
-                  <stop offset="70%" stopColor="#60A5FA" stopOpacity="0.85" />
-                  <stop offset="100%" stopColor="#0D9488" stopOpacity="0.15" />
-                </linearGradient>
-                <linearGradient id="luminousGlow3" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#0D9488" stopOpacity="0.1" />
-                  <stop offset="50%" stopColor="#38BDF8" stopOpacity="0.7" />
-                  <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.2" />
-                </linearGradient>
-              </defs>
-            </svg>
           </div>
         </div>
 
