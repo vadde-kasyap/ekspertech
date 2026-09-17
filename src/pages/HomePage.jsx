@@ -435,27 +435,36 @@ export default function HomePage() {
           <div className="capabilities-panel">
             <div className="capabilities-header">
               <div className="capabilities-header__left">
+                <span className="capabilities-header__eyebrow">CAPABILITIES</span>
                 <h2 className="capabilities-header__title">Capabilities We Bring</h2>
+                <p className="capabilities-header__sub">
+                  From strategy to scale &mdash; end-to-end capabilities for real-world impact.
+                </p>
               </div>
-              <p className="capabilities-header__sub">
-                From strategy to scale &mdash; end-to-end capabilities for real-world impact.
-              </p>
+              <div className="capabilities-header__right">
+                <div className="capabilities-header__tag-wrap">
+                  <span className="capabilities-header__tag-line" aria-hidden="true"></span>
+                  <span className="capabilities-header__tag-text">
+                    TECHNOLOGY THAT TURNS<br />POSSIBILITY INTO PROGRESS.
+                  </span>
+                </div>
+              </div>
             </div>
 
             <div className="capabilities-grid">
-              <div className="capability-card">
-                <div className="capability-card__top">
-                  <div className="capability-card__icon-badge" title="Digital Transformation">
-                    <Laptop size={20} strokeWidth={2.2} />
-                  </div>
-                </div>
-                <div className="capability-card__media">
+              {/* Card 1: Digital Transformation */}
+              <div className="capability-card capability-card--digital-transformation">
+                <div className="capability-card__image-wrap">
                   <img
                     src="/images/capabilities/card-visual-1@2x.png"
                     alt="Digital Transformation - Modernising legacy systems into platforms that work"
                     className="capability-card__img"
                     loading="lazy"
                   />
+                  <div className="capability-card__image-fade"></div>
+                </div>
+                <div className="capability-card__badge" title="Digital Transformation">
+                  <Laptop size={22} strokeWidth={2.2} />
                 </div>
                 <div className="capability-card__body">
                   <h3 className="capability-card__title">Digital Transformation</h3>
@@ -465,41 +474,41 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="capability-card">
-                <div className="capability-card__top">
-                  <div className="capability-card__icon-badge" title="Data & AI">
-                    <BarChart3 size={20} strokeWidth={2.2} />
-                  </div>
-                </div>
-                <div className="capability-card__media">
+              {/* Card 2: Data & AI */}
+              <div className="capability-card capability-card--data-ai">
+                <div className="capability-card__image-wrap">
                   <img
                     src="/images/capabilities/card-visual-2@2x.png"
                     alt="Data & AI - Built into operations, not bolted on"
                     className="capability-card__img"
                     loading="lazy"
                   />
+                  <div className="capability-card__image-fade"></div>
+                </div>
+                <div className="capability-card__badge" title="Data & AI">
+                  <BarChart3 size={22} strokeWidth={2.2} />
                 </div>
                 <div className="capability-card__body">
-                  <h3 className="capability-card__title">Data & AI</h3>
+                  <h3 className="capability-card__title">Data &amp; AI</h3>
                   <p className="capability-card__desc">
                     Data platforms, analytics and AI built into operations, not bolted on.
                   </p>
                 </div>
               </div>
 
-              <div className="capability-card">
-                <div className="capability-card__top">
-                  <div className="capability-card__icon-badge" title="Enterprise Platforms">
-                    <Layers size={20} strokeWidth={2.2} />
-                  </div>
-                </div>
-                <div className="capability-card__media">
+              {/* Card 3: Enterprise Platforms */}
+              <div className="capability-card capability-card--enterprise-platforms">
+                <div className="capability-card__image-wrap">
                   <img
                     src="/images/capabilities/card-visual-3@2x.png"
                     alt="Enterprise Platforms - ERP, e-Governance, LMS & Campus Management"
                     className="capability-card__img"
                     loading="lazy"
                   />
+                  <div className="capability-card__image-fade"></div>
+                </div>
+                <div className="capability-card__badge" title="Enterprise Platforms">
+                  <Layers size={22} strokeWidth={2.2} />
                 </div>
                 <div className="capability-card__body">
                   <h3 className="capability-card__title">Enterprise Platforms</h3>
@@ -509,25 +518,24 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="capability-card">
-                <div className="capability-card__top">
-                  <div className="capability-card__icon-badge" title="Run & Support">
-                    <Headphones size={20} strokeWidth={2.2} />
-                  </div>
-                  <span className="capability-card__pill-badge">24/7</span>
-                </div>
-                <div className="capability-card__media">
+              {/* Card 4: Run & Support */}
+              <div className="capability-card capability-card--run-support">
+                <div className="capability-card__image-wrap">
                   <img
                     src="/images/capabilities/card-visual-4@2x.png"
                     alt="Run & Support - 24/7 Operations and Observability"
                     className="capability-card__img"
                     loading="lazy"
                   />
+                  <div className="capability-card__image-fade"></div>
+                </div>
+                <div className="capability-card__badge" title="Run & Support">
+                  <Headphones size={22} strokeWidth={2.2} />
                 </div>
                 <div className="capability-card__body">
-                  <h3 className="capability-card__title">Run & Support</h3>
+                  <h3 className="capability-card__title">Run &amp; Support</h3>
                   <p className="capability-card__desc">
-                    We stay on after go-live.
+                    We stay on after go-live, ensuring stability, security and continuous improvement.
                   </p>
                 </div>
               </div>
