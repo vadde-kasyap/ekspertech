@@ -430,28 +430,85 @@ export default function HomePage() {
       </section>
 
       {/* 3. CAPABILITIES WE BRING */}
-      <section className="section section--stone" id="what-we-do">
+      <section className="capabilities-section" id="what-we-do">
         <div className="container">
-          <h2 className="section-title">Capabilities We Bring</h2>
-          <div className="four-cards-grid">
-            <div className="simple-card">
-              <h3 className="simple-card__title">Digital Transformation</h3>
-              <p className="simple-card__line">Modernising legacy systems into platforms that work.</p>
+          <div className="capabilities-header">
+            <div className="capabilities-header__left">
+              <span className="capabilities-header__accent" aria-hidden="true"></span>
+              <h2 className="capabilities-header__title">Capabilities We Bring</h2>
+            </div>
+            <p className="capabilities-header__sub">
+              From strategy to scale &mdash; end-to-end capabilities for real-world impact.
+            </p>
+          </div>
+
+          <div className="capabilities-grid">
+            <div className="capability-card">
+              <div className="capability-card__media">
+                <img
+                  src="/images/capabilities/card-visual-1@2x.png"
+                  alt="Digital Transformation - Modernising legacy systems into platforms that work"
+                  className="capability-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div className="capability-card__body">
+                <h3 className="capability-card__title">Digital Transformation</h3>
+                <p className="capability-card__desc">
+                  Modernising legacy systems into platforms that work.
+                </p>
+              </div>
             </div>
 
-            <div className="simple-card">
-              <h3 className="simple-card__title">Data & AI</h3>
-              <p className="simple-card__line">Data platforms, analytics and AI built into operations, not bolted on.</p>
+            <div className="capability-card">
+              <div className="capability-card__media">
+                <img
+                  src="/images/capabilities/card-visual-2@2x.png"
+                  alt="Data & AI - Built into operations, not bolted on"
+                  className="capability-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div className="capability-card__body">
+                <h3 className="capability-card__title">Data & AI</h3>
+                <p className="capability-card__desc">
+                  Data platforms, analytics and AI built into operations, not bolted on.
+                </p>
+              </div>
             </div>
 
-            <div className="simple-card">
-              <h3 className="simple-card__title">Enterprise Platforms</h3>
-              <p className="simple-card__line">ERP, e-Governance and campus management at institutional scale.</p>
+            <div className="capability-card">
+              <div className="capability-card__media">
+                <img
+                  src="/images/capabilities/card-visual-3@2x.png"
+                  alt="Enterprise Platforms - ERP, e-Governance, LMS & Campus Management"
+                  className="capability-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div className="capability-card__body">
+                <h3 className="capability-card__title">Enterprise Platforms</h3>
+                <p className="capability-card__desc">
+                  ERP, e-Governance and campus management at institutional scale.
+                </p>
+              </div>
             </div>
 
-            <div className="simple-card">
-              <h3 className="simple-card__title">Run & Support</h3>
-              <p className="simple-card__line">We stay on after go-live.</p>
+            <div className="capability-card">
+              <div className="capability-card__media">
+                <img
+                  src="/images/capabilities/card-visual-4@2x.png"
+                  alt="Run & Support - 24/7 Operations and Observability"
+                  className="capability-card__img"
+                  loading="lazy"
+                />
+              </div>
+              <div className="capability-card__body">
+                <h3 className="capability-card__title">Run & Support</h3>
+                <p className="capability-card__desc">
+                  We stay on after go-live.
+                </p>
+              </div>
             </div>
           </div>
         </div>

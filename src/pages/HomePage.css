@@ -320,43 +320,120 @@
   border-bottom: 1px solid var(--stone-200);
 }
 
-/* ---------- 3. WHAT WE DO (Four cards, one line each) ---------- */
-.four-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 24px;
+/* ---------- 3. CAPABILITIES WE BRING (4 Visual 3D Cards) ---------- */
+.capabilities-section {
+  padding: clamp(68px, 7vw, 100px) 0;
+  background: radial-gradient(ellipse at 52% 0%, rgba(224, 242, 254, 0.45) 0%, rgba(240, 249, 255, 0.25) 45%, #ffffff 85%);
+  position: relative;
+  border-bottom: 1px solid var(--stone-200);
 }
 
-.simple-card {
-  background: var(--white);
-  border: 1px solid var(--stone-200);
-  border-radius: var(--r-md);
-  padding: 24px 22px;
+.capabilities-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(36px, 4.5vw, 48px);
+  flex-wrap: wrap;
+}
+
+.capabilities-header__left {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  transition: border-color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+  gap: 12px;
 }
 
-.simple-card:hover {
-  border-color: var(--stone-200);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px -4px rgba(0, 0, 0, 0.09), 0 2px 8px rgba(0, 0, 0, 0.04);
+.capabilities-header__accent {
+  display: block;
+  width: 34px;
+  height: 3.5px;
+  background: #0284C7;
+  border-radius: 9999px;
 }
 
-.simple-card__title {
+.capabilities-header__title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.capabilities-header__sub {
+  font-size: clamp(0.88rem, 1.1vw, 0.98rem);
+  color: var(--ink-secondary);
+  max-width: 440px;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.capability-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 24px;
+  padding: 22px 20px 26px;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  position: relative;
+}
+
+.capability-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(186, 230, 253, 0.95);
+  box-shadow: 0 20px 36px -10px rgba(2, 132, 199, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.capability-card__media {
+  width: 100%;
+  height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.capability-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.capability-card:hover .capability-card__img {
+  transform: scale(1.03);
+}
+
+.capability-card__body {
+  margin-top: auto;
+}
+
+.capability-card__title {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 8px;
+  margin: 0 0 8px 0;
   letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
-.simple-card__line {
-  font-size: 0.9375rem;
-  color: var(--ink-muted);
-  line-height: 1.55;
+.capability-card__desc {
+  font-size: 0.88rem;
+  color: var(--ink-secondary);
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -898,6 +975,11 @@
     gap: 18px 24px;
     text-align: left;
   }
+
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
 }
 
 /* MOBILE COMPOSITION (<= 640px): 4 Core Images as Small Thumbnails / Cards */
@@ -1074,6 +1156,22 @@
     grid-column: 1 / -1;
     border-top: 1px solid rgba(226, 232, 240, 0.7);
     padding-top: 10px;
+  }
+
+  .capabilities-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .capability-card__media {
+    height: 145px;
   }
 }
 
