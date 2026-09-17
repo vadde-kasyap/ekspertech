@@ -217,8 +217,9 @@
   border-radius: var(--r-sm);
 }
 
-/* Mobile Drawer */
+/* Mobile Drawer (Only for tablet and mobile screens) */
 .mobile-drawer {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -228,7 +229,6 @@
   height: 100dvh;
   background: var(--white);
   z-index: 200;
-  display: flex;
   flex-direction: column;
   transform: translateX(100%);
   transition: transform 0.35s var(--ease);
@@ -337,6 +337,15 @@
 }
 
 /* ---------- Responsive ---------- */
+@media (min-width: 1025px) {
+  .mobile-drawer,
+  .mobile-backdrop {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
 @media (max-width: 1024px) {
   .header__nav,
   .header__phone {
@@ -349,6 +358,10 @@
 
   .header__inner {
     justify-content: space-between;
+  }
+
+  .mobile-drawer {
+    display: flex;
   }
 }
 
