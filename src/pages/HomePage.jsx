@@ -432,94 +432,104 @@ export default function HomePage() {
       {/* 3. CAPABILITIES WE BRING */}
       <section className="capabilities-section" id="what-we-do">
         <div className="container">
-          <div className="capabilities-header">
-            <div className="capabilities-header__left">
-              <span className="capabilities-header__accent" aria-hidden="true"></span>
-              <h2 className="capabilities-header__title">Capabilities We Bring</h2>
-            </div>
-            <p className="capabilities-header__sub">
-              From strategy to scale &mdash; end-to-end capabilities for real-world impact.
-            </p>
-          </div>
-
-          <div className="capabilities-grid">
-            <div className="capability-card">
-              <div className="capability-card__icon-badge" aria-hidden="true">
-                <Laptop size={18} strokeWidth={2.2} />
+          <div className="capabilities-panel">
+            <div className="capabilities-header">
+              <div className="capabilities-header__left">
+                <h2 className="capabilities-header__title">Capabilities We Bring</h2>
               </div>
-              <div className="capability-card__visual">
-                <img
-                  src="/images/capabilities/digital-transformation.png"
-                  alt="Digital Transformation — legacy servers/data flowing into modern glass-like platforms"
-                  className="capability-card__visual-img"
-                  loading="lazy"
-                />
-              </div>
-              <div className="capability-card__content">
-                <h3 className="capability-card__title">Digital Transformation</h3>
-                <p className="capability-card__desc">
-                  Modernising legacy systems into platforms that work.
-                </p>
-              </div>
+              <p className="capabilities-header__sub">
+                From strategy to scale &mdash; end-to-end capabilities for real-world impact.
+              </p>
             </div>
 
-            <div className="capability-card">
-              <div className="capability-card__icon-badge" aria-hidden="true">
-                <BarChart3 size={18} strokeWidth={2.2} />
+            <div className="capabilities-grid">
+              <div className="capability-card">
+                <div className="capability-card__top">
+                  <div className="capability-card__icon-badge" title="Digital Transformation">
+                    <Laptop size={20} strokeWidth={2.2} />
+                  </div>
+                </div>
+                <div className="capability-card__media">
+                  <img
+                    src="/images/capabilities/card-visual-1@2x.png"
+                    alt="Digital Transformation - Modernising legacy systems into platforms that work"
+                    className="capability-card__img"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="capability-card__body">
+                  <h3 className="capability-card__title">Digital Transformation</h3>
+                  <p className="capability-card__desc">
+                    Modernising legacy systems into platforms that work.
+                  </p>
+                </div>
               </div>
-              <div className="capability-card__visual">
-                <img
-                  src="/images/capabilities/data-ai.png"
-                  alt="Data & AI — AI processor surrounded by analytics/data visualizations"
-                  className="capability-card__visual-img"
-                  loading="lazy"
-                />
-              </div>
-              <div className="capability-card__content">
-                <h3 className="capability-card__title">Data & AI</h3>
-                <p className="capability-card__desc">
-                  Data platforms, analytics and AI built into operations, not bolted on.
-                </p>
-              </div>
-            </div>
 
-            <div className="capability-card">
-              <div className="capability-card__icon-badge" aria-hidden="true">
-                <Layers size={18} strokeWidth={2.2} />
+              <div className="capability-card">
+                <div className="capability-card__top">
+                  <div className="capability-card__icon-badge" title="Data & AI">
+                    <BarChart3 size={20} strokeWidth={2.2} />
+                  </div>
+                </div>
+                <div className="capability-card__media">
+                  <img
+                    src="/images/capabilities/card-visual-2@2x.png"
+                    alt="Data & AI - Built into operations, not bolted on"
+                    className="capability-card__img"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="capability-card__body">
+                  <h3 className="capability-card__title">Data & AI</h3>
+                  <p className="capability-card__desc">
+                    Data platforms, analytics and AI built into operations, not bolted on.
+                  </p>
+                </div>
               </div>
-              <div className="capability-card__visual">
-                <img
-                  src="/images/capabilities/enterprise-platforms.png"
-                  alt="Enterprise Platforms — layered ERP, e-Governance, LMS and campus-management systems"
-                  className="capability-card__visual-img"
-                  loading="lazy"
-                />
-              </div>
-              <div className="capability-card__content">
-                <h3 className="capability-card__title">Enterprise Platforms</h3>
-                <p className="capability-card__desc">
-                  ERP, e-Governance and campus management at institutional scale.
-                </p>
-              </div>
-            </div>
 
-            <div className="capability-card">
-              <div className="capability-card__icon-badge" aria-hidden="true">
-                <Headphones size={18} strokeWidth={2.2} />
+              <div className="capability-card">
+                <div className="capability-card__top">
+                  <div className="capability-card__icon-badge" title="Enterprise Platforms">
+                    <Layers size={20} strokeWidth={2.2} />
+                  </div>
+                </div>
+                <div className="capability-card__media">
+                  <img
+                    src="/images/capabilities/card-visual-3@2x.png"
+                    alt="Enterprise Platforms - ERP, e-Governance, LMS & Campus Management"
+                    className="capability-card__img"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="capability-card__body">
+                  <h3 className="capability-card__title">Enterprise Platforms</h3>
+                  <p className="capability-card__desc">
+                    ERP, e-Governance and campus management at institutional scale.
+                  </p>
+                </div>
               </div>
-              <div className="capability-card__visual">
-                <img
-                  src="/images/capabilities/run-support.png"
-                  alt="Run & Support — enterprise monitoring dashboard with support/resolve/operate concepts"
-                  className="capability-card__visual-img"
-                  loading="lazy"
-                />
-              </div>
-              <div className="capability-card__content">
-                <h3 className="capability-card__title">Run & Support</h3>
-                <p className="capability-card__desc">
-                  We stay on after go-live.
-                </p>
+
+              <div className="capability-card">
+                <div className="capability-card__top">
+                  <div className="capability-card__icon-badge" title="Run & Support">
+                    <Headphones size={20} strokeWidth={2.2} />
+                  </div>
+                  <span className="capability-card__pill-badge">24/7</span>
+                </div>
+                <div className="capability-card__media">
+                  <img
+                    src="/images/capabilities/card-visual-4@2x.png"
+                    alt="Run & Support - 24/7 Operations and Observability"
+                    className="capability-card__img"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="capability-card__body">
+                  <h3 className="capability-card__title">Run & Support</h3>
+                  <p className="capability-card__desc">
+                    We stay on after go-live.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
