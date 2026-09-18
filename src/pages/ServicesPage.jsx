@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Server, Brain, Layers, ShieldCheck, LifeBuoy, Pickaxe, CheckCircle2 } from 'lucide-react';
 import './ServicesPage.css';
@@ -6,30 +6,43 @@ import './ServicesPage.css';
 const SERVICES = [
   {
     id: 'digital-transformation',
-    icon: <Layers size={24} strokeWidth={2.2} />,
+    icon: <Layers size={22} strokeWidth={2.2} />,
     color: '#EA580C',
-    bg: 'rgba(234, 88, 12, 0.08)',
-    border: 'rgba(234, 88, 12, 0.22)',
+    bg: '#FFF7ED',
+    border: '#FFEDD5',
+    image: '/images/services/card-digital-transformation.png',
     title: 'Digital Transformation',
     desc: 'Modernising legacy systems into platforms that work. Decoupling monolithic legacy code, deduplicating databases, and standing up robust modern APIs.',
-    features: ['Legacy modernization without operational downtime', 'Clean API architecture (REST, GraphQL, gRPC)', 'Database cleansing and schema consolidation', 'Statutory compliance & audit logging'],
+    features: [
+      'Legacy modernization without operational downtime',
+      'Clean API architecture (REST, GraphQL, gRPC)',
+      'Database cleansing and schema consolidation',
+      'Statutory compliance & audit logging',
+    ],
   },
   {
     id: 'data-ai',
-    icon: <Brain size={24} strokeWidth={2.2} />,
+    icon: <Brain size={22} strokeWidth={2.2} />,
     color: '#6366F1',
-    bg: 'rgba(99, 102, 241, 0.08)',
-    border: 'rgba(99, 102, 241, 0.22)',
+    bg: '#EEF2FF',
+    border: '#E0E7FF',
+    image: '/images/services/card-data-ai.png',
     title: 'Data & AI',
     desc: 'Data platforms, analytics and AI built into operations, not bolted on. From automated clinical data pipelines to operational anomaly detection.',
-    features: ['FHIR & healthcare data integration', 'Operational telemetry and automated alerting', 'Embedded analytical dashboards', 'Domain-specific machine learning models'],
+    features: [
+      'FHIR & healthcare data integration',
+      'Operational telemetry and automated alerting',
+      'Embedded analytical dashboards',
+      'Domain-specific machine learning models',
+    ],
   },
   {
     id: 'enterprise-platforms',
-    icon: <ShieldCheck size={24} strokeWidth={2.2} />,
+    icon: <ShieldCheck size={22} strokeWidth={2.2} />,
     color: '#0D9488',
-    bg: 'rgba(13, 148, 136, 0.08)',
-    border: 'rgba(13, 148, 136, 0.22)',
+    bg: '#F0FDFA',
+    border: '#CCFBF1',
+    image: '/images/services/card-enterprise-platforms.png',
     title: 'Enterprise Platforms',
     desc: 'Modern enterprise platforms, state e-Governance, and mission-critical administrative systems engineered for strict statutory mandates and large-scale public institutions.',
     features: [
@@ -41,85 +54,175 @@ const SERVICES = [
   },
   {
     id: 'run-support',
-    icon: <LifeBuoy size={24} strokeWidth={2.2} />,
+    icon: <LifeBuoy size={22} strokeWidth={2.2} />,
     color: '#0284C7',
-    bg: 'rgba(2, 132, 199, 0.08)',
-    border: 'rgba(2, 132, 199, 0.22)',
+    bg: '#F0F9FF',
+    border: '#E0F2FE',
+    image: '/images/services/card-run-support.png',
     title: 'Run & Support',
     desc: 'We stay on after go-live. Dedicated long-term engineering teams ensuring uptime, statutory upgrades, and continuous performance.',
-    features: ['24/7 mission-critical uptime monitoring', 'Dedicated post-go-live engineering teams', 'Continuous security patching and audit readiness', 'Preventative maintenance and SLAs'],
+    features: [
+      '24/7 mission-critical uptime monitoring',
+      'Dedicated post-go-live engineering teams',
+      'Continuous security patching and audit readiness',
+      'Preventative maintenance and SLAs',
+    ],
   },
   {
     id: 'cloud',
-    icon: <Server size={24} strokeWidth={2.2} />,
+    icon: <Server size={22} strokeWidth={2.2} />,
     color: '#2563EB',
-    bg: 'rgba(37, 99, 235, 0.08)',
-    border: 'rgba(37, 99, 235, 0.22)',
+    bg: '#EFF6FF',
+    border: '#DBEAFE',
+    image: '/images/services/card-cloud.png',
     title: 'Cloud Infrastructure',
     desc: 'High-concurrency autoscaling infrastructure engineered for extreme traffic surges and high availability across AWS, Azure, and private cloud.',
-    features: ['Multi-region resilient deployments', 'Auto-scaling for massive concurrency spikes', 'Disaster recovery and automated failover', 'Private datacenter & hybrid architectures'],
+    features: [
+      'Multi-region resilient deployments',
+      'Auto-scaling for massive concurrency spikes',
+      'Disaster recovery and automated failover',
+      'Private datacenter & hybrid architectures',
+    ],
   },
   {
     id: 'mining-telemetry',
-    icon: <Pickaxe size={24} strokeWidth={2.2} />,
+    icon: <Pickaxe size={22} strokeWidth={2.2} />,
     color: '#D97706',
-    bg: 'rgba(217, 119, 6, 0.08)',
-    border: 'rgba(217, 119, 6, 0.22)',
+    bg: '#FFFBEB',
+    border: '#FEF3C7',
+    image: '/images/services/card-mining.png',
     title: 'Industrial & Mining Telemetry',
     desc: 'Hardware-integrated weighbridge capture, digital dispatch tracking, and real-time statutory logistics across production sites.',
-    features: ['Tamper-proof weighbridge hardware integration', 'Real-time production & dispatch telemetry', 'Electronic transport passes with QR verification', 'Direct statutory compliance reporting'],
+    features: [
+      'Tamper-proof weighbridge hardware integration',
+      'Real-time production & dispatch telemetry',
+      'Electronic transport passes with QR verification',
+      'Direct statutory compliance reporting',
+    ],
   },
 ];
 
 export default function ServicesPage() {
+  useEffect(() => {
+    if (window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
-    <div>
-      <section className="page-hero">
-        <div className="container">
-          <div className="page-hero__eyebrow">Capabilities</div>
-          <h1 className="page-hero__title">Capabilities We Bring</h1>
-          <p className="page-hero__desc">
-            Four core capabilities plus specialized infrastructure and industrial services backing every deployment.
-          </p>
+    <div className="services-redesign">
+      {/* 1. HERO SECTION */}
+      <section className="services-hero">
+        <div className="container services-hero__container">
+          <div className="services-hero__left">
+            <div className="services-hero__eyebrow">
+              <span className="services-hero__eyebrow-dash" />
+              <span>CAPABILITIES</span>
+            </div>
+            <h1 className="services-hero__title">Capabilities We Bring</h1>
+            <p className="services-hero__sub">
+              Four core capabilities plus specialized infrastructure and industrial services backing every deployment.
+            </p>
+            <div className="services-hero__sub-tagline">
+              <span className="services-hero__sub-tagline-bar" />
+              <div className="services-hero__sub-tagline-text">
+                <span>PEOPLE.</span>
+                <span>TECHNOLOGY.</span>
+                <span>A BETTER TOMORROW.</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="services-hero__right">
+            <div className="services-hero__top-tagline">
+              <span className="services-hero__top-tagline-dash" />
+              <div className="services-hero__top-tagline-text">
+                <span>IDEAS TODAY.</span>
+                <span>IMPACT TOMORROW.</span>
+              </div>
+            </div>
+            <div className="services-hero__visual-wrap">
+              <img
+                src="/images/services/services-hero-building.png"
+                alt="Scalable Solutions for Complex Worlds"
+                className="services-hero__visual-img"
+                loading="eager"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="section">
+      {/* 2. CAPABILITY CARDS GRID */}
+      <section className="services-grid-section">
         <div className="container">
-          <div className="services-page__grid">
+          <div className="services-cards-grid">
             {SERVICES.map((s) => (
-              <div key={s.id} id={s.id} className="services-page__card">
-                <div
-                  className="services-page__card-icon"
-                  style={{ color: s.color, background: s.bg, borderColor: s.border }}
-                >
-                  {s.icon}
+              <article key={s.id} id={s.id} className="services-card">
+                <div className="services-card__img-wrap">
+                  <img
+                    src={s.image}
+                    alt={`${s.title} capability visual`}
+                    className="services-card__img"
+                    loading="lazy"
+                  />
+                  <div
+                    className="services-card__badge"
+                    style={{ color: s.color, backgroundColor: s.bg, borderColor: s.border }}
+                  >
+                    {s.icon}
+                  </div>
                 </div>
-                <h3 className="services-page__card-title">{s.title}</h3>
-                <p className="services-page__card-desc">{s.desc}</p>
-                <ul className="services-page__features">
-                  {s.features.map((f, j) => (
-                    <li key={j}>
-                      <CheckCircle2 size={15} style={{ color: s.color, flexShrink: 0, marginTop: 2 }} />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="services-card__body">
+                  <h3 className="services-card__title">{s.title}</h3>
+                  <p className="services-card__desc">{s.desc}</p>
+                  <ul className="services-card__features">
+                    {s.features.map((f, j) => (
+                      <li key={j}>
+                        <CheckCircle2 size={15} style={{ color: s.color, flexShrink: 0, marginTop: 2 }} />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section section--beige">
-        <div className="container" style={{ textAlign: 'center', maxWidth: 600 }}>
-          <h2 className="section-title">Discuss your architecture</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto 32px' }}>
-            Speak directly with our engineering team about your systems, data, and infrastructure.
-          </p>
-          <Link to="/contact" className="btn btn--primary btn--lg">
-            Talk to us <ArrowRight size={14} />
-          </Link>
+      {/* 3. DISCUSS YOUR ARCHITECTURE CTA BANNER */}
+      <section className="services-cta-section">
+        <div className="container">
+          <div className="services-cta-banner">
+            <div className="services-cta-banner__left">
+              <h2 className="services-cta-banner__title">Discuss your architecture</h2>
+              <p className="services-cta-banner__sub">
+                Speak directly with our engineering team about your systems, data, and infrastructure.
+              </p>
+              <Link to="/contact" className="services-cta-banner__btn">
+                Talk to us <ArrowRight size={14} />
+              </Link>
+            </div>
+            <div className="services-cta-banner__right">
+              <div className="services-cta-banner__tagline">
+                <span className="services-cta-banner__tagline-dash" />
+                <div className="services-cta-banner__tagline-text">
+                  <span>COMPLEX</span>
+                  <span>CHALLENGES.</span>
+                  <span>MEASURABLE</span>
+                  <span>OUTCOMES.</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

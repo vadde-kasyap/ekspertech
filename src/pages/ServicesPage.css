@@ -1,83 +1,428 @@
 /* ==========================================================================
-   SERVICES PAGE
+   SERVICES / CAPABILITIES PAGE REDESIGN
+   Matches Reference: Architectural Hero, 6 Capability Cards, Mountain CTA
    ========================================================================== */
 
-.services-page__grid {
+.services-redesign {
+  background-color: #FDFDFD;
+  min-height: 100vh;
+}
+
+/* ---------- 1. HERO SECTION ---------- */
+.services-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(48px, 6vw, 76px) 0 32px;
+  background: radial-gradient(circle at 82% 35%, rgba(210, 230, 248, 0.32), transparent 45%),
+              linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.services-hero__container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.services-page__card {
-  display: flex;
-  flex-direction: column;
-  padding: 32px;
-  background: var(--stone-50);
-  border: 1px solid transparent;
-  border-radius: var(--r-lg);
-  transition: all var(--t-normal);
-}
-
-.services-page__card:hover {
-  background: var(--white);
-  border-color: var(--stone-200);
-  transform: translateY(-2px);
-}
-
-.services-page__card-icon {
-  display: flex;
+  grid-template-columns: minmax(420px, 1fr) minmax(440px, 1.12fr);
   align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: var(--r-md);
-  border: 1px solid transparent;
-  margin-bottom: 20px;
-  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  gap: clamp(32px, 4vw, 56px);
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-.services-page__card:hover .services-page__card-icon {
-  transform: scale(1.08);
+.services-hero__left {
+  max-width: 520px;
 }
 
-.services-page__card-title {
-  font-size: 1.125rem;
+.services-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #EA580C;
+  text-transform: uppercase;
   margin-bottom: 12px;
 }
 
-.services-page__card-desc {
-  font-size: 0.875rem;
-  color: var(--ink-muted);
-  line-height: 1.65;
-  margin-bottom: 20px;
+.services-hero__eyebrow-dash {
+  width: 18px;
+  height: 2px;
+  background: #EA580C;
+  display: inline-block;
 }
 
-.services-page__features {
-  list-style: none;
+.services-hero__title {
+  font-size: clamp(2.5rem, 4vw, 3.6rem);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 0 0 16px;
+}
+
+.services-hero__sub {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 0 32px;
+}
+
+.services-hero__sub-tagline {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.services-hero__sub-tagline-bar {
+  width: 1.5px;
+  background: #94A3B8;
+  opacity: 0.7;
+  display: block;
+}
+
+.services-hero__sub-tagline-text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 0;
-  padding: 0;
-}
-
-.services-page__features li {
-  font-size: 0.8125rem;
-  color: var(--ink-secondary);
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  gap: 2px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #64748B;
+  text-transform: uppercase;
   line-height: 1.45;
 }
 
-@media (max-width: 992px) {
-  .services-page__grid {
+.services-hero__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+}
+
+.services-hero__top-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-self: flex-end;
+}
+
+.services-hero__top-tagline-dash {
+  width: 32px;
+  height: 1.5px;
+  background: #94A3B8;
+  opacity: 0.7;
+  display: block;
+}
+
+.services-hero__top-tagline-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #64748B;
+  text-transform: uppercase;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.services-hero__visual-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.services-hero__visual-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 18px;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 5%, black 14%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 5%, black 14%);
+}
+
+/* ---------- 2. CAPABILITIES GRID SECTION ---------- */
+.services-grid-section {
+  padding: 48px 0 64px;
+}
+
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.2vw, 28px);
+}
+
+.services-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px -4px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+}
+
+.services-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px -8px rgba(15, 23, 42, 0.09), 0 2px 8px rgba(0, 0, 0, 0.03);
+  border-color: rgba(203, 213, 225, 0.95);
+}
+
+.services-card__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  overflow: visible;
+  background: #f8fafc;
+}
+
+.services-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+}
+
+.services-card__badge {
+  position: absolute;
+  bottom: -20px;
+  left: 24px;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.services-card:hover .services-card__badge {
+  transform: scale(1.08);
+}
+
+.services-card__body {
+  padding: 30px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.services-card__title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.services-card__desc {
+  font-size: 0.88rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  margin: 0 0 22px;
+  font-weight: 400;
+}
+
+.services-card__features {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.services-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--ink-secondary);
+}
+
+.services-card__features li span {
+  flex: 1;
+}
+
+/* ---------- 3. CTA BANNER SECTION ---------- */
+.services-cta-section {
+  padding: 0 0 80px;
+}
+
+.services-cta-banner {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background-color: #F8F9FB;
+  background-image: url('/images/services/cta-mountains-bg.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 48% auto;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 8px 30px -6px rgba(15, 23, 42, 0.05);
+  padding: clamp(36px, 5vw, 48px) clamp(28px, 4vw, 48px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.services-cta-banner__left {
+  max-width: 520px;
+  position: relative;
+  z-index: 2;
+}
+
+.services-cta-banner__title {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+
+.services-cta-banner__sub {
+  font-size: 0.95rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  margin: 0 0 24px;
+  font-weight: 400;
+}
+
+.services-cta-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.services-cta-banner__btn:hover {
+  background: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+  color: #ffffff;
+}
+
+.services-cta-banner__right {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.services-cta-banner__tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.services-cta-banner__tagline-dash {
+  width: 32px;
+  height: 1.5px;
+  background: #94A3B8;
+  opacity: 0.8;
+  display: block;
+}
+
+.services-cta-banner__tagline-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #475569;
+  text-transform: uppercase;
+  line-height: 1.45;
+  text-align: left;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+@media (max-width: 1080px) {
+  .services-cards-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-hero__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .services-cta-banner {
+    background-size: 42% auto;
+  }
+}
+
+@media (max-width: 840px) {
+  .services-hero {
+    padding: 40px 0 24px;
+  }
+
+  .services-hero__container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .services-hero__left {
+    max-width: 100%;
+  }
+
+  .services-hero__right {
+    align-items: flex-start;
+  }
+
+  .services-hero__top-tagline {
+    align-self: flex-start;
+  }
+
+  .services-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    background-size: cover;
+    background-position: center right;
+  }
+
+  .services-cta-banner__right {
+    display: none;
   }
 }
 
 @media (max-width: 640px) {
-  .services-page__grid {
+  .services-cards-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .services-hero__title {
+    font-size: 2.2rem;
+  }
+
+  .services-card__img-wrap {
+    height: 150px;
   }
 }
