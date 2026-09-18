@@ -183,7 +183,7 @@ export default function MiningPage() {
         </div>
       </section>
 
-      {/* 4. FLAGSHIP CLIENT STRIP (NMDC) */}
+      {/* 4. FLAGSHIP CLIENT STRIP */}
       <section className="mining-flagship">
         <div className="container">
           <div className="mining-flagship__container">
@@ -191,12 +191,12 @@ export default function MiningPage() {
               <span className="mining-flagship__badge">
                 Flagship Deployment
               </span>
-              <div title="NMDC" className="mining-flagship__logo">
-                <svg viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ height: 32, width: 'auto' }}>
+              <div title="National Mineral Enterprise" className="mining-flagship__logo">
+                <svg viewBox="0 0 165 38" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ height: 32, width: 'auto' }}>
                   <rect x="2" y="5" width="28" height="28" rx="4" fill="#003366" />
                   <path d="M7 25L14 11L18 20L22 14L25 25" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                   <circle cx="21" cy="11" r="2" fill="#E05A2B" />
-                  <text x="38" y="25" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="19" fontWeight="800" fill="currentColor" letterSpacing="0.06em">NMDC</text>
+                  <text x="38" y="24" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="13" fontWeight="800" fill="currentColor" letterSpacing="0.05em">MINING PSU</text>
                 </svg>
               </div>
             </div>

@@ -5,8 +5,8 @@ import './CaseStudiesPage.css';
 
 const FEATURED_CASES = [
   {
-    id: 'nmdc',
-    client: 'NMDC',
+    id: 'mining-psu',
+    client: 'National Mineral Enterprise (PSU)',
     sector: 'Mining & Public Sector',
     problem: 'Production dispatch, weighbridge capture, and statutory filings operated through disconnected spreadsheets and manual logs.',
     whatChanged: 'Centralized telemetry, automated weighbridge data acquisition, and real-time statutory reporting across production units.',

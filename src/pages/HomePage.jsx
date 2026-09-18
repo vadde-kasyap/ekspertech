@@ -155,13 +155,13 @@ export default function HomePage() {
           <div className="client-strip" ref={clientStripRef}>
             {[
               {
-                name: 'NMDC',
+                name: 'National Mineral Enterprise',
                 content: (
-                  <svg className="client-logo" viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="client-logo" viewBox="0 0 165 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="2" y="5" width="28" height="28" rx="4" fill="#003366" />
                     <path d="M7 25L14 11L18 20L22 14L25 25" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                     <circle cx="21" cy="11" r="2" fill="#E05A2B" />
-                    <text x="38" y="25" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="19" fontWeight="800" fill="currentColor" letterSpacing="0.06em">NMDC</text>
+                    <text x="38" y="24" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="13" fontWeight="800" fill="currentColor" letterSpacing="0.05em">MINING PSU</text>
                   </svg>
                 )
               },
@@ -220,13 +220,13 @@ export default function HomePage() {
             ].concat(
               [
                 {
-                  name: 'NMDC',
+                  name: 'National Mineral Enterprise',
                   content: (
-                    <svg className="client-logo" viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="client-logo" viewBox="0 0 165 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect x="2" y="5" width="28" height="28" rx="4" fill="#003366" />
                       <path d="M7 25L14 11L18 20L22 14L25 25" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                       <circle cx="21" cy="11" r="2" fill="#E05A2B" />
-                      <text x="38" y="25" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="19" fontWeight="800" fill="currentColor" letterSpacing="0.06em">NMDC</text>
+                      <text x="38" y="24" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="13" fontWeight="800" fill="currentColor" letterSpacing="0.05em">MINING PSU</text>
                     </svg>
                   )
                 },
@@ -286,13 +286,13 @@ export default function HomePage() {
             ).concat(
               [
                 {
-                  name: 'NMDC',
+                  name: 'National Mineral Enterprise',
                   content: (
-                    <svg className="client-logo" viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="client-logo" viewBox="0 0 165 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect x="2" y="5" width="28" height="28" rx="4" fill="#003366" />
                       <path d="M7 25L14 11L18 20L22 14L25 25" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                       <circle cx="21" cy="11" r="2" fill="#E05A2B" />
-                      <text x="38" y="25" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="19" fontWeight="800" fill="currentColor" letterSpacing="0.06em">NMDC</text>
+                      <text x="38" y="24" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="13" fontWeight="800" fill="currentColor" letterSpacing="0.05em">MINING PSU</text>
                     </svg>
                   )
                 },
@@ -352,13 +352,13 @@ export default function HomePage() {
             ).concat(
               [
                 {
-                  name: 'NMDC',
+                  name: 'National Mineral Enterprise',
                   content: (
-                    <svg className="client-logo" viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="client-logo" viewBox="0 0 165 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect x="2" y="5" width="28" height="28" rx="4" fill="#003366" />
                       <path d="M7 25L14 11L18 20L22 14L25 25" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                       <circle cx="21" cy="11" r="2" fill="#E05A2B" />
-                      <text x="38" y="25" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="19" fontWeight="800" fill="currentColor" letterSpacing="0.06em">NMDC</text>
+                      <text x="38" y="24" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="13" fontWeight="800" fill="currentColor" letterSpacing="0.05em">MINING PSU</text>
                     </svg>
                   )
                 },
@@ -652,7 +652,7 @@ export default function HomePage() {
               <div className="industry-card__content">
                 <h3 className="industry-card__title">Mining</h3>
                 <p className="industry-card__desc">
-                  NMDC and the public-sector mining ecosystem.
+                  Tier-1 public-sector mining enterprises and mineral complexes.
                 </p>
               </div>
             </div>
@@ -729,19 +729,19 @@ export default function HomePage() {
           </div>
 
           <div className="case-studies-list">
-            {/* Case Study 01: NMDC */}
+            {/* Case Study 01: National Mineral Enterprise */}
             <article className="case-study-row">
               <div className="case-study__content">
                 <div className="case-study__header">
                   <span className="case-study__num">01</span>
                   <span className="case-study__divider" />
-                  <strong className="case-study__client-name">NMDC</strong>
-                  <div className="work-logo-badge" title="NMDC">
-                    <svg viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
+                  <strong className="case-study__client-name">National Mineral Enterprise</strong>
+                  <div className="work-logo-badge" title="National Mineral Enterprise">
+                    <svg viewBox="0 0 165 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="work-svg-logo">
                       <rect x="2" y="5" width="28" height="28" rx="4" fill="#003366" />
                       <path d="M7 25L14 11L18 20L22 14L25 25" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                       <circle cx="21" cy="11" r="2" fill="#E05A2B" />
-                      <text x="38" y="25" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="19" fontWeight="800" fill="currentColor" letterSpacing="0.06em">NMDC</text>
+                      <text x="38" y="24" fontFamily="'Outfit', 'Inter', sans-serif" fontSize="13" fontWeight="800" fill="currentColor" letterSpacing="0.05em">MINING PSU</text>
                     </svg>
                   </div>
                   <span className="case-study__sector">Mining &amp; Public Sector</span>
@@ -781,9 +781,9 @@ export default function HomePage() {
               <div className="case-study__visual">
                 <div className="case-study__visual-inner">
                   <img
-                    src="/images/work/nmdc-case-study.png"
-                    srcSet="/images/work/nmdc-case-study@2x.png 2x"
-                    alt="NMDC Production Telemetry and Statutory Reporting Case Study"
+                    src="/images/work/mining-case-study.png"
+                    srcSet="/images/work/mining-case-study@2x.png 2x"
+                    alt="Production Telemetry and Statutory Reporting Case Study"
                     className="case-study__visual-img"
                     loading="lazy"
                   />

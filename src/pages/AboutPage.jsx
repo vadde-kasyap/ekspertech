@@ -44,7 +44,7 @@ export default function AboutPage() {
                 Founded in 2000 in Hyderabad, Eksper Technologies Limited was built around a singular principle: mission-critical organizations require purpose-engineered systems that work under real-world operational pressure.
               </p>
               <p style={{ marginBottom: 16 }}>
-                Over two and a half decades, we have delivered core platforms for state government bodies, premier public institutions, industrial mining leaders like NMDC, renewable energy operators like Greenko, and US healthcare organisations.
+                Over two and a half decades, we have delivered core platforms for state government bodies, premier public institutions, national public-sector mining enterprises, renewable energy operators like Greenko, and US healthcare organisations.
               </p>
               <p>
                 Whether it is modernising multi-decade legacy platforms, deploying real-time industrial telemetry, or building clinical AI pipelines, we take end-to-end accountability from initial architecture through post-launch operations.
