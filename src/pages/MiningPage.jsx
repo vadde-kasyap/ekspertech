@@ -53,7 +53,7 @@ export default function MiningPage() {
           <div className="mining-hero__right">
             <div className="mining-hero__visual-wrap">
               <img 
-                src="/images/mining/mining-hero-pit.png" 
+                src="/images/mining/mining-hero-panorama.png" 
                 alt="Mining open pit operations with real-time telemetry HUD overlay" 
                 className="mining-hero__image"
               />

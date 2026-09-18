@@ -46,7 +46,7 @@ export default function CloudServicesPage() {
           <div className="cloud-hero__right">
             <div className="cloud-hero__visual-wrap">
               <img 
-                src="/images/cloud/cloud-hero-visual.png" 
+                src="/images/cloud/cloud-hero-panorama.png" 
                 alt="Cloud infrastructure network and server datacenter with live telemetry"
                 className="cloud-hero__image"
               />

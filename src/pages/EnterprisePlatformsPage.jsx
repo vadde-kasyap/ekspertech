@@ -126,8 +126,8 @@ export default function EnterprisePlatformsPage() {
           <div className="enterprise-hero__right">
             <div className="enterprise-hero__visual-wrap">
               <img 
-                src="/images/enterprise/enterprise-hero-capitol.png" 
-                alt="Institutional governance neoclassical architectural dome"
+                src="/images/enterprise/enterprise-hero-panorama.png" 
+                alt="Institutional governance neoclassical architectural dome and nationwide network"
                 className="enterprise-hero__image"
               />
             </div>
@@ -309,7 +309,7 @@ export default function EnterprisePlatformsPage() {
             {/* Center Graphic */}
             <div className="enterprise-architecture__center">
               <img 
-                src="/images/enterprise/enterprise-arch-center.png" 
+                src="/images/enterprise/enterprise-arch-center.jpg" 
                 alt="Institutional architecture platform layers" 
                 className="enterprise-architecture__center-visual"
               />

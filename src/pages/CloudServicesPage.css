@@ -121,6 +121,8 @@
   height: auto;
   display: block;
   object-fit: contain;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 4%, black 14%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 4%, black 14%);
 }
 
 /* ---------- 2. STACK TRUST STRIP ---------- */
