@@ -2,17 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
-  Scale, 
-  Truck, 
-  BarChart3, 
-  ShieldCheck, 
   CheckCircle2, 
-  Activity, 
-  Cpu, 
+  Eye, 
+  BarChart3, 
+  Link as LinkIcon, 
+  ShieldCheck, 
   Leaf, 
-  Layers, 
-  Radio, 
-  ChevronRight 
+  Zap, 
+  Database, 
+  Shield, 
+  RefreshCw, 
+  ChevronRight,
+  Cpu,
+  Truck,
+  Server,
+  LineChart,
+  FileCheck2,
+  Maximize2,
+  Users
 } from 'lucide-react';
 import './MiningPage.css';
 
@@ -24,21 +31,21 @@ export default function MiningPage() {
         <div className="container">
           <div className="mining-hero__container">
             <div className="mining-hero__left">
-              <div className="mining-hero__eyebrow">
-                <span className="mining-hero__eyebrow-dash" />
-                Energy & Mining Telemetry
+              <div className="mining-eyebrow">
+                <span className="mining-eyebrow-dash" />
+                Energy & Mining
               </div>
               <h1 className="mining-hero__title">
-                Smarter operations for high-throughput extraction.
+                Smarter operations for a stronger tomorrow.
               </h1>
               <p className="mining-hero__desc">
-                Automated weighbridge hardware integration, digital transit passes, and real-time mineral extraction telemetry for NMDC and public-sector mining enterprises.
+                Integrated technology solutions for the entire mining value chain — from extraction to dispatch, enabling safer, more efficient and sustainable operations.
               </p>
               <div className="mining-hero__cta-row">
-                <Link to="/contact" className="mining-hero__btn">
+                <Link to="/contact" className="mining-hero__btn-primary">
                   Talk to us <ArrowRight size={16} />
                 </Link>
-                <a href="#solutions" className="mining-hero__link">
+                <a href="#solutions" className="mining-hero__btn-secondary">
                   Explore solutions ↓
                 </a>
               </div>
@@ -48,7 +55,7 @@ export default function MiningPage() {
               <div className="mining-hero__visual-wrap">
                 <img 
                   src="/images/mining/mining-hero-pit.png" 
-                  alt="Mining open pit operations with real-time telemetry overlays" 
+                  alt="Mining open pit operations with real-time telemetry HUD overlay" 
                   className="mining-hero__image"
                 />
                 <div className="mining-hero__visual-fade" />
@@ -58,12 +65,12 @@ export default function MiningPage() {
         </div>
       </section>
 
-      {/* 2. TRUST / OUTCOME RIBBON */}
+      {/* 2. TRUST / CAPABILITIES RIBBON */}
       <section className="mining-ribbon">
         <div className="container">
           <div className="mining-ribbon__items">
             <div className="mining-ribbon__item">
-              <span className="mining-ribbon__icon"><Activity size={16} /></span>
+              <span className="mining-ribbon__icon"><Eye size={16} /></span>
               <span>Operational Visibility</span>
             </div>
             <div className="mining-ribbon__divider" />
@@ -73,7 +80,7 @@ export default function MiningPage() {
             </div>
             <div className="mining-ribbon__divider" />
             <div className="mining-ribbon__item">
-              <span className="mining-ribbon__icon"><Truck size={16} /></span>
+              <span className="mining-ribbon__icon"><LinkIcon size={16} /></span>
               <span>Connected Assets</span>
             </div>
             <div className="mining-ribbon__divider" />
@@ -83,7 +90,7 @@ export default function MiningPage() {
             </div>
             <div className="mining-ribbon__divider" />
             <div className="mining-ribbon__item">
-              <span className="mining-ribbon__icon"><Leaf size={16} /></span>
+              <span className="mining-ribbon__icon mining-ribbon__icon--green"><Leaf size={16} /></span>
               <span>Sustainable Mining</span>
             </div>
           </div>
@@ -93,12 +100,21 @@ export default function MiningPage() {
       {/* 3. VALUE CHAIN SECTION */}
       <section className="mining-chain" id="value-chain">
         <div className="container">
-          <div className="mining-chain__header">
-            <div className="mining-section-eyebrow">End-to-End Lifecycle</div>
-            <h2 className="mining-section-title">Technology across the mining value chain.</h2>
-            <p className="mining-section-desc">
-              Seamless operational visibility, hardware integration, and telemetry from geological modeling to final weighbridge dispatch.
-            </p>
+          <div className="mining-chain__header-split">
+            <div className="mining-chain__header-left">
+              <div className="mining-eyebrow">
+                <span className="mining-eyebrow-dash" />
+                The Mining Value Chain
+              </div>
+              <h2 className="mining-heading">
+                End-to-end capabilities across the mining lifecycle.
+              </h2>
+            </div>
+            <div className="mining-chain__header-right">
+              <p className="mining-subheading">
+                From exploration and planning to extraction, processing and dispatch, we enable connected, data-driven and resilient mining operations.
+              </p>
+            </div>
           </div>
 
           <div className="mining-chain__grid">
@@ -112,14 +128,10 @@ export default function MiningPage() {
                 />
               </div>
               <div className="mining-chain__body">
-                <span className="mining-chain__step-num">Step 01</span>
                 <h3 className="mining-chain__step-title">Exploration & Planning</h3>
-                <p className="mining-chain__step-desc">
-                  Pit modeling, drill-rig status tracking, and blast perimeter monitoring integrated with mine safety systems.
-                </p>
               </div>
               <div className="mining-chain__connector">
-                <ChevronRight size={16} />
+                <ChevronRight size={15} />
               </div>
             </div>
 
@@ -133,14 +145,10 @@ export default function MiningPage() {
                 />
               </div>
               <div className="mining-chain__body">
-                <span className="mining-chain__step-num">Step 02</span>
                 <h3 className="mining-chain__step-title">Extraction</h3>
-                <p className="mining-chain__step-desc">
-                  Excavator payload telemetry, cycle-time telemetry, and haul-truck queue optimization inside active open pits.
-                </p>
               </div>
               <div className="mining-chain__connector">
-                <ChevronRight size={16} />
+                <ChevronRight size={15} />
               </div>
             </div>
 
@@ -154,14 +162,10 @@ export default function MiningPage() {
                 />
               </div>
               <div className="mining-chain__body">
-                <span className="mining-chain__step-num">Step 03</span>
                 <h3 className="mining-chain__step-title">Handling & Processing</h3>
-                <p className="mining-chain__step-desc">
-                  Crushing plant throughput, conveyor belt health monitoring, and real-time stockpile inventory tracking.
-                </p>
               </div>
               <div className="mining-chain__connector">
-                <ChevronRight size={16} />
+                <ChevronRight size={15} />
               </div>
             </div>
 
@@ -175,11 +179,7 @@ export default function MiningPage() {
                 />
               </div>
               <div className="mining-chain__body">
-                <span className="mining-chain__step-num">Step 04</span>
                 <h3 className="mining-chain__step-title">Logistics & Dispatch</h3>
-                <p className="mining-chain__step-desc">
-                  Automated weighbridges, tamper-proof electronic transit passes (e-TP), and regulatory gate-out reconciliation.
-                </p>
               </div>
             </div>
           </div>
@@ -223,11 +223,13 @@ export default function MiningPage() {
       <section className="mining-solutions" id="solutions">
         <div className="container">
           <div className="mining-solutions__header">
-            <div className="mining-section-eyebrow">Enterprise Mining Solutions</div>
-            <h2 className="mining-section-title">Technology for every mining need.</h2>
-            <p className="mining-section-desc">
-              Hardware-integrated weighbridges, telemetry gateways, and operational intelligence engines engineered for harsh field operations.
-            </p>
+            <div className="mining-eyebrow">
+              <span className="mining-eyebrow-dash" />
+              Our Solutions
+            </div>
+            <h2 className="mining-heading">
+              Technology for every mining need.
+            </h2>
           </div>
 
           <div className="mining-solutions__grid">
@@ -235,24 +237,13 @@ export default function MiningPage() {
             <div className="mining-card">
               <div className="mining-card__content">
                 <div className="mining-card__top">
-                  <span className="mining-card__icon-wrap" style={{ background: '#FEF3C7', color: '#D97706' }}>
-                    <Scale size={24} />
+                  <span className="mining-card__icon-wrap" style={{ background: '#FFF7ED', color: '#EA580C' }}>
+                    <Zap size={22} />
                   </span>
                   <h3 className="mining-card__title">Mining Operations</h3>
                   <p className="mining-card__desc">
                     Enable efficient extraction, material handling, processing and dispatch with integrated digital solutions.
                   </p>
-                  <ul className="mining-card__features">
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Automated weighbridge capture & gross/tare logging
-                    </li>
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Instant digital weight tickets with barcode verification
-                    </li>
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Multi-site scale calibration & tamper alarms
-                    </li>
-                  </ul>
                 </div>
                 <Link to="/contact" className="mining-card__link">
                   Learn more <ArrowRight size={14} />
@@ -261,7 +252,7 @@ export default function MiningPage() {
               <div className="mining-card__visual">
                 <img 
                   src="/images/mining/mining-sol-01-operations.png" 
-                  alt="Excavator and haul truck during mining operations" 
+                  alt="Mining Operations Excavator" 
                   className="mining-card__img"
                 />
                 <div className="mining-card__mask" />
@@ -272,24 +263,13 @@ export default function MiningPage() {
             <div className="mining-card">
               <div className="mining-card__content">
                 <div className="mining-card__top">
-                  <span className="mining-card__icon-wrap" style={{ background: '#E0F2FE', color: '#0284C7' }}>
-                    <BarChart3 size={24} />
+                  <span className="mining-card__icon-wrap" style={{ background: '#EFF6FF', color: '#2563EB' }}>
+                    <Database size={22} />
                   </span>
                   <h3 className="mining-card__title">Mining Intelligence</h3>
                   <p className="mining-card__desc">
                     Real-time operational visibility, KPI/LPI dashboards, production analytics and forecasting for smarter decisions.
                   </p>
-                  <ul className="mining-card__features">
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Live production extraction vs. dispatch yield tracking
-                    </li>
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Shift-level throughput analytics & bottleneck detection
-                    </li>
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Executive reporting with multi-pit comparative metrics
-                    </li>
-                  </ul>
                 </div>
                 <Link to="/contact" className="mining-card__link">
                   Learn more <ArrowRight size={14} />
@@ -298,7 +278,7 @@ export default function MiningPage() {
               <div className="mining-card__visual">
                 <img 
                   src="/images/mining/mining-sol-02-intelligence.png" 
-                  alt="Control room engineer monitoring live mining intelligence dashboards" 
+                  alt="Mining Intelligence Control Room" 
                   className="mining-card__img"
                 />
                 <div className="mining-card__mask" />
@@ -310,23 +290,12 @@ export default function MiningPage() {
               <div className="mining-card__content">
                 <div className="mining-card__top">
                   <span className="mining-card__icon-wrap" style={{ background: '#ECFDF5', color: '#059669' }}>
-                    <Cpu size={24} />
+                    <Shield size={22} />
                   </span>
                   <h3 className="mining-card__title">Mine Automation & IIoT</h3>
                   <p className="mining-card__desc">
                     Connected equipment, telematics, GPS/GIS, geofencing and real-time data acquisition for safer and more efficient operations.
                   </p>
-                  <ul className="mining-card__features">
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Rugged edge telemetry gateways for dust & vibration
-                    </li>
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Tamper-resistant load cell serial communications
-                    </li>
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Geofenced perimeter security & unauthorized transit alerts
-                    </li>
-                  </ul>
                 </div>
                 <Link to="/contact" className="mining-card__link">
                   Learn more <ArrowRight size={14} />
@@ -335,7 +304,7 @@ export default function MiningPage() {
               <div className="mining-card__visual">
                 <img 
                   src="/images/mining/mining-sol-03-iiot.png" 
-                  alt="Connected haul truck with telemetry sensors and aerial drone network" 
+                  alt="Mine Automation & IIoT Haul Truck" 
                   className="mining-card__img"
                 />
                 <div className="mining-card__mask" />
@@ -346,24 +315,13 @@ export default function MiningPage() {
             <div className="mining-card">
               <div className="mining-card__content">
                 <div className="mining-card__top">
-                  <span className="mining-card__icon-wrap" style={{ background: '#F3E8FF', color: '#7E22CE' }}>
-                    <Layers size={24} />
+                  <span className="mining-card__icon-wrap" style={{ background: '#FAF5FF', color: '#9333EA' }}>
+                    <RefreshCw size={22} />
                   </span>
                   <h3 className="mining-card__title">Enterprise Mining Operations</h3>
                   <p className="mining-card__desc">
                     Asset management, procurement & stores, workforce enablement, safety and ESG to drive operational excellence.
                   </p>
-                  <ul className="mining-card__features">
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Electronic Transit Passes (e-TP) with QR code security
-                    </li>
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> State mining directorate automated regulatory filings
-                    </li>
-                    <li className="mining-card__feature-item">
-                      <span className="mining-card__feature-dot" /> Royalty frameworks, audit trails, and statutory compliance
-                    </li>
-                  </ul>
                 </div>
                 <Link to="/contact" className="mining-card__link">
                   Learn more <ArrowRight size={14} />
@@ -372,7 +330,7 @@ export default function MiningPage() {
               <div className="mining-card__visual">
                 <img 
                   src="/images/mining/mining-sol-04-enterprise.png" 
-                  alt="Site engineer reviewing enterprise mining metrics on tablet" 
+                  alt="Enterprise Mining Operations Tablet" 
                   className="mining-card__img"
                 />
                 <div className="mining-card__mask" />
@@ -382,62 +340,128 @@ export default function MiningPage() {
         </div>
       </section>
 
-      {/* 6. REAL IMPACT / PROVEN OUTCOMES */}
-      <section className="mining-impact">
+      {/* 6. CONNECTED MINING ARCHITECTURE PIPELINE */}
+      <section className="mining-arch">
         <div className="container">
-          <div className="mining-impact__header">
-            <div className="mining-section-eyebrow">Proven Outcomes</div>
-            <h2 className="mining-section-title">Delivering real impact for more sustainable mining.</h2>
-            <p className="mining-section-desc">
-              Measurable operational and regulatory improvements across institutional mineral extraction sites.
+          <div className="mining-arch__header">
+            <div className="mining-eyebrow">
+              <span className="mining-eyebrow-dash" />
+              Operational Architecture
+            </div>
+            <h2 className="mining-heading">
+              Connected Mining: From Pit Sensor to Decision.
+            </h2>
+            <p className="mining-subheading">
+              Enterprise architecture uniting heavy equipment, rugged edge telemetry, and regulatory compliance into one cohesive intelligence loop.
             </p>
           </div>
 
-          <div className="mining-impact__grid">
-            <div className="mining-impact__item">
-              <div className="mining-impact__icon">
-                <Scale size={22} />
-              </div>
-              <h3 className="mining-impact__title">Operational Efficiency</h3>
-              <p className="mining-impact__desc">
-                Sub-second automated weighbridge gross/tare logging, drastically cutting vehicle idle times during peak shift turnarounds.
+          <div className="mining-arch__pipeline">
+            {/* Node 1 */}
+            <div className="mining-arch__node">
+              <div className="mining-arch__node-num">STAGE 01</div>
+              <div className="mining-arch__node-icon"><Truck size={20} /></div>
+              <h4 className="mining-arch__node-title">Pit Equipment</h4>
+              <p className="mining-arch__node-desc">
+                Excavators, haulers, static weighbridges & load cells operating in harsh field conditions.
               </p>
+              <div className="mining-arch__arrow">→</div>
             </div>
 
-            <div className="mining-impact__item">
-              <div className="mining-impact__icon">
-                <ShieldCheck size={22} />
-              </div>
-              <h3 className="mining-impact__title">Improved Safety Outcomes</h3>
-              <p className="mining-impact__desc">
-                Tamper-resistant load validation preventing hazardous vehicle overloading and automated pit geofence tracking.
+            {/* Node 2 */}
+            <div className="mining-arch__node">
+              <div className="mining-arch__node-num">STAGE 02</div>
+              <div className="mining-arch__node-icon"><Cpu size={20} /></div>
+              <h4 className="mining-arch__node-title">Telemetry & Sensors</h4>
+              <p className="mining-arch__node-desc">
+                Rugged IIoT gateways, tamper-proof serial bus links, and GPS/GIS tracking units.
               </p>
+              <div className="mining-arch__arrow">→</div>
             </div>
 
-            <div className="mining-impact__item">
-              <div className="mining-impact__icon">
-                <BarChart3 size={22} />
-              </div>
-              <h3 className="mining-impact__title">Better Resource Utilization</h3>
-              <p className="mining-impact__desc">
-                End-to-end extraction yield reconciliation between pit excavator production and gate-out weighbridge receipts.
+            {/* Node 3 */}
+            <div className="mining-arch__node">
+              <div className="mining-arch__node-num">STAGE 03</div>
+              <div className="mining-arch__node-icon"><Server size={20} /></div>
+              <h4 className="mining-arch__node-title">Data Acquisition</h4>
+              <p className="mining-arch__node-desc">
+                Edge gross/tare validation, encrypted stream ingestion, and real-time payload logging.
               </p>
+              <div className="mining-arch__arrow">→</div>
             </div>
 
-            <div className="mining-impact__item">
-              <div className="mining-impact__icon">
-                <Leaf size={22} />
-              </div>
-              <h3 className="mining-impact__title">Sustainable Growth</h3>
-              <p className="mining-impact__desc">
-                100% paperless e-TP issuance and full statutory compliance with state mining directorate royalty oversight.
+            {/* Node 4 */}
+            <div className="mining-arch__node">
+              <div className="mining-arch__node-num">STAGE 04</div>
+              <div className="mining-arch__node-icon"><LineChart size={20} /></div>
+              <h4 className="mining-arch__node-title">Production Analytics</h4>
+              <p className="mining-arch__node-desc">
+                Shift-level throughput metrics, weighbridge turnaround times, and extraction rate dashboards.
+              </p>
+              <div className="mining-arch__arrow">→</div>
+            </div>
+
+            {/* Node 5 */}
+            <div className="mining-arch__node">
+              <div className="mining-arch__node-num">STAGE 05</div>
+              <div className="mining-arch__node-icon"><FileCheck2 size={20} /></div>
+              <h4 className="mining-arch__node-title">Operational Decisions</h4>
+              <p className="mining-arch__node-desc">
+                Instant digital transit passes (e-TP), statutory state filings, and dispatch clearance.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 7. CINEMATIC BOTTOM CTA BANNER */}
+      {/* 7. REAL IMPACT SECTION */}
+      <section className="mining-impact">
+        <div className="container">
+          <div className="mining-impact__split">
+            <div className="mining-impact__left">
+              <div className="mining-eyebrow">
+                <span className="mining-eyebrow-dash" />
+                Real Impact
+              </div>
+              <h2 className="mining-heading" style={{ margin: 0 }}>
+                Enabling safer, smarter and more sustainable mining.
+              </h2>
+            </div>
+
+            <div className="mining-impact__columns">
+              <div className="mining-impact__col">
+                <div className="mining-impact__icon-circle">
+                  <Maximize2 size={22} />
+                </div>
+                <h4 className="mining-impact__col-title">Operational Efficiency</h4>
+              </div>
+
+              <div className="mining-impact__col">
+                <div className="mining-impact__icon-circle">
+                  <ShieldCheck size={22} />
+                </div>
+                <h4 className="mining-impact__col-title">Improved Safety Outcomes</h4>
+              </div>
+
+              <div className="mining-impact__col">
+                <div className="mining-impact__icon-circle mining-impact__icon-circle--green">
+                  <Leaf size={22} />
+                </div>
+                <h4 className="mining-impact__col-title">Better Resource Utilization</h4>
+              </div>
+
+              <div className="mining-impact__col">
+                <div className="mining-impact__icon-circle">
+                  <Users size={22} />
+                </div>
+                <h4 className="mining-impact__col-title">Sustainable Growth</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. CINEMATIC BOTTOM CTA BANNER */}
       <section className="mining-cta">
         <div className="container">
           <div className="mining-cta__banner">
