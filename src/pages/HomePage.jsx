@@ -69,16 +69,6 @@ export default function HomePage() {
           <div className="ripple-ring"></div>
         </div>
 
-        {/* Layer 3A: Desktop Pre-merged Composition Visual */}
-        <div className="hero-desktop-merged" aria-hidden="true">
-          <img
-            src="/images/domains/desktop-merged.jpg"
-            alt="Government, Healthcare, Education, Energy & Mining digital transformation"
-            className="hero-desktop-merged__img"
-            loading="eager"
-          />
-        </div>
-
         {/* Layer 3B: Tablet & Mobile Responsive Domains (Tiles on Tablet, Compact on Mobile) */}
         <div className="hero-domains-container" aria-label="Core Industry Domains">
           <div className="hero-domains-grid">
@@ -107,7 +97,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Layer 4: Hero headline, supporting text and CTA */}
+        {/* Layer 4: Hero headline, supporting text, CTA and Desktop Composition Visual */}
         <div className="container home-hero__container">
           <div className="home-hero__content">
             <span className="home-hero__eyebrow-pill">PEOPLE &bull; TECHNOLOGY &bull; A BETTER TOMORROW</span>
@@ -123,6 +113,16 @@ export default function HomePage() {
                 <ArrowRight size={16} />
               </a>
             </div>
+          </div>
+
+          {/* Desktop Pre-merged Composition Visual (Anchored inside container to prevent drifting on zoom) */}
+          <div className="hero-desktop-merged" aria-hidden="true">
+            <img
+              src="/images/domains/desktop-merged.jpg"
+              alt="Government, Healthcare, Education, Energy & Mining digital transformation"
+              className="hero-desktop-merged__img"
+              loading="eager"
+            />
           </div>
         </div>
 

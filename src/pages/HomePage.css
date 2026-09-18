@@ -20,8 +20,14 @@
   position: relative;
   z-index: 4;
   width: 100%;
-  margin: auto 0;
+  max-width: 1320px;
+  margin: auto auto;
+  padding: 0 clamp(20px, 4vw, 40px);
   pointer-events: none;
+  display: grid;
+  grid-template-columns: minmax(440px, 1fr) minmax(480px, 1.25fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
 }
 
 .home-hero__content {
@@ -76,23 +82,19 @@
 
 /* DOMAIN COMPOSITION (Layer 3 — Desktop: Single Merged Artwork Visual) */
 .hero-desktop-merged {
-  position: absolute;
-  top: 50%;
-  right: clamp(-10px, 1.5vw, 24px);
-  transform: translateY(-50%);
-  width: clamp(560px, 50vw, 840px);
-  max-width: 54%;
+  position: relative;
   pointer-events: none;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  width: 100%;
 }
 
 .hero-desktop-merged__img {
   width: 100%;
   height: auto;
-  max-height: 82vh;
+  max-height: clamp(420px, 60vh, 560px);
   object-fit: contain;
   display: block;
   opacity: 0.98;
@@ -100,6 +102,13 @@
   mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 4%, black 14%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 4%, black 14%);
   filter: contrast(1.02) brightness(1.01);
+}
+
+@media (max-width: 1180px) and (min-width: 1025px) {
+  .home-hero__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
 }
 
 /* On Desktop, hide the multi-item container since desktop uses the pre-merged visual */
@@ -1304,6 +1313,7 @@
   }
 
   .home-hero__container {
+    display: block;
     order: 1;
     width: 100%;
     max-width: 720px;
@@ -1448,6 +1458,7 @@
   }
 
   .home-hero__container {
+    display: block;
     order: 1;
     width: 100%;
     padding: 0 18px;
