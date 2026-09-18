@@ -18,7 +18,7 @@ import './EnterprisePlatformsPage.css';
 const DEPLOYMENT_TYPES = [
   {
     num: '01',
-    image: '/images/enterprise/enterprise-card-01-students.png',
+    image: '/images/enterprise/enterprise-card-01-students.jpg',
     alt: 'Students on campus with holographic governance badges',
     icon: <GraduationCap size={24} strokeWidth={2.2} />,
     color: '#1D4ED8',
@@ -42,7 +42,7 @@ const DEPLOYMENT_TYPES = [
   },
   {
     num: '02',
-    image: '/images/enterprise/enterprise-card-02-governance.png',
+    image: '/images/enterprise/enterprise-card-02-governance.jpg',
     alt: 'State secretariat with national flag and digital administration overlays',
     icon: <Building2 size={24} strokeWidth={2.2} />,
     color: '#0D9488',
@@ -64,7 +64,7 @@ const DEPLOYMENT_TYPES = [
   },
   {
     num: '03',
-    image: '/images/enterprise/enterprise-card-03-datacenter.png',
+    image: '/images/enterprise/enterprise-card-03-datacenter.jpg',
     alt: 'Systems architect reviewing institutional financial and governance dashboards',
     icon: <ShieldCheck size={24} strokeWidth={2.2} />,
     color: '#D97706',
