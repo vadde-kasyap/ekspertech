@@ -150,8 +150,8 @@ export default function ServicesPage() {
             </div>
             <div className="services-hero__visual-wrap">
               <img
-                src="/images/services/services-hero-building.png"
-                alt="Scalable Solutions for Complex Worlds"
+                src="/images/services/capabilities-hero-hd.png"
+                alt="Capabilities We Bring - Scalable Solutions"
                 className="services-hero__visual-img"
                 loading="eager"
               />

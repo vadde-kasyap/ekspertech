@@ -132,9 +132,12 @@
 .services-hero__visual-wrap {
   position: relative;
   width: 100%;
-  max-width: 560px;
-  border-radius: 18px;
+  max-width: 600px;
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 16px 36px -12px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #ffffff;
 }
 
 .services-hero__visual-img {
@@ -142,9 +145,9 @@
   height: auto;
   display: block;
   object-fit: cover;
-  border-radius: 18px;
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 5%, black 14%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 5%, black 14%);
+  object-position: right center;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 3%, black 12%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.6) 3%, black 12%);
 }
 
 /* ---------- 2. CAPABILITIES GRID SECTION ---------- */
@@ -267,20 +270,22 @@
 
 .services-cta-banner {
   position: relative;
-  border-radius: 22px;
+  border-radius: 24px;
   overflow: hidden;
   background-color: #F8F9FB;
-  background-image: url('/images/services/cta-mountains-bg.png');
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.88) 36%, rgba(255, 255, 255, 0.2) 65%, rgba(255, 255, 255, 0) 100%),
+                    url('/images/services/cta-architecture-mountains-hd.png');
   background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: 48% auto;
+  background-position: right center;
+  background-size: cover;
   border: 1px solid rgba(226, 232, 240, 0.95);
-  box-shadow: 0 8px 30px -6px rgba(15, 23, 42, 0.05);
-  padding: clamp(36px, 5vw, 48px) clamp(28px, 4vw, 48px);
+  box-shadow: 0 10px 32px -6px rgba(15, 23, 42, 0.06);
+  padding: clamp(38px, 5vw, 52px) clamp(28px, 4vw, 48px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 32px;
+  min-height: 220px;
 }
 
 .services-cta-banner__left {
