@@ -124,16 +124,6 @@ export default function EnterprisePlatformsPage() {
 
           {/* Right Hero Visual */}
           <div className="enterprise-hero__right">
-            <div className="enterprise-hero__editorial-tag">
-              <p className="enterprise-hero__editorial-text">
-                DIGITAL<br />
-                GOVERNANCE<br />
-                FOR A STRONGER<br />
-                TOMORROW.
-              </p>
-              <div className="enterprise-hero__editorial-line"></div>
-            </div>
-
             <div className="enterprise-hero__visual-wrap">
               <img 
                 src="/images/enterprise/enterprise-hero-capitol.png" 

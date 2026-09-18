@@ -28,38 +28,35 @@ export default function MiningPage() {
     <div className="mining-page">
       {/* 1. HERO SECTION */}
       <section className="mining-hero">
-        <div className="container">
-          <div className="mining-hero__container">
-            <div className="mining-hero__left">
-              <div className="mining-eyebrow">
-                <span className="mining-eyebrow-dash" />
-                Energy & Mining
-              </div>
-              <h1 className="mining-hero__title">
-                Smarter operations for a stronger tomorrow.
-              </h1>
-              <p className="mining-hero__desc">
-                Integrated technology solutions for the entire mining value chain — from extraction to dispatch, enabling safer, more efficient and sustainable operations.
-              </p>
-              <div className="mining-hero__cta-row">
-                <Link to="/contact" className="mining-hero__btn-primary">
-                  Talk to us <ArrowRight size={16} />
-                </Link>
-                <a href="#solutions" className="mining-hero__btn-secondary">
-                  Explore solutions ↓
-                </a>
-              </div>
+        <div className="container mining-hero__container">
+          <div className="mining-hero__left">
+            <div className="mining-eyebrow">
+              <span className="mining-eyebrow-dash" />
+              Energy & Mining
             </div>
+            <h1 className="mining-hero__title">
+              Smarter operations for a stronger tomorrow.
+            </h1>
+            <p className="mining-hero__desc">
+              Integrated technology solutions for the entire mining value chain — from extraction to dispatch, enabling safer, more efficient and sustainable operations.
+            </p>
+            <div className="mining-hero__cta-row">
+              <Link to="/contact" className="mining-hero__btn-primary">
+                Talk to us <ArrowRight size={16} />
+              </Link>
+              <a href="#solutions" className="mining-hero__btn-secondary">
+                Explore solutions ↓
+              </a>
+            </div>
+          </div>
 
-            <div className="mining-hero__right">
-              <div className="mining-hero__visual-wrap">
-                <img 
-                  src="/images/mining/mining-hero-pit.png" 
-                  alt="Mining open pit operations with real-time telemetry HUD overlay" 
-                  className="mining-hero__image"
-                />
-                <div className="mining-hero__visual-fade" />
-              </div>
+          <div className="mining-hero__right">
+            <div className="mining-hero__visual-wrap">
+              <img 
+                src="/images/mining/mining-hero-pit.png" 
+                alt="Mining open pit operations with real-time telemetry HUD overlay" 
+                className="mining-hero__image"
+              />
             </div>
           </div>
         </div>

@@ -124,30 +124,20 @@ export default function ServicesPage() {
           <div className="services-hero__left">
             <div className="services-hero__eyebrow">
               <span className="services-hero__eyebrow-dash" />
-              <span>CAPABILITIES</span>
+              <span>Capabilities</span>
             </div>
             <h1 className="services-hero__title">Capabilities We Bring</h1>
             <p className="services-hero__sub">
               Four core capabilities plus specialized infrastructure and industrial services backing every deployment.
             </p>
-            <div className="services-hero__sub-tagline">
-              <span className="services-hero__sub-tagline-bar" />
-              <div className="services-hero__sub-tagline-text">
-                <span>PEOPLE.</span>
-                <span>TECHNOLOGY.</span>
-                <span>A BETTER TOMORROW.</span>
-              </div>
+            <div className="services-hero__cta-row">
+              <Link to="/contact" className="services-hero__btn">
+                Talk to us <ArrowRight size={15} />
+              </Link>
             </div>
           </div>
 
           <div className="services-hero__right">
-            <div className="services-hero__top-tagline">
-              <span className="services-hero__top-tagline-dash" />
-              <div className="services-hero__top-tagline-text">
-                <span>IDEAS TODAY.</span>
-                <span>IMPACT TOMORROW.</span>
-              </div>
-            </div>
             <div className="services-hero__visual-wrap">
               <img
                 src="/images/services/capabilities-hero-hd.png"

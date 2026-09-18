@@ -60,15 +60,6 @@ export default function AiHealthcarePage() {
 
           {/* Right Hero Visual */}
           <div className="healthcare-hero__right">
-            <div className="healthcare-hero__editorial-tag">
-              <p className="healthcare-hero__editorial-text">
-                BETTER DATA.<br />
-                HEALTHIER<br />
-                TOMORROWS.
-              </p>
-              <div className="healthcare-hero__editorial-line"></div>
-            </div>
-
             <div className="healthcare-hero__visual-wrap">
               <img 
                 src="/images/healthcare/healthcare-hero-radiologist.png" 
