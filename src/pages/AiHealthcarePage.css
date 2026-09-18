@@ -1,0 +1,700 @@
+/* ==========================================================================
+   HEALTHCARE & CLINICAL AI PAGE STYLING
+   Exact match to Reference Image 1 with responsive layout
+   ========================================================================== */
+
+.healthcare-page {
+  background-color: #FDFDFD;
+  min-height: 100vh;
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ---------- 1. HERO SECTION ---------- */
+.healthcare-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(48px, 6vw, 76px) 0 clamp(44px, 5vw, 68px);
+  background: 
+    radial-gradient(circle at 75% 40%, rgba(200, 230, 255, 0.45), transparent 55%),
+    radial-gradient(circle at 15% 20%, rgba(240, 246, 255, 0.6), transparent 45%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.healthcare-hero__container {
+  display: grid;
+  grid-template-columns: minmax(360px, 1.05fr) minmax(400px, 1.25fr);
+  align-items: center;
+  gap: clamp(32px, 4vw, 56px);
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.healthcare-hero__left {
+  max-width: 540px;
+}
+
+.healthcare-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #EA580C;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.healthcare-hero__eyebrow-dash {
+  width: 16px;
+  height: 2px;
+  background: #EA580C;
+  display: inline-block;
+}
+
+.healthcare-hero__title {
+  font-size: clamp(2.35rem, 3.8vw, 3.4rem);
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.035em;
+  line-height: 1.14;
+  margin: 0 0 18px;
+}
+
+.healthcare-hero__desc {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  color: #475569;
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
+
+.healthcare-hero__cta-wrap {
+  margin-bottom: 36px;
+}
+
+.healthcare-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+}
+
+.healthcare-hero__btn:hover {
+  background: #1E293B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+}
+
+.healthcare-hero__metrics {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 32px);
+  padding-top: 24px;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.healthcare-hero__metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.healthcare-hero__metric-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.25;
+}
+
+.healthcare-hero__metric-sub {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.25;
+}
+
+.healthcare-hero__metric-divider {
+  width: 1px;
+  height: 32px;
+  background: #CBD5E1;
+  opacity: 0.7;
+}
+
+/* Hero Right Visual Column */
+.healthcare-hero__right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.healthcare-hero__editorial-tag {
+  align-self: flex-end;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.healthcare-hero__editorial-text {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #64748B;
+  text-transform: uppercase;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.healthcare-hero__editorial-line {
+  width: 24px;
+  height: 1.5px;
+  background: #94A3B8;
+  margin-left: auto;
+  margin-top: 4px;
+}
+
+.healthcare-hero__visual-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #FFFFFF;
+}
+
+.healthcare-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating pill badges on hero visual */
+.healthcare-hero__badges-col {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 3;
+}
+
+.healthcare-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  transition: all 0.2s ease;
+}
+
+.healthcare-badge-pill:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+}
+
+.healthcare-badge-pill__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0284C7;
+}
+
+.healthcare-badge-pill__text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0F172A;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* ---------- 2. TRUST STRIP ---------- */
+.healthcare-trust-strip {
+  padding: 28px 0;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  background: #F8FAFC;
+}
+
+.healthcare-trust-strip__eyebrow {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.healthcare-trust-strip__eyebrow-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748B;
+}
+
+.healthcare-trust-strip__logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(32px, 7vw, 72px);
+  flex-wrap: wrap;
+}
+
+.healthcare-trust-strip__logo {
+  display: flex;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.healthcare-trust-strip__logo:hover {
+  opacity: 1;
+}
+
+/* ---------- 3. CAPABILITIES SECTION ---------- */
+.healthcare-capabilities {
+  padding: clamp(64px, 8vw, 96px) 0;
+  background: #FFFFFF;
+}
+
+.healthcare-capabilities__header {
+  max-width: 680px;
+  margin-bottom: 48px;
+}
+
+.healthcare-capabilities__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #EA580C;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.healthcare-capabilities__eyebrow-dash {
+  width: 16px;
+  height: 2px;
+  background: #EA580C;
+  display: inline-block;
+}
+
+.healthcare-capabilities__title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  margin: 0 0 16px;
+}
+
+.healthcare-capabilities__desc {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  color: #64748B;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.healthcare-capabilities__grid {
+  display: grid;
+  grid-template-columns: minmax(360px, 1.1fr) minmax(400px, 1.1fr);
+  gap: clamp(32px, 4vw, 56px);
+  align-items: stretch;
+}
+
+/* Left Column Cards */
+.healthcare-capabilities__cards-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.healthcare-cap-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.healthcare-cap-card:hover {
+  transform: translateY(-2px);
+  border-color: #CBD5E1;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.healthcare-cap-card__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.healthcare-cap-card:hover .healthcare-cap-card__icon-box {
+  transform: scale(1.05);
+}
+
+.healthcare-cap-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.healthcare-cap-card__title {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.healthcare-cap-card__desc {
+  display: block;
+  font-size: 0.85rem;
+  color: #64748B;
+  line-height: 1.5;
+}
+
+.healthcare-cap-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #E2E8F0;
+  background: #F8FAFC;
+  color: #64748B;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.healthcare-cap-card:hover .healthcare-cap-card__arrow {
+  border-color: #0F172A;
+  background: #0F172A;
+  color: #FFFFFF;
+  transform: translateX(3px);
+}
+
+/* Right Column Atrium Card */
+.healthcare-atrium-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #E2E8F0;
+  overflow: hidden;
+  box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.healthcare-atrium-card__image-wrap {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 340px;
+  overflow: hidden;
+}
+
+.healthcare-atrium-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Environmental typography overlay on hospital atrium wall */
+.healthcare-atrium-card__typo {
+  position: absolute;
+  top: 48px;
+  left: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.healthcare-atrium-card__typo span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #334155;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+/* Footer strip below atrium image */
+.healthcare-atrium-card__footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+}
+
+.healthcare-atrium-card__stat-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 14px;
+  gap: 10px;
+  position: relative;
+}
+
+.healthcare-atrium-card__stat-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: #E2E8F0;
+}
+
+.healthcare-atrium-card__stat-icon {
+  color: #0284C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.healthcare-atrium-card__stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1E293B;
+  line-height: 1.35;
+  max-width: 140px;
+}
+
+/* ---------- 4. BOTTOM CTA BANNER ---------- */
+.healthcare-cta {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 7vw, 84px) 0;
+  background: 
+    radial-gradient(circle at 80% 50%, rgba(200, 235, 255, 0.7), transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(241, 245, 249, 0.8), transparent 50%),
+    linear-gradient(180deg, #F8FAFC 0%, #EDF4FB 100%);
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.healthcare-cta__arc-line {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  pointer-events: none;
+  width: 600px;
+  height: 600px;
+  right: 28%;
+  top: -120px;
+}
+
+.healthcare-cta__container {
+  display: grid;
+  grid-template-columns: minmax(360px, 1.15fr) minmax(400px, 1.15fr);
+  align-items: center;
+  gap: clamp(32px, 4vw, 56px);
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.healthcare-cta__left {
+  max-width: 520px;
+}
+
+.healthcare-cta__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #EA580C;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.healthcare-cta__eyebrow-dash {
+  width: 16px;
+  height: 2px;
+  background: #EA580C;
+  display: inline-block;
+}
+
+.healthcare-cta__title {
+  font-size: clamp(2.2rem, 3.5vw, 3.1rem);
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.035em;
+  line-height: 1.16;
+  margin: 0 0 16px;
+}
+
+.healthcare-cta__desc {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  color: #475569;
+  line-height: 1.65;
+  margin: 0 0 28px;
+}
+
+.healthcare-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+}
+
+.healthcare-cta__btn:hover {
+  background: #1E293B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+}
+
+.healthcare-cta__right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.healthcare-cta__editorial-tag {
+  align-self: flex-end;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.healthcare-cta__editorial-text {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #64748B;
+  text-transform: uppercase;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.healthcare-cta__visual-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #FFFFFF;
+}
+
+.healthcare-cta__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+@media (max-width: 992px) {
+  .healthcare-hero__container,
+  .healthcare-capabilities__grid,
+  .healthcare-cta__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .healthcare-hero__left,
+  .healthcare-cta__left {
+    max-width: 100%;
+  }
+
+  .healthcare-hero__editorial-tag,
+  .healthcare-cta__editorial-tag {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .healthcare-hero__editorial-line {
+    margin-left: 0;
+  }
+
+  .healthcare-atrium-card__image-wrap {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .healthcare-hero__metrics {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .healthcare-hero__metric-divider {
+    display: none;
+  }
+
+  .healthcare-hero__badges-col {
+    left: 12px;
+    gap: 8px;
+  }
+
+  .healthcare-badge-pill {
+    padding: 6px 12px;
+  }
+
+  .healthcare-badge-pill__text {
+    font-size: 0.72rem;
+  }
+
+  .healthcare-cap-card {
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .healthcare-atrium-card__footer {
+    grid-template-columns: 1fr;
+  }
+
+  .healthcare-atrium-card__stat-col:not(:last-child)::after {
+    display: none;
+  }
+
+  .healthcare-atrium-card__stat-col {
+    padding: 14px 10px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+}
