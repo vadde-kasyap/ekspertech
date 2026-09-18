@@ -23,7 +23,6 @@ const SERVICES = [
     title: 'Data & AI',
     desc: 'Data platforms, analytics and AI built into operations, not bolted on. From automated clinical data pipelines to operational anomaly detection.',
     features: ['FHIR & healthcare data integration', 'Operational telemetry and automated alerting', 'Embedded analytical dashboards', 'Domain-specific machine learning models'],
-    link: '/ai-healthcare',
   },
   {
     id: 'enterprise-platforms',
@@ -39,7 +38,6 @@ const SERVICES = [
       'CAG-compliant double-entry financial ledgers and statutory tracking',
       'Large-scale multi-department operational orchestration',
     ],
-    link: '/enterprise-platforms',
   },
   {
     id: 'run-support',
@@ -60,7 +58,6 @@ const SERVICES = [
     title: 'Cloud Infrastructure',
     desc: 'High-concurrency autoscaling infrastructure engineered for extreme traffic surges and high availability across AWS, Azure, and private cloud.',
     features: ['Multi-region resilient deployments', 'Auto-scaling for massive concurrency spikes', 'Disaster recovery and automated failover', 'Private datacenter & hybrid architectures'],
-    link: '/cloud-services',
   },
   {
     id: 'mining-telemetry',
@@ -71,7 +68,6 @@ const SERVICES = [
     title: 'Industrial & Mining Telemetry',
     desc: 'Hardware-integrated weighbridge capture, digital dispatch tracking, and real-time statutory logistics across production sites.',
     features: ['Tamper-proof weighbridge hardware integration', 'Real-time production & dispatch telemetry', 'Electronic transport passes with QR verification', 'Direct statutory compliance reporting'],
-    link: '/mining',
   },
 ];
 
@@ -109,11 +105,6 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                {s.link && (
-                  <Link to={s.link} className="btn btn--ghost" style={{ marginTop: 'auto' }}>
-                    Learn more <ArrowRight size={14} className="btn-arrow" />
-                  </Link>
-                )}
               </div>
             ))}
           </div>
