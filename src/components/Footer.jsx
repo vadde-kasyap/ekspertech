@@ -20,8 +20,8 @@ const SERVICES = [
 ];
 
 const COMPANY = [
-  { label: 'Who We Are', path: '/about' },
-  { label: 'Clients & Cases', path: '/case-studies' },
+  { label: 'About us', path: '/about' },
+  { label: 'Our Work', path: '/case-studies' },
   { label: 'Careers', path: '/careers' },
   { label: 'Contact', path: '/contact' },
 ];
