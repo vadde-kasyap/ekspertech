@@ -734,3 +734,22 @@
     gap: 18px;
   }
 }
+
+/* ---------- Large Screen & iMac Scaling ---------- */
+@media (min-width: 1536px) {
+  .enterprise-hero__container,
+  .enterprise-deployments .container,
+  .enterprise-architecture .container,
+  .enterprise-cta__container {
+    max-width: 1540px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .enterprise-hero__container,
+  .enterprise-deployments .container,
+  .enterprise-architecture .container,
+  .enterprise-cta__container {
+    max-width: 1680px;
+  }
+}

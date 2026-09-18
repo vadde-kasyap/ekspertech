@@ -698,3 +698,20 @@
     border-bottom: 1px solid #E2E8F0;
   }
 }
+
+/* ---------- Large Screen & iMac Scaling ---------- */
+@media (min-width: 1536px) {
+  .healthcare-hero__container,
+  .healthcare-capabilities__grid,
+  .healthcare-cta__container {
+    max-width: 1540px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .healthcare-hero__container,
+  .healthcare-capabilities__grid,
+  .healthcare-cta__container {
+    max-width: 1680px;
+  }
+}

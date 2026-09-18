@@ -431,3 +431,37 @@
     height: 170px;
   }
 }
+
+/* ---------- Large Screen & iMac Scaling ---------- */
+@media (min-width: 1536px) {
+  .services-hero__container,
+  .services-capabilities__container,
+  .services-cta__container {
+    max-width: 1540px;
+  }
+
+  .services-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .services-card__img-wrap {
+    height: 220px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .services-hero__container,
+  .services-capabilities__container,
+  .services-cta__container {
+    max-width: 1680px;
+  }
+
+  .services-cards-grid {
+    gap: 40px;
+  }
+
+  .services-card__img-wrap {
+    height: 240px;
+  }
+}

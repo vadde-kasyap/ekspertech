@@ -624,3 +624,30 @@
     font-size: 0.75rem;
   }
 }
+
+/* ---------- Large Screen & iMac Scaling ---------- */
+@media (min-width: 1536px) {
+  .cloud-hero__container,
+  .cloud-capabilities .container,
+  .cloud-architecture__container,
+  .cloud-cta__container {
+    max-width: 1540px;
+  }
+
+  .cloud-capabilities__grid {
+    gap: 36px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .cloud-hero__container,
+  .cloud-capabilities .container,
+  .cloud-architecture__container,
+  .cloud-cta__container {
+    max-width: 1680px;
+  }
+
+  .cloud-capabilities__grid {
+    gap: 44px;
+  }
+}

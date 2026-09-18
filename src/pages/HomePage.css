@@ -224,8 +224,8 @@
     opacity: 0.12;
   }
   100% {
-    width: 1200px;
-    height: 1200px;
+    width: clamp(1200px, 92vw, 2400px);
+    height: clamp(1200px, 92vw, 2400px);
     opacity: 0;
     transform: translate(-50%, 50%) scale(1);
   }
@@ -1757,5 +1757,96 @@
 
   .industry-card__image-wrap {
     height: 190px;
+  }
+}
+
+/* ==========================================================================
+   ULTRA-WIDE & IMAC LARGE SCREEN SCALING (1536px, 1920px, 2560px)
+   Eliminates excessive white space and scales visual components proportionally
+   ========================================================================== */
+@media (min-width: 1536px) {
+  .home-hero__container {
+    max-width: 1540px;
+    grid-template-columns: minmax(500px, 1fr) minmax(580px, 1.32fr);
+    gap: clamp(40px, 3.5vw, 64px);
+  }
+
+  .home-hero__content {
+    max-width: 620px;
+  }
+
+  .home-hero__title {
+    font-size: clamp(3rem, 3.8vw, 4.3rem);
+  }
+
+  .home-hero__desc {
+    font-size: 1.15rem;
+    max-width: 540px;
+  }
+
+  .hero-desktop-merged__img {
+    max-height: 640px;
+  }
+
+  .capabilities-grid {
+    gap: 28px;
+  }
+
+  .capability-card__image-wrap {
+    height: 220px;
+  }
+
+  .capability-card__title {
+    font-size: 1.22rem;
+  }
+
+  .capability-card__desc {
+    font-size: 0.92rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .home-hero__container {
+    max-width: 1680px;
+    grid-template-columns: minmax(560px, 1fr) minmax(660px, 1.38fr);
+    gap: clamp(56px, 4vw, 84px);
+  }
+
+  .home-hero__content {
+    max-width: 680px;
+  }
+
+  .home-hero__title {
+    font-size: clamp(3.4rem, 4.2vw, 4.75rem);
+  }
+
+  .home-hero__desc {
+    font-size: 1.25rem;
+    max-width: 600px;
+  }
+
+  .hero-desktop-merged__img {
+    max-height: 720px;
+  }
+
+  .capabilities-grid {
+    gap: 32px;
+  }
+
+  .capability-card__image-wrap {
+    height: 245px;
+  }
+
+  .capability-card__title {
+    font-size: 1.3rem;
+  }
+
+  .capability-card__desc {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .capability-card__body {
+    padding: 0 28px 30px;
   }
 }
