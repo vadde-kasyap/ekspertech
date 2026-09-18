@@ -1,0 +1,736 @@
+/* ==========================================================================
+   ENTERPRISE PLATFORMS PAGE STYLING
+   Pixel-faithful match to Reference Image 1 with responsive layout
+   ========================================================================== */
+
+.enterprise-page {
+  background-color: #FDFDFD;
+  min-height: 100vh;
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ---------- 1. HERO SECTION ---------- */
+.enterprise-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(48px, 6vw, 76px) 0 clamp(44px, 5vw, 68px);
+  background: 
+    radial-gradient(circle at 75% 38%, rgba(200, 230, 255, 0.45), transparent 55%),
+    radial-gradient(circle at 12% 25%, rgba(240, 246, 255, 0.6), transparent 45%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+.enterprise-hero__container {
+  display: grid;
+  grid-template-columns: minmax(360px, 1.05fr) minmax(400px, 1.25fr);
+  align-items: center;
+  gap: clamp(32px, 4vw, 56px);
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.enterprise-hero__left {
+  max-width: 540px;
+}
+
+.enterprise-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #EA580C;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.enterprise-hero__eyebrow-dash {
+  width: 16px;
+  height: 2px;
+  background: #EA580C;
+  display: inline-block;
+}
+
+.enterprise-hero__title {
+  font-size: clamp(2.35rem, 3.8vw, 3.35rem);
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.035em;
+  line-height: 1.14;
+  margin: 0 0 18px;
+}
+
+.enterprise-hero__desc {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  color: #475569;
+  line-height: 1.65;
+  margin: 0 0 32px;
+}
+
+.enterprise-hero__cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.enterprise-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0F172A;
+  color: #FFFFFF;
+  padding: 12px 26px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+}
+
+.enterprise-hero__btn:hover {
+  background: #1E293B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+}
+
+.enterprise-hero__tagline-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.enterprise-hero__tagline-bar {
+  width: 1.5px;
+  background: #CBD5E1;
+}
+
+.enterprise-hero__tagline-text {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #64748B;
+  text-transform: uppercase;
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Right Column Hero Visual */
+.enterprise-hero__right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.enterprise-hero__editorial-tag {
+  align-self: flex-end;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.enterprise-hero__editorial-text {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #64748B;
+  text-transform: uppercase;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.enterprise-hero__editorial-line {
+  width: 24px;
+  height: 1.5px;
+  background: #94A3B8;
+  margin-left: auto;
+  margin-top: 4px;
+}
+
+.enterprise-hero__visual-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #FFFFFF;
+}
+
+.enterprise-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---------- 2. INSTITUTION CATEGORIES STRIP ---------- */
+.enterprise-trust-strip {
+  padding: 22px 0;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  background: #F8FAFC;
+}
+
+.enterprise-trust-strip__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+  flex-wrap: wrap;
+}
+
+.enterprise-trust-strip__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #334155;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.enterprise-trust-strip__item-icon {
+  color: #0284C7;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- 3. DEPLOYMENT ARCHITECTURES SECTION ---------- */
+.enterprise-deployments {
+  padding: clamp(64px, 8vw, 96px) 0;
+  background: #FFFFFF;
+}
+
+.enterprise-deployments__header {
+  max-width: 680px;
+  margin-bottom: 44px;
+}
+
+.enterprise-deployments__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #EA580C;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.enterprise-deployments__eyebrow-dash {
+  width: 16px;
+  height: 2px;
+  background: #EA580C;
+  display: inline-block;
+}
+
+.enterprise-deployments__title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  margin: 0 0 16px;
+}
+
+.enterprise-deployments__desc {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  color: #64748B;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.enterprise-deployments__cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Big Horizontal Architecture Card */
+.enterprise-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05);
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(380px, 1.8fr);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.enterprise-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 12px 32px -6px rgba(15, 23, 42, 0.09);
+  transform: translateY(-2px);
+}
+
+.enterprise-card__visual-side {
+  position: relative;
+  background: #0F172A;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.enterprise-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.enterprise-card__num-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #0F172A;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  z-index: 3;
+}
+
+.enterprise-card__content-side {
+  padding: clamp(24px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.enterprise-card__header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.enterprise-card__icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.enterprise-card__header-titles {
+  flex: 1;
+}
+
+.enterprise-card__title {
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.25;
+  margin: 0 0 6px;
+  letter-spacing: -0.015em;
+}
+
+.enterprise-card__desc {
+  font-size: 0.875rem;
+  color: #64748B;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Two-column sub-grid for Capabilities & Deployments */
+.enterprise-card__sub-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+}
+
+.enterprise-card__sub-panel {
+  background: #F8FAFC;
+  padding: 20px 22px;
+  border-radius: 14px;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+}
+
+.enterprise-card__sub-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.enterprise-card__cap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.enterprise-card__cap-item {
+  font-size: 0.8125rem;
+  color: #334155;
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.enterprise-card__cap-bullet {
+  font-size: 0.95rem;
+  line-height: 1.1;
+  color: #EA580C;
+  font-weight: 800;
+}
+
+.enterprise-card__deploy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.enterprise-card__deploy-item {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1E293B;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.enterprise-card__deploy-check {
+  font-size: 0.875rem;
+  line-height: 1.2;
+  color: #0284C7;
+  font-weight: 800;
+}
+
+/* ---------- 4. ARCHITECTURE SECTION ---------- */
+.enterprise-architecture {
+  padding: clamp(64px, 8vw, 96px) 0;
+  background: 
+    radial-gradient(circle at 50% 60%, rgba(220, 240, 255, 0.4), transparent 60%),
+    linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.enterprise-architecture__header {
+  text-align: left;
+  max-width: 680px;
+  margin-bottom: 48px;
+}
+
+.enterprise-architecture__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #EA580C;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.enterprise-architecture__eyebrow-dash {
+  width: 16px;
+  height: 2px;
+  background: #EA580C;
+  display: inline-block;
+}
+
+.enterprise-architecture__title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  margin: 0 0 10px;
+}
+
+.enterprise-architecture__subtitle {
+  font-size: 0.95rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.enterprise-architecture__layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(320px, 1.2fr) minmax(260px, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.enterprise-architecture__side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.enterprise-arch-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  padding: 22px 24px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.enterprise-arch-card:hover {
+  transform: translateY(-2px);
+  border-color: #CBD5E1;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.enterprise-arch-card__icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.enterprise-arch-card__content {
+  flex: 1;
+}
+
+.enterprise-arch-card__title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.enterprise-arch-card__desc {
+  font-size: 0.8125rem;
+  color: #64748B;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Center Graphic Container */
+.enterprise-architecture__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.enterprise-architecture__center-visual {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 14px 30px rgba(2, 132, 199, 0.12));
+}
+
+/* ---------- 5. BOTTOM CTA BANNER ---------- */
+.enterprise-cta {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 7vw, 88px) 0;
+  background: 
+    linear-gradient(90deg, #0A1124 0%, #101B33 45%, #18233C 100%);
+  color: #FFFFFF;
+}
+
+.enterprise-cta__container {
+  display: grid;
+  grid-template-columns: minmax(360px, 1.15fr) minmax(400px, 1.15fr);
+  align-items: center;
+  gap: clamp(32px, 4vw, 56px);
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.enterprise-cta__left {
+  max-width: 520px;
+}
+
+.enterprise-cta__title {
+  font-size: clamp(2.2rem, 3.5vw, 3.1rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.035em;
+  line-height: 1.16;
+  margin: 0 0 16px;
+}
+
+.enterprise-cta__desc {
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  color: #94A3B8;
+  line-height: 1.65;
+  margin: 0 0 32px;
+}
+
+.enterprise-cta__btn-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.enterprise-cta__btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  color: #0F172A;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.enterprise-cta__btn-primary:hover {
+  background: #F1F5F9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.enterprise-cta__btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.enterprise-cta__btn-outline:hover {
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.enterprise-cta__right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.enterprise-cta__editorial-tag {
+  align-self: flex-end;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.enterprise-cta__editorial-text {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #94A3B8;
+  text-transform: uppercase;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.enterprise-cta__editorial-line {
+  width: 24px;
+  height: 1.5px;
+  background: #64748B;
+  margin-left: auto;
+  margin-top: 4px;
+}
+
+.enterprise-cta__visual-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.enterprise-cta__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+@media (max-width: 992px) {
+  .enterprise-hero__container,
+  .enterprise-card,
+  .enterprise-architecture__layout,
+  .enterprise-cta__container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .enterprise-hero__left,
+  .enterprise-cta__left {
+    max-width: 100%;
+  }
+
+  .enterprise-hero__editorial-tag,
+  .enterprise-cta__editorial-tag {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .enterprise-hero__editorial-line {
+    margin-left: 0;
+  }
+
+  .enterprise-card__visual-side {
+    min-height: 220px;
+  }
+
+  .enterprise-card__sub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enterprise-architecture__center {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .enterprise-card__content-side {
+    padding: 20px 18px;
+  }
+
+  .enterprise-card__sub-panel {
+    padding: 16px 14px;
+  }
+
+  .enterprise-trust-strip__items {
+    gap: 18px;
+  }
+}

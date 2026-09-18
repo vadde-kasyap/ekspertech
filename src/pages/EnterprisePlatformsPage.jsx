@@ -1,15 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, GraduationCap, Building2, ShieldCheck, Database, FileCheck, Users, Award } from 'lucide-react';
+import { 
+  ArrowRight, 
+  GraduationCap, 
+  Building2, 
+  ShieldCheck, 
+  Database, 
+  FileCheck, 
+  Users, 
+  Lock, 
+  Landmark, 
+  FileText, 
+  Check 
+} from 'lucide-react';
+import './EnterprisePlatformsPage.css';
 
 const DEPLOYMENT_TYPES = [
   {
-    icon: <GraduationCap size={28} strokeWidth={2.2} />,
+    num: '01',
+    image: '/images/enterprise/enterprise-card-01-students.png',
+    alt: 'Students on campus with holographic governance badges',
+    icon: <GraduationCap size={24} strokeWidth={2.2} />,
     color: '#1D4ED8',
-    bg: 'rgba(29, 78, 216, 0.08)',
-    border: 'rgba(29, 78, 216, 0.22)',
+    bg: '#EFF6FF',
+    border: '#BFDBFE',
     title: 'Institutional Governance & Examination Security Platforms',
-    subtitle: 'Comprehensive governance architectures for large-scale institutional administration',
     desc: 'End-to-end digital platforms for large public institutions handling tens of thousands of candidates, multi-faculty departments, and confidential evaluations.',
     capabilities: [
       'Statewide online admissions and automated multi-channel merit list generation',
@@ -20,39 +35,43 @@ const DEPLOYMENT_TYPES = [
       'Ph.D. scholar lifecycle tracking, research guide allocation, and thesis defense milestones',
     ],
     deployments: [
-      { name: 'University of Mysore (70+ PG departments, 100+ affiliated centres)', logo: '/images/Mysore_University_logo.png' },
-      { name: 'Kadi Sarva Vishwavidyalaya (KSV) & constituent institutions' },
-      { name: 'GNITS Hyderabad & autonomous institutions', logo: '/images/gnits_logo.png' },
+      'University of Mysore (70+ PG departments, 100+ affiliated centres)',
+      'Kadi Sarva Vishwavidyalaya (KSV) & constituent institutions',
+      'GNITS Hyderabad & autonomous institutions',
     ],
   },
   {
-    icon: <Building2 size={28} strokeWidth={2.2} />,
+    num: '02',
+    image: '/images/enterprise/enterprise-card-02-governance.png',
+    alt: 'State secretariat with national flag and digital administration overlays',
+    icon: <Building2 size={24} strokeWidth={2.2} />,
     color: '#0D9488',
-    bg: 'rgba(13, 148, 136, 0.08)',
-    border: 'rgba(13, 148, 136, 0.22)',
+    bg: '#F0FDFA',
+    border: '#99F6E4',
     title: 'State e-Governance & Public Administration Systems',
-    subtitle: 'Directorate-level high-throughput admissions and statutory administrative engines',
-    desc: 'Large-scale workflow engines engineered for state government departments, directorates, and statutory bodies with strict reservation quotas and regulatory audit mandates.',
+    desc: 'Directorate-level high-throughput admissions and statutory administrative engines.',
     capabilities: [
-      'High-throughput web counselling engine handling simultaneous statewide seat allocations',
+      'High-throughput web counseling engine handling simultaneous statewide seat allocations',
       'Statutory reservation quota validation (caste, merit, regional, and special categories)',
-      'Central Records Branch (CRB) barcoded file management guaranteeing rapid physical retrieval',
+      'Central Records Branch (CRB) barcode file management guaranteeing rapid physical retrieval',
       'Real-time verification center dashboards and candidate document authentication',
       'Audit-ready audit trails compliant with CAG and State Vigilance guidelines',
     ],
     deployments: [
-      { name: 'State Technical Education & Polytechnic Directorate (DET)' },
-      { name: 'State Secretariat Central Records Branch (GAD)', logo: '/images/gad-logo.jpg' },
+      'State Technical Education & Polytechnic Directorate (DET)',
+      'State Secretariat Central Records Branch (GAD)',
     ],
   },
   {
-    icon: <ShieldCheck size={28} strokeWidth={2.2} />,
+    num: '03',
+    image: '/images/enterprise/enterprise-card-03-datacenter.png',
+    alt: 'Systems architect reviewing institutional financial and governance dashboards',
+    icon: <ShieldCheck size={24} strokeWidth={2.2} />,
     color: '#D97706',
-    bg: 'rgba(217, 119, 6, 0.08)',
-    border: 'rgba(217, 119, 6, 0.22)',
+    bg: '#FFFBEB',
+    border: '#FDE68A',
     title: 'Enterprise Operational & Financial Backbones',
-    subtitle: 'Single-database architectures unifying accounting, payroll, and asset management',
-    desc: 'Mission-critical institutional operations platforms replacing error-prone spreadsheets with unified, tamper-evident transactional backbones.',
+    desc: 'Single-database architectures unifying accounting, payroll, and asset management.',
     capabilities: [
       'CAG-compliant double-entry fund accounting and multi-budget head tracking',
       'Pay commission salary automation with biometric attendance hardware integration',
@@ -60,139 +79,185 @@ const DEPLOYMENT_TYPES = [
       'Role-based granular access control (RBAC) with complete cryptographic logging',
     ],
     deployments: [
-      { name: 'State institutional administrative finance wings' },
-      { name: 'Multi-branch organizational networks' },
+      'State institutional administrative finance wings',
+      'Multi-branch organizational networks',
     ],
-  },
-];
-
-const ARCHITECTURE_PILLARS = [
-  {
-    icon: <Database size={22} strokeWidth={2.2} />,
-    color: '#2563EB',
-    bg: 'rgba(37, 99, 235, 0.08)',
-    border: 'rgba(37, 99, 235, 0.2)',
-    title: 'Single-Database Architecture',
-    desc: 'Eliminates data silos across admissions, academic records, finance, and exams. A unified institutional ledger ensures absolute consistency.',
-  },
-  {
-    icon: <FileCheck size={22} strokeWidth={2.2} />,
-    color: '#059669',
-    bg: 'rgba(5, 150, 105, 0.08)',
-    border: 'rgba(5, 150, 105, 0.2)',
-    title: 'Statutory & Audit Compliance',
-    desc: 'Built ground-up around state regulations, public governance councils, and CAG double-entry standards. Ready for statutory review.',
-  },
-  {
-    icon: <Users size={22} strokeWidth={2.2} />,
-    color: '#7C3AED',
-    bg: 'rgba(124, 58, 237, 0.08)',
-    border: 'rgba(124, 58, 237, 0.2)',
-    title: 'High-Concurrency Scaling',
-    desc: 'Tested to sustain extreme traffic surges during state admission counselling rounds and statewide result publications without downtime.',
-  },
-  {
-    icon: <Award size={22} strokeWidth={2.2} />,
-    color: '#E11D48',
-    bg: 'rgba(225, 29, 72, 0.08)',
-    border: 'rgba(225, 29, 72, 0.2)',
-    title: 'Confidential Exam Security',
-    desc: 'Barcode dummy indexing and masked evaluation workflows guarantee complete integrity from evaluation centers to degree conferral.',
   },
 ];
 
 export default function EnterprisePlatformsPage() {
   return (
-    <div className="enterprise-platforms-page">
-      <section className="page-hero">
-        <div className="container">
-          <div className="page-hero__eyebrow">Enterprise Platforms</div>
-          <h1 className="page-hero__title">High-concurrency institutional and governance platforms.</h1>
-          <p className="page-hero__desc">
-            25+ years engineering unified administrative, examination, and state-level workflow platforms for public directorates and large institutions.
-          </p>
+    <div className="enterprise-page">
+      {/* 1. HERO SECTION */}
+      <section className="enterprise-hero">
+        <div className="container enterprise-hero__container">
+          {/* Left Hero Content */}
+          <div className="enterprise-hero__left">
+            <div className="enterprise-hero__eyebrow">
+              <span className="enterprise-hero__eyebrow-dash"></span>
+              Enterprise Platforms
+            </div>
+            
+            <h1 className="enterprise-hero__title">
+              High-concurrency institutional and governance platforms.
+            </h1>
+            
+            <p className="enterprise-hero__desc">
+              25+ years engineering unified administrative, examination, and state-level workflow platforms for public directorates and large institutions.
+            </p>
+            
+            <div className="enterprise-hero__cta-row">
+              <Link to="/contact" className="enterprise-hero__btn">
+                Talk to us <ArrowRight size={15} />
+              </Link>
+              
+              <div className="enterprise-hero__tagline-wrap">
+                <div className="enterprise-hero__tagline-bar"></div>
+                <div className="enterprise-hero__tagline-text">
+                  <span>PEOPLE.</span>
+                  <span>SYSTEMS.</span>
+                  <span>STRONGER INSTITUTIONS.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Hero Visual */}
+          <div className="enterprise-hero__right">
+            <div className="enterprise-hero__editorial-tag">
+              <p className="enterprise-hero__editorial-text">
+                DIGITAL<br />
+                GOVERNANCE<br />
+                FOR A STRONGER<br />
+                TOMORROW.
+              </p>
+              <div className="enterprise-hero__editorial-line"></div>
+            </div>
+
+            <div className="enterprise-hero__visual-wrap">
+              <img 
+                src="/images/enterprise/enterprise-hero-capitol.png" 
+                alt="Institutional governance neoclassical architectural dome"
+                className="enterprise-hero__image"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Proven Deployment Types */}
-      <section className="section">
+      {/* 2. INSTITUTION CATEGORIES STRIP */}
+      <section className="enterprise-trust-strip">
         <div className="container">
-          <div className="section-eyebrow">Deployment Architectures</div>
-          <h2 className="section-title">Engineered for complex institutional scale</h2>
-          <p className="section-subtitle">
-            Three specialized platform architectures battle-tested across state directorates and large public institutions.
-          </p>
+          <div className="enterprise-trust-strip__items">
+            <div className="enterprise-trust-strip__item">
+              <span className="enterprise-trust-strip__item-icon">
+                <Landmark size={18} strokeWidth={2} />
+              </span>
+              <span>State Governments</span>
+            </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 40, marginTop: 40 }}>
+            <div className="enterprise-trust-strip__item">
+              <span className="enterprise-trust-strip__item-icon">
+                <GraduationCap size={18} strokeWidth={2} />
+              </span>
+              <span>Universities</span>
+            </div>
+
+            <div className="enterprise-trust-strip__item">
+              <span className="enterprise-trust-strip__item-icon">
+                <FileText size={18} strokeWidth={2} />
+              </span>
+              <span>Examination Bodies</span>
+            </div>
+
+            <div className="enterprise-trust-strip__item">
+              <span className="enterprise-trust-strip__item-icon">
+                <Users size={18} strokeWidth={2} />
+              </span>
+              <span>Public Institutions</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. DEPLOYMENT ARCHITECTURES */}
+      <section className="enterprise-deployments">
+        <div className="container">
+          <div className="enterprise-deployments__header">
+            <div className="enterprise-deployments__eyebrow">
+              <span className="enterprise-deployments__eyebrow-dash"></span>
+              Deployment Architectures
+            </div>
+            <h2 className="enterprise-deployments__title">
+              Engineered for complex institutional scale.
+            </h2>
+            <p className="enterprise-deployments__desc">
+              Three specialized platform architectures battle-tested across state directorates and large public institutions.
+            </p>
+          </div>
+
+          <div className="enterprise-deployments__cards-list">
             {DEPLOYMENT_TYPES.map((type, idx) => (
-              <div
-                key={idx}
-                style={{
-                  background: 'var(--white)',
-                  border: '1px solid var(--stone-200)',
-                  borderRadius: 'var(--r-lg)',
-                  padding: 'clamp(28px, 4vw, 44px)',
-                  boxShadow: '0 4px 20px -4px rgba(0, 0, 0, 0.04)',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: 18, marginBottom: 20 }}>
-                  <div
-                    style={{
-                      width: 56,
-                      height: 56,
-                      borderRadius: 'var(--r-md)',
-                      background: type.bg,
-                      color: type.color,
-                      border: `1px solid ${type.border}`,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                    }}
-                  >
-                    {type.icon}
-                  </div>
+              <div key={idx} className="enterprise-card">
+                {/* Left Visual Column */}
+                <div className="enterprise-card__visual-side">
+                  <span className="enterprise-card__num-badge">{type.num}</span>
+                  <img 
+                    src={type.image} 
+                    alt={type.alt} 
+                    className="enterprise-card__image"
+                  />
+                </div>
+
+                {/* Right Content Column */}
+                <div className="enterprise-card__content-side">
                   <div>
-                    <h3 style={{ fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', margin: 0 }}>{type.title}</h3>
-                    <span style={{ fontSize: '0.875rem', color: 'var(--ink-muted)' }}>{type.subtitle}</span>
-                  </div>
-                </div>
+                    <div className="enterprise-card__header-row">
+                      <div 
+                        className="enterprise-card__icon-box"
+                        style={{ background: type.bg, color: type.color, border: `1px solid ${type.border}` }}
+                      >
+                        {type.icon}
+                      </div>
+                      <div className="enterprise-card__header-titles">
+                        <h3 className="enterprise-card__title">{type.title}</h3>
+                        <p className="enterprise-card__desc">{type.desc}</p>
+                      </div>
+                    </div>
 
-                <p style={{ fontSize: '1rem', color: 'var(--ink-secondary)', lineHeight: 1.65, marginBottom: 24 }}>
-                  {type.desc}
-                </p>
+                    <div className="enterprise-card__sub-grid">
+                      {/* Left: Key Capabilities */}
+                      <div className="enterprise-card__sub-panel">
+                        <div className="enterprise-card__sub-title" style={{ color: '#0F172A' }}>
+                          Key Capabilities
+                        </div>
+                        <ul className="enterprise-card__cap-list">
+                          {type.capabilities.map((cap, i) => (
+                            <li key={i} className="enterprise-card__cap-item">
+                              <span className="enterprise-card__cap-bullet">•</span>
+                              <span>{cap}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 28 }}>
-                  <div style={{ background: 'var(--stone-50)', padding: '24px', borderRadius: 'var(--r-md)', border: '1px solid var(--stone-200)' }}>
-                    <h4 style={{ fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--ink-muted)', marginBottom: 14 }}>
-                      Key Capabilities
-                    </h4>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                      {type.capabilities.map((cap, i) => (
-                        <li key={i} style={{ fontSize: '0.875rem', color: 'var(--ink)', lineHeight: 1.5, display: 'flex', alignItems: 'flex-start', gap: 10 }}>
-                          <span style={{ color: type.color, fontWeight: 700 }}>•</span>
-                          <span>{cap}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div style={{ background: 'var(--stone-50)', padding: '24px', borderRadius: 'var(--r-md)', border: '1px solid var(--stone-200)', display: 'flex', flexDirection: 'column' }}>
-                    <h4 style={{ fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: type.color, marginBottom: 14 }}>
-                      Proven Deployments & Scale
-                    </h4>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 14 }}>
-                      {type.deployments.map((dep, i) => (
-                        <li key={i} style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: 10 }}>
-                          {dep.logo ? (
-                            <img src={dep.logo} alt="" style={{ width: 22, height: 22, objectFit: 'contain', borderRadius: 3, flexShrink: 0 }} />
-                          ) : (
-                            <span style={{ color: type.color, fontWeight: 700 }}>✓</span>
-                          )}
-                          <span>{dep.name}</span>
-                        </li>
-                      ))}
-                    </ul>
+                      {/* Right: Proven Deployments & Scale */}
+                      <div className="enterprise-card__sub-panel">
+                        <div className="enterprise-card__sub-title" style={{ color: '#0284C7' }}>
+                          Proven Deployments & Scale
+                        </div>
+                        <ul className="enterprise-card__deploy-list">
+                          {type.deployments.map((dep, i) => (
+                            <li key={i} className="enterprise-card__deploy-item">
+                              <span className="enterprise-card__deploy-check">
+                                <Check size={14} strokeWidth={2.8} />
+                              </span>
+                              <span>{dep}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -201,60 +266,140 @@ export default function EnterprisePlatformsPage() {
         </div>
       </section>
 
-      {/* Architectural Pillars */}
-      <section className="section section--stone">
+      {/* 4. ARCHITECTURE SECTION */}
+      <section className="enterprise-architecture">
         <div className="container">
-          <div className="section-eyebrow">Architecture</div>
-          <h2 className="section-title">Built for institutional resilience</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20, marginTop: 36 }}>
-            {ARCHITECTURE_PILLARS.map((p, i) => (
-              <div
-                key={i}
-                style={{
-                  background: 'var(--white)',
-                  border: '1px solid var(--stone-200)',
-                  borderRadius: 'var(--r-md)',
-                  padding: 24,
-                }}
-              >
-                <div style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: 44,
-                  height: 44,
-                  borderRadius: 'var(--r-md)',
-                  background: p.bg,
-                  color: p.color,
-                  border: `1px solid ${p.border}`,
-                  marginBottom: 16
-                }}>
-                  {p.icon}
+          <div className="enterprise-architecture__header">
+            <div className="enterprise-architecture__eyebrow">
+              <span className="enterprise-architecture__eyebrow-dash"></span>
+              Architecture
+            </div>
+            <h2 className="enterprise-architecture__title">
+              Built for institutional resilience.
+            </h2>
+            <p className="enterprise-architecture__subtitle">
+              Scalable. Secure. Compliant. Always on.
+            </p>
+          </div>
+
+          <div className="enterprise-architecture__layout">
+            {/* Left Column (2 Cards) */}
+            <div className="enterprise-architecture__side-col">
+              <div className="enterprise-arch-card">
+                <div 
+                  className="enterprise-arch-card__icon-box"
+                  style={{ background: '#EFF6FF', color: '#2563EB', border: '1px solid #BFDBFE' }}
+                >
+                  <Database size={22} strokeWidth={2.2} />
                 </div>
-                <h4 style={{ fontSize: '1.05rem', marginBottom: 8 }}>{p.title}</h4>
-                <p style={{ fontSize: '0.875rem', color: 'var(--ink-muted)', lineHeight: 1.6, margin: 0 }}>
-                  {p.desc}
-                </p>
+                <div className="enterprise-arch-card__content">
+                  <h4 className="enterprise-arch-card__title">Single-Database Architecture</h4>
+                  <p className="enterprise-arch-card__desc">
+                    Eliminates data silos across admissions, academic records, finance, and exams. A unified institutional ledger ensures absolute consistency.
+                  </p>
+                </div>
               </div>
-            ))}
+
+              <div className="enterprise-arch-card">
+                <div 
+                  className="enterprise-arch-card__icon-box"
+                  style={{ background: '#ECFDF5', color: '#059669', border: '1px solid #A7F3D0' }}
+                >
+                  <FileCheck size={22} strokeWidth={2.2} />
+                </div>
+                <div className="enterprise-arch-card__content">
+                  <h4 className="enterprise-arch-card__title">Statutory & Audit Compliance</h4>
+                  <p className="enterprise-arch-card__desc">
+                    Built ground-up around state regulations, public governance councils, and CAG double-entry standards. Ready for statutory review.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Center Graphic */}
+            <div className="enterprise-architecture__center">
+              <img 
+                src="/images/enterprise/enterprise-arch-center.png" 
+                alt="Institutional architecture platform layers" 
+                className="enterprise-architecture__center-visual"
+              />
+            </div>
+
+            {/* Right Column (2 Cards) */}
+            <div className="enterprise-architecture__side-col">
+              <div className="enterprise-arch-card">
+                <div 
+                  className="enterprise-arch-card__icon-box"
+                  style={{ background: '#F5F3FF', color: '#7C3AED', border: '1px solid #DDD6FE' }}
+                >
+                  <Users size={22} strokeWidth={2.2} />
+                </div>
+                <div className="enterprise-arch-card__content">
+                  <h4 className="enterprise-arch-card__title">High-Concurrency Scaling</h4>
+                  <p className="enterprise-arch-card__desc">
+                    Tested to sustain extreme traffic surges during state admission counselling rounds and statewide result publications without downtime.
+                  </p>
+                </div>
+              </div>
+
+              <div className="enterprise-arch-card">
+                <div 
+                  className="enterprise-arch-card__icon-box"
+                  style={{ background: '#FFF1F2', color: '#E11D48', border: '1px solid #FECDD3' }}
+                >
+                  <Lock size={22} strokeWidth={2.2} />
+                </div>
+                <div className="enterprise-arch-card__content">
+                  <h4 className="enterprise-arch-card__title">Confidential Exam Security</h4>
+                  <p className="enterprise-arch-card__desc">
+                    Barcode dummy indexing and masked evaluation workflows guarantee complete integrity from evaluation centers to degree conferral.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Discuss Requirements CTA */}
-      <section className="section">
-        <div className="container" style={{ textAlign: 'center', maxWidth: 640 }}>
-          <h2 className="section-title">Modernize your institutional infrastructure</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto 32px' }}>
-            Speak with our systems architects about deploying scalable governance, examination security, or administrative solutions.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
-            <Link to="/contact" className="btn btn--primary btn--lg">
-              Talk to us <ArrowRight size={16} />
-            </Link>
-            <Link to="/case-studies" className="btn btn--outline btn--lg">
-              Explore Track Record
-            </Link>
+      {/* 5. BOTTOM CTA BANNER */}
+      <section className="enterprise-cta">
+        <div className="container enterprise-cta__container">
+          {/* Left CTA Info */}
+          <div className="enterprise-cta__left">
+            <h2 className="enterprise-cta__title">
+              Modernize your institutional infrastructure.
+            </h2>
+            <p className="enterprise-cta__desc">
+              Speak with our systems architects about deploying scalable governance, examination security, or administrative solutions.
+            </p>
+            <div className="enterprise-cta__btn-row">
+              <Link to="/contact" className="enterprise-cta__btn-primary">
+                Talk to us <ArrowRight size={15} />
+              </Link>
+              <Link to="/case-studies" className="enterprise-cta__btn-outline">
+                Explore Track Record
+              </Link>
+            </div>
+          </div>
+
+          {/* Right CTA Visual */}
+          <div className="enterprise-cta__right">
+            <div className="enterprise-cta__editorial-tag">
+              <p className="enterprise-cta__editorial-text">
+                TRUSTED<br />
+                PLATFORMS<br />
+                FOR LASTING<br />
+                IMPACT.
+              </p>
+              <div className="enterprise-cta__editorial-line"></div>
+            </div>
+            <div className="enterprise-cta__visual-wrap">
+              <img 
+                src="/images/enterprise/enterprise-cta-columns.png" 
+                alt="Neoclassical institution pillars overlooking sunset skyline" 
+                className="enterprise-cta__image"
+              />
+            </div>
           </div>
         </div>
       </section>
