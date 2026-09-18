@@ -182,7 +182,7 @@
 .services-card__img-wrap {
   position: relative;
   width: 100%;
-  height: 140px;
+  height: 180px;
   overflow: visible;
   background: #f8fafc;
 }
@@ -428,6 +428,6 @@
   }
 
   .services-card__img-wrap {
-    height: 150px;
+    height: 170px;
   }
 }
