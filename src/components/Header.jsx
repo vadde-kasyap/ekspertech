@@ -15,8 +15,8 @@ const NAV_ITEMS = [
       { label: 'Mining Telemetry', desc: 'Weighbridge capture and dispatch logistics', path: '/mining' },
     ]
   },
-  { label: 'About us', path: '/about' },
   { label: 'Our Work', path: '/case-studies' },
+  { label: 'About us', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ];
 
