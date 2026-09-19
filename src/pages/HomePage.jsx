@@ -20,14 +20,6 @@ const DOMAIN_SECTORS = [
     accent: '#0284C7',
   },
   {
-    id: 'education',
-    title: 'Education',
-    desc: 'Enabling brighter futures.',
-    icon: <GraduationCap size={18} strokeWidth={2.2} />,
-    image: '/images/domains/education.jpg',
-    accent: '#0D9488',
-  },
-  {
     id: 'energy-mining',
     title: 'Energy & Mining',
     desc: 'Sustainable progress through technology.',
@@ -600,27 +592,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* 2. Education */}
-            <div className="industry-card industry-card--education">
-              <div className="industry-card__image-wrap">
-                <img
-                  src="/images/industries/education@2x.png"
-                  alt="Education"
-                  className="industry-card__img"
-                  loading="lazy"
-                />
-                <div className="industry-card__image-fade"></div>
-              </div>
-              <div className="industry-card__badge" title="Education">
-                <GraduationCap size={22} strokeWidth={2.2} />
-              </div>
-              <div className="industry-card__content">
-                <h3 className="industry-card__title">Education</h3>
-                <p className="industry-card__desc">
-                  ERP and campus management for schools, colleges and institutions.
-                </p>
-              </div>
-            </div>
 
             {/* 3. Mining */}
             <div className="industry-card industry-card--mining">

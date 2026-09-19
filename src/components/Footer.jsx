@@ -5,7 +5,6 @@ import './Footer.css';
 
 const SECTORS = [
   { label: 'Government & Public Sector', path: '/enterprise-platforms' },
-  { label: 'Higher Education', path: '/enterprise-platforms#education' },
   { label: 'Energy & Mining', path: '/mining' },
   { label: 'Healthcare & Life Sciences', path: '/ai-healthcare' },
 ];

@@ -5,24 +5,14 @@ import './Header.css';
 
 const NAV_ITEMS = [
   {
-    label: 'Services',
-    path: '/services',
-    children: [
-      { label: 'Digital Transformation', desc: 'Modernising legacy systems into platforms that work', path: '/services#digital-transformation' },
-      { label: 'Enterprise Platforms', desc: 'State e-Governance & institutional systems', path: '/enterprise-platforms' },
-      { label: 'Cloud Infrastructure', desc: 'High-concurrency autoscaling & mission-critical resilience', path: '/cloud-services' },
-      { label: 'Data & AI', desc: 'Data engineering, analytics and operational intelligence', path: '/services#data-ai' },
-      { label: 'Run & Support', desc: 'Continuous engineering, 24/7 reliability & SLAs', path: '/services#run-support' },
-    ]
-  },
-  {
     label: 'Industries',
     path: '/#where-we-work',
     children: [
       { label: 'Government & Public Sector', desc: 'State directorates and citizen-scale platforms', path: '/enterprise-platforms' },
-      { label: 'Higher Education', desc: 'Centralized admissions, examination & campus ERP', path: '/enterprise-platforms#education' },
       { label: 'Energy & Mining', desc: 'Rugged telemetry, weighbridge automation & logistics', path: '/mining' },
       { label: 'Healthcare & Life Sciences', desc: 'FHIR data integration and clinical workflows', path: '/ai-healthcare' },
+      { label: 'Cloud Infrastructure', desc: 'High-concurrency autoscaling & mission-critical resilience', path: '/cloud-services' },
+      { label: 'Digital Transformation', desc: 'Modernising legacy systems into platforms that work', path: '/services' },
     ]
   },
   { label: 'Our Work', path: '/case-studies' },
