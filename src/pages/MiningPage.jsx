@@ -12,18 +12,21 @@ import {
   Database, 
   Shield, 
   RefreshCw, 
-  ChevronRight,
-  Cpu,
-  Truck,
-  Server,
-  LineChart,
-  FileCheck2,
-  Maximize2,
-  Users
+  ChevronRight, 
+  Cpu, 
+  Truck, 
+  Server, 
+  LineChart, 
+  FileCheck2, 
+  Maximize2, 
+  Users 
 } from 'lucide-react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './MiningPage.css';
 
 export default function MiningPage() {
+  useDocumentTitle('Energy & Mining Telemetry Solutions | Eksper Technologies');
+
   return (
     <div className="mining-page">
       {/* 1. HERO SECTION */}
@@ -57,6 +60,8 @@ export default function MiningPage() {
                 onError={(e) => { e.currentTarget.src = '/images/mining/mining-hero-panorama.png'; }}
                 alt="Mining open pit operations with real-time telemetry HUD overlay" 
                 className="mining-hero__image"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>

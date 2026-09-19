@@ -11,9 +11,12 @@ import {
   Users, 
   BarChart3 
 } from 'lucide-react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './AiHealthcarePage.css';
 
 export default function AiHealthcarePage() {
+  useDocumentTitle('Healthcare Data Platforms & Clinical AI | Eksper Technologies');
+
   return (
     <div className="healthcare-page">
       {/* 1. HERO SECTION */}
@@ -65,6 +68,8 @@ export default function AiHealthcarePage() {
                 src="/images/healthcare/healthcare-hero-radiologist.png" 
                 alt="Clinician using multi-screen clinical AI diagnostic workstation"
                 className="healthcare-hero__image"
+                loading="eager"
+                fetchPriority="high"
               />
 
               {/* Floating Pill Badges */}

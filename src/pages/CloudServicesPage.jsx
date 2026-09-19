@@ -12,9 +12,12 @@ import {
   CheckCircle2, 
   Globe 
 } from 'lucide-react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './CloudServicesPage.css';
 
 export default function CloudServicesPage() {
+  useDocumentTitle('Cloud & High-Concurrency Infrastructure | Eksper Technologies');
+
   return (
     <div className="cloud-page">
       {/* 1. HERO SECTION */}
@@ -49,6 +52,8 @@ export default function CloudServicesPage() {
                 src="/images/cloud/cloud-hero-panorama.png" 
                 alt="Cloud infrastructure network and server datacenter with live telemetry"
                 className="cloud-hero__image"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>

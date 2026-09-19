@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Shield, Database, Cpu, LifeBuoy } from 'lucide-react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './AboutPage.css';
 
 export default function AboutPage() {
+  useDocumentTitle('About Us — 25+ Years of Mission-Critical Engineering | Eksper Technologies');
+
   const milestones = [
     { year: '2000', title: 'Founded in Hyderabad', desc: 'Established with a focus on engineering dependable software platforms for complex institutional environments.' },
     { year: '2005', title: 'Large-Scale Institutional Platforms', desc: 'Deployed multi-department governance and administration systems across large public bodies.' },

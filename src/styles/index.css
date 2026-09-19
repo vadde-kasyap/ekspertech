@@ -538,8 +538,11 @@ textarea.form-input {
 
 /* ---------- Page Hero (used by subpages) ---------- */
 .page-hero {
-  padding: 72px 0 56px;
+  position: relative;
+  padding: clamp(64px, 7vw, 88px) 0 clamp(48px, 5vw, 64px);
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(224, 242, 254, 0.45) 0%, rgba(248, 250, 252, 0.8) 60%, #ffffff 100%);
   border-bottom: 1px solid var(--stone-200);
+  overflow: hidden;
 }
 
 .page-hero__eyebrow {

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Landmark, Activity, GraduationCap, Leaf, Check, Copy, Laptop, BarChart3, Layers, Headphones, Zap } from 'lucide-react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './HomePage.css';
 
 const DOMAIN_SECTORS = [
@@ -10,6 +12,7 @@ const DOMAIN_SECTORS = [
     icon: <Landmark size={18} strokeWidth={2.2} />,
     image: '/images/domains/government.jpg',
     accent: '#1D4ED8',
+    link: '/enterprise-platforms',
   },
   {
     id: 'healthcare',
@@ -18,6 +21,7 @@ const DOMAIN_SECTORS = [
     icon: <Activity size={18} strokeWidth={2.2} />,
     image: '/images/domains/healthcare.jpg',
     accent: '#0284C7',
+    link: '/ai-healthcare',
   },
   {
     id: 'energy-mining',
@@ -26,10 +30,12 @@ const DOMAIN_SECTORS = [
     icon: <Leaf size={18} strokeWidth={2.2} />,
     image: '/images/domains/energy-mining.jpg',
     accent: '#D97706',
+    link: '/mining',
   },
 ];
 
 export default function HomePage() {
+  useDocumentTitle('Eksper Technologies — Digital Transformation & AI');
   const [copied, setCopied] = useState(false);
   const clientStripRef = useRef(null);
 
@@ -65,7 +71,7 @@ export default function HomePage() {
         <div className="hero-domains-container" aria-label="Core Industry Domains">
           <div className="hero-domains-grid">
             {DOMAIN_SECTORS.map((sector) => (
-              <div key={sector.id} className={`hero-domain-card hero-domain-card--${sector.id}`}>
+              <Link to={sector.link} key={sector.id} className={`hero-domain-card hero-domain-card--${sector.id}`}>
                 <div className="hero-domain-card__image-box">
                   <img
                     src={sector.image}
@@ -84,7 +90,7 @@ export default function HomePage() {
                     <span className="hero-domain-card__desc">{sector.desc}</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -441,7 +447,7 @@ export default function HomePage() {
 
             <div className="capabilities-grid">
               {/* Card 1: Digital Transformation */}
-              <div className="capability-card capability-card--digital-transformation">
+              <Link to="/services#digital-transformation" className="capability-card capability-card--digital-transformation">
                 <div className="capability-card__image-wrap">
                   <img
                     src="/images/capabilities/card-visual-1@2x.png"
@@ -459,11 +465,14 @@ export default function HomePage() {
                   <p className="capability-card__desc">
                     Modernising legacy systems into platforms that work.
                   </p>
+                  <span className="capability-card__action">
+                    Learn more <ArrowRight size={14} />
+                  </span>
                 </div>
-              </div>
+              </Link>
 
               {/* Card 2: Data & AI */}
-              <div className="capability-card capability-card--data-ai">
+              <Link to="/ai-healthcare" className="capability-card capability-card--data-ai">
                 <div className="capability-card__image-wrap">
                   <img
                     src="/images/capabilities/card-visual-2@2x.png"
@@ -481,11 +490,14 @@ export default function HomePage() {
                   <p className="capability-card__desc">
                     Data platforms, analytics and AI built into operations, not bolted on.
                   </p>
+                  <span className="capability-card__action">
+                    Learn more <ArrowRight size={14} />
+                  </span>
                 </div>
-              </div>
+              </Link>
 
               {/* Card 3: Enterprise Platforms */}
-              <div className="capability-card capability-card--enterprise-platforms">
+              <Link to="/enterprise-platforms" className="capability-card capability-card--enterprise-platforms">
                 <div className="capability-card__image-wrap">
                   <img
                     src="/images/capabilities/card-visual-3@2x.png"
@@ -503,11 +515,14 @@ export default function HomePage() {
                   <p className="capability-card__desc">
                     ERP, e-Governance and campus management at institutional scale.
                   </p>
+                  <span className="capability-card__action">
+                    Learn more <ArrowRight size={14} />
+                  </span>
                 </div>
-              </div>
+              </Link>
 
               {/* Card 4: Run & Support */}
-              <div className="capability-card capability-card--run-support">
+              <Link to="/services#run-support" className="capability-card capability-card--run-support">
                 <div className="capability-card__image-wrap">
                   <img
                     src="/images/capabilities/card-visual-4@2x.png"
@@ -525,8 +540,11 @@ export default function HomePage() {
                   <p className="capability-card__desc">
                     We stay on after go-live, ensuring stability, security and continuous improvement.
                   </p>
+                  <span className="capability-card__action">
+                    Learn more <ArrowRight size={14} />
+                  </span>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -573,7 +591,7 @@ export default function HomePage() {
 
           <div className="industries-grid">
             {/* 1. Government & e-Governance */}
-            <div className="industry-card industry-card--government">
+            <Link to="/enterprise-platforms" className="industry-card industry-card--government">
               <div className="industry-card__image-wrap">
                 <img
                   src="/images/industries/government@2x.png"
@@ -589,12 +607,15 @@ export default function HomePage() {
               <div className="industry-card__content">
                 <h3 className="industry-card__title">Government &amp; e-Governance</h3>
                 <p className="industry-card__desc">State departments and public institutions.</p>
+                <span className="industry-card__action">
+                  Explore <ArrowRight size={13} />
+                </span>
               </div>
-            </div>
+            </Link>
 
 
             {/* 3. Mining */}
-            <div className="industry-card industry-card--mining">
+            <Link to="/mining" className="industry-card industry-card--mining">
               <div className="industry-card__image-wrap">
                 <img
                   src="/images/industries/mining@2x.png"
@@ -621,11 +642,14 @@ export default function HomePage() {
                 <p className="industry-card__desc">
                   Tier-1 public-sector mining enterprises and mineral complexes.
                 </p>
+                <span className="industry-card__action">
+                  Explore <ArrowRight size={13} />
+                </span>
               </div>
-            </div>
+            </Link>
 
             {/* 4. Energy */}
-            <div className="industry-card industry-card--energy">
+            <Link to="/case-studies#greenko" className="industry-card industry-card--energy">
               <div className="industry-card__image-wrap">
                 <img
                   src="/images/industries/energy@2x.png"
@@ -643,11 +667,14 @@ export default function HomePage() {
                 <p className="industry-card__desc">
                   Technology platforms and infrastructure for energy operations.
                 </p>
+                <span className="industry-card__action">
+                  Explore <ArrowRight size={13} />
+                </span>
               </div>
-            </div>
+            </Link>
 
             {/* 5. Healthcare */}
-            <div className="industry-card industry-card--healthcare">
+            <Link to="/ai-healthcare" className="industry-card industry-card--healthcare">
               <div className="industry-card__image-wrap">
                 <img
                   src="/images/industries/healthcare@2x.png"
@@ -667,8 +694,11 @@ export default function HomePage() {
                 <p className="industry-card__desc">
                   Data and AI for US payers and provider organisations.
                 </p>
+                <span className="industry-card__action">
+                  Explore <ArrowRight size={13} />
+                </span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -724,9 +754,9 @@ export default function HomePage() {
                 </div>
 
                 <div className="case-study__cta-wrap">
-                  <a href="#contact" onClick={scrollToContact} className="case-study__cta-btn">
+                  <Link to="/case-studies#mining-psu" className="case-study__cta-btn">
                     View case study <ArrowRight size={14} className="case-study__cta-arrow" />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="case-study__metrics">
@@ -786,9 +816,9 @@ export default function HomePage() {
                 </div>
 
                 <div className="case-study__cta-wrap">
-                  <a href="#contact" onClick={scrollToContact} className="case-study__cta-btn">
+                  <Link to="/case-studies#greenko" className="case-study__cta-btn">
                     View case study <ArrowRight size={14} className="case-study__cta-arrow" />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="case-study__metrics">
@@ -865,9 +895,9 @@ export default function HomePage() {
                 </div>
 
                 <div className="case-study__cta-wrap">
-                  <a href="#contact" onClick={scrollToContact} className="case-study__cta-btn">
+                  <Link to="/case-studies#us-healthcare" className="case-study__cta-btn">
                     View case study <ArrowRight size={14} className="case-study__cta-arrow" />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="case-study__metrics">

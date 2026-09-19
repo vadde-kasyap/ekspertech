@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './CaseStudiesPage.css';
 
 const FEATURED_CASES = [
@@ -50,6 +51,8 @@ const PUBLIC_SECTOR_CASES = [
 ];
 
 export default function CaseStudiesPage() {
+  useDocumentTitle('Mission-Critical Delivery Track Record | Eksper Technologies');
+
   return (
     <div className="case-studies-page">
       <section className="page-hero">
@@ -70,6 +73,7 @@ export default function CaseStudiesPage() {
             {FEATURED_CASES.map((c) => (
               <div
                 key={c.id}
+                id={c.id}
                 style={{
                   background: 'var(--white)',
                   border: '1px solid var(--stone-200)',
@@ -132,6 +136,7 @@ export default function CaseStudiesPage() {
             {PUBLIC_SECTOR_CASES.map((h) => (
               <div
                 key={h.id}
+                id={h.id}
                 style={{
                   background: 'var(--white)',
                   border: '1px solid var(--stone-200)',

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Server, Brain, Layers, ShieldCheck, LifeBuoy, Pickaxe, CheckCircle2 } from 'lucide-react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './ServicesPage.css';
 
 const SERVICES = [
@@ -115,6 +116,8 @@ const SERVICES = [
 ];
 
 export default function ServicesPage() {
+  useDocumentTitle('Capabilities & Core Services | Eksper Technologies');
+
   useEffect(() => {
     if (window.location.hash) {
       const el = document.querySelector(window.location.hash);
@@ -156,6 +159,7 @@ export default function ServicesPage() {
                 alt="Capabilities We Bring - Scalable Solutions"
                 className="services-hero__visual-img"
                 loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>

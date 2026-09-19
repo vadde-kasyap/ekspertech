@@ -13,6 +13,7 @@ import {
   FileText, 
   Check 
 } from 'lucide-react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './EnterprisePlatformsPage.css';
 
 const DEPLOYMENT_TYPES = [
@@ -86,6 +87,8 @@ const DEPLOYMENT_TYPES = [
 ];
 
 export default function EnterprisePlatformsPage() {
+  useDocumentTitle('Enterprise Platforms & e-Governance | Eksper Technologies');
+
   return (
     <div className="enterprise-page">
       {/* 1. HERO SECTION */}
@@ -129,6 +132,8 @@ export default function EnterprisePlatformsPage() {
                 src="/images/enterprise/enterprise-hero-panorama.png" 
                 alt="Institutional governance neoclassical architectural dome and nationwide network"
                 className="enterprise-hero__image"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </div>

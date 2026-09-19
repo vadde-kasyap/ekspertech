@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Copy, Check, ArrowUpRight } from 'lucide-react';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import './ContactPage.css';
 
 export default function ContactPage() {
+  useDocumentTitle('Contact Leadership & Engineering | Eksper Technologies');
   const [copied, setCopied] = useState(false);
   const email = 'info@ekspertech.com';
   const phone = '040 2355 4455';
