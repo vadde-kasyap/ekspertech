@@ -156,9 +156,6 @@ export default function AboutPage() {
               <Link to="/contact" className="btn btn--primary btn--lg">
                 Talk to us <ArrowRight size={14} />
               </Link>
-              <Link to="/careers" className="btn btn--outline btn--lg">
-                Join Our Team
-              </Link>
             </div>
           </div>
         </div>

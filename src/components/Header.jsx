@@ -192,14 +192,6 @@ export default function Header() {
               )}
             </div>
           ))}
-          <Link
-            to="/careers"
-            className={`mobile-drawer__link ${location.pathname === '/careers' ? 'mobile-drawer__link--active' : ''}`}
-            aria-current={location.pathname === '/careers' ? 'page' : undefined}
-            onClick={() => setMobileOpen(false)}
-          >
-            Careers
-          </Link>
         </div>
 
         <div className="mobile-drawer__foot">

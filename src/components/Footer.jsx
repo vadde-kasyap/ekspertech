@@ -20,7 +20,6 @@ const SERVICES = [
 const COMPANY = [
   { label: 'About us', path: '/about' },
   { label: 'Our Work', path: '/case-studies' },
-  { label: 'Careers', path: '/careers' },
   { label: 'Contact', path: '/contact' },
 ];
 

@@ -13,7 +13,6 @@ import CloudServicesPage from './pages/CloudServicesPage';
 import MiningPage from './pages/MiningPage';
 import EnterprisePlatformsPage from './pages/EnterprisePlatformsPage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
-import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
 
 export default function App() {
@@ -33,7 +32,7 @@ export default function App() {
           <Route path="/cloud-services" element={<CloudServicesPage />} />
           <Route path="/mining" element={<MiningPage />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
-          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/careers" element={<Navigate to="/about" replace />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* Aliases & Fallbacks */}
           <Route path="/web-services" element={<Navigate to="/services" replace />} />
