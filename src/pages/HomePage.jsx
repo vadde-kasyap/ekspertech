@@ -141,10 +141,6 @@ export default function HomePage() {
               <strong className="hero-stat-val">03</strong>
               <span className="hero-stat-lbl">Core solution domains</span>
             </div>
-            <div className="hero-stat-box hero-stat-box--global">
-              <strong className="hero-stat-val">GLOBAL</strong>
-              <span className="hero-stat-lbl">India • USA • UK • Germany</span>
-            </div>
           </div>
         </div>
       </section>

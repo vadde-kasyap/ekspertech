@@ -158,11 +158,6 @@
   letter-spacing: 0.01em;
 }
 
-.hero-stat-box--global .hero-stat-val {
-  color: #0284C7;
-  letter-spacing: 0.06em;
-}
-
 /* EXPANDING RIPPLES (Only Upper Half Visible, Layer 2) */
 .hero-ripple-field {
   position: absolute;
@@ -1615,14 +1610,8 @@
 
   .hero-stats-bar__inner {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 14px;
-  }
-
-  .hero-stat-box--global {
-    grid-column: 1 / -1;
-    border-top: 1px solid rgba(226, 232, 240, 0.7);
-    padding-top: 10px;
   }
 
   .capabilities-panel {
