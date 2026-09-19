@@ -35,7 +35,7 @@ export default function MiningPage() {
           <div className="mining-hero__left">
             <div className="mining-eyebrow">
               <span className="mining-eyebrow-dash" />
-              Energy & Mining
+              Industry &bull; Energy &amp; Mining
             </div>
             <h1 className="mining-hero__title">
               Smarter operations for a stronger tomorrow.

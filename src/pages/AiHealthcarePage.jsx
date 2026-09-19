@@ -26,7 +26,7 @@ export default function AiHealthcarePage() {
           <div className="healthcare-hero__left">
             <div className="healthcare-hero__eyebrow">
               <span className="healthcare-hero__eyebrow-dash"></span>
-              Healthcare & Clinical AI
+              Industry &bull; Healthcare &amp; Life Sciences
             </div>
             
             <h1 className="healthcare-hero__title">

@@ -27,7 +27,7 @@ export default function CloudServicesPage() {
           <div className="cloud-hero__left">
             <div className="cloud-hero__eyebrow">
               <span className="cloud-hero__eyebrow-dash"></span>
-              Cloud Infrastructure
+              Engineering Foundation &bull; Cloud Infrastructure
             </div>
             
             <h1 className="cloud-hero__title">

@@ -98,7 +98,7 @@ export default function EnterprisePlatformsPage() {
           <div className="enterprise-hero__left">
             <div className="enterprise-hero__eyebrow">
               <span className="enterprise-hero__eyebrow-dash"></span>
-              Enterprise Platforms
+              Industry &bull; Government &amp; Public Sector
             </div>
             
             <h1 className="enterprise-hero__title">

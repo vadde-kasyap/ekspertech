@@ -7,13 +7,23 @@ const NAV_ITEMS = [
   {
     label: 'Industries',
     path: '/#where-we-work',
-    children: [
-      { label: 'Government & Public Sector', desc: 'State directorates and citizen-scale platforms', path: '/enterprise-platforms' },
-      { label: 'Energy & Mining', desc: 'Rugged telemetry, weighbridge automation & logistics', path: '/mining' },
-      { label: 'Healthcare & Life Sciences', desc: 'FHIR data integration and clinical workflows', path: '/ai-healthcare' },
-      { label: 'Cloud Infrastructure', desc: 'High-concurrency autoscaling & mission-critical resilience', path: '/cloud-services' },
-      { label: 'Digital Transformation', desc: 'Modernising legacy systems into platforms that work', path: '/services' },
-    ]
+    groups: [
+      {
+        title: 'Core Sectors',
+        items: [
+          { label: 'Government & Public Sector', desc: 'State directorates, citizen platforms & examination security', path: '/enterprise-platforms' },
+          { label: 'Energy & Mining', desc: 'Rugged telemetry, weighbridge automation & logistics', path: '/mining' },
+          { label: 'Healthcare & Life Sciences', desc: 'FHIR data integration, EHR pipelines & clinical AI', path: '/ai-healthcare' },
+        ],
+      },
+      {
+        title: 'Engineering Foundation',
+        items: [
+          { label: 'Cloud Infrastructure', desc: 'High-concurrency autoscaling & zero-downtime resilience', path: '/cloud-services' },
+          { label: 'Digital Transformation', desc: 'Modernising legacy systems into platforms that work', path: '/services' },
+        ],
+      },
+    ],
   },
   { label: 'Our Work', path: '/case-studies' },
   { label: 'About us', path: '/about' },
@@ -70,6 +80,14 @@ export default function Header() {
     if (item.path === '/') return location.pathname === '/';
     if (location.pathname === item.path) return true;
     if (item.path !== '/' && location.pathname.startsWith(item.path)) return true;
+    if (item.groups) {
+      return item.groups.some((g) =>
+        g.items.some((child) => {
+          const childBasePath = child.path.split('#')[0];
+          return childBasePath && childBasePath !== '/' && location.pathname === childBasePath;
+        })
+      );
+    }
     if (item.children) {
       return item.children.some((child) => {
         const childBasePath = child.path.split('#')[0];
@@ -89,44 +107,77 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="header__nav" aria-label="Main Navigation">
-          {NAV_ITEMS.map((item) => (
-            <div
-              key={item.label}
-              className={`nav-item ${item.children ? 'nav-item--has-children' : ''}`}
-              onMouseEnter={() => item.children && handleMouseEnter(item.label)}
-              onMouseLeave={item.children ? handleMouseLeave : undefined}
-            >
-              <Link
-                to={item.path}
-                className={`nav-link ${isActive(item) ? 'nav-link--active' : ''}`}
-                aria-current={isActive(item) ? 'page' : undefined}
+          {NAV_ITEMS.map((item) => {
+            const hasMenu = Boolean(item.groups || item.children);
+            return (
+              <div
+                key={item.label}
+                className={`nav-item ${hasMenu ? 'nav-item--has-children' : ''}`}
+                onMouseEnter={() => hasMenu && handleMouseEnter(item.label)}
+                onMouseLeave={hasMenu ? handleMouseLeave : undefined}
               >
-                {item.label}
-                {item.children && <ChevronDown size={13} className="nav-caret" />}
-              </Link>
+                <Link
+                  to={item.path}
+                  className={`nav-link ${isActive(item) ? 'nav-link--active' : ''}`}
+                  aria-current={isActive(item) ? 'page' : undefined}
+                >
+                  {item.label}
+                  {hasMenu && <ChevronDown size={13} className="nav-caret" />}
+                </Link>
 
-              {item.children && (
-                <div className={`dropdown ${openDropdown === item.label ? 'dropdown--open' : ''}`}>
-                  <div className="dropdown__list">
-                    {item.children.map((child) => {
-                      const isChildActive = location.pathname === child.path.split('#')[0];
-                      return (
-                        <Link
-                          key={child.path}
-                          to={child.path}
-                          className={`dropdown__item ${isChildActive ? 'dropdown__item--active' : ''}`}
-                          aria-current={isChildActive ? 'page' : undefined}
-                        >
-                          <span className="dropdown__item-label">{child.label}</span>
-                          <span className="dropdown__item-desc">{child.desc}</span>
-                        </Link>
-                      );
-                    })}
+                {item.groups && (
+                  <div className={`dropdown dropdown--grouped ${openDropdown === item.label ? 'dropdown--open' : ''}`}>
+                    <div className="dropdown__groups-container">
+                      {item.groups.map((group) => (
+                        <div key={group.title} className="dropdown__group">
+                          <div className="dropdown__group-header">
+                            <span className="dropdown__group-title">{group.title}</span>
+                          </div>
+                          <div className="dropdown__list">
+                            {group.items.map((child) => {
+                              const isChildActive = location.pathname === child.path.split('#')[0];
+                              return (
+                                <Link
+                                  key={child.path}
+                                  to={child.path}
+                                  className={`dropdown__item ${isChildActive ? 'dropdown__item--active' : ''}`}
+                                  aria-current={isChildActive ? 'page' : undefined}
+                                >
+                                  <span className="dropdown__item-label">{child.label}</span>
+                                  <span className="dropdown__item-desc">{child.desc}</span>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
+                )}
+
+                {item.children && !item.groups && (
+                  <div className={`dropdown ${openDropdown === item.label ? 'dropdown--open' : ''}`}>
+                    <div className="dropdown__list">
+                      {item.children.map((child) => {
+                        const isChildActive = location.pathname === child.path.split('#')[0];
+                        return (
+                          <Link
+                            key={child.path}
+                            to={child.path}
+                            className={`dropdown__item ${isChildActive ? 'dropdown__item--active' : ''}`}
+                            aria-current={isChildActive ? 'page' : undefined}
+                          >
+                            <span className="dropdown__item-label">{child.label}</span>
+                            <span className="dropdown__item-desc">{child.desc}</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         {/* Right Actions */}
@@ -172,7 +223,32 @@ export default function Header() {
               >
                 {item.label}
               </Link>
-              {item.children && (
+              {item.groups && (
+                <div className="mobile-drawer__groups">
+                  {item.groups.map((group) => (
+                    <div key={group.title} className="mobile-drawer__group">
+                      <div className="mobile-drawer__group-title">{group.title}</div>
+                      <div className="mobile-drawer__sub">
+                        {group.items.map((child) => {
+                          const isChildActive = location.pathname === child.path.split('#')[0];
+                          return (
+                            <Link
+                              key={child.path}
+                              to={child.path}
+                              className={`mobile-drawer__sub-link ${isChildActive ? 'mobile-drawer__sub-link--active' : ''}`}
+                              aria-current={isChildActive ? 'page' : undefined}
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              {child.label}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {item.children && !item.groups && (
                 <div className="mobile-drawer__sub">
                   {item.children.map((child) => {
                     const isChildActive = location.pathname === child.path.split('#')[0];

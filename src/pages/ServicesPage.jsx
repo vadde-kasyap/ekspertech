@@ -139,7 +139,7 @@ export default function ServicesPage() {
           <div className="services-hero__left">
             <div className="services-hero__eyebrow">
               <span className="services-hero__eyebrow-dash" />
-              <span>Capabilities</span>
+              <span>Engineering Foundation &bull; Core Capabilities</span>
             </div>
             <h1 className="services-hero__title">Capabilities We Bring</h1>
             <p className="services-hero__sub">

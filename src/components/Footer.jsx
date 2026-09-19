@@ -3,23 +3,22 @@ import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
-const SECTORS = [
+const INDUSTRIES = [
   { label: 'Government & Public Sector', path: '/enterprise-platforms' },
   { label: 'Energy & Mining', path: '/mining' },
   { label: 'Healthcare & Life Sciences', path: '/ai-healthcare' },
 ];
 
-const SERVICES = [
-  { label: 'Digital Transformation', path: '/services#digital-transformation' },
-  { label: 'Enterprise Platforms', path: '/enterprise-platforms' },
+const FOUNDATION = [
   { label: 'Cloud Infrastructure', path: '/cloud-services' },
-  { label: 'Data & AI', path: '/services#data-ai' },
-  { label: 'Run & Support', path: '/services#run-support' },
+  { label: 'Digital Transformation', path: '/services#digital-transformation' },
+  { label: 'Data Platforms & AI', path: '/ai-healthcare' },
+  { label: '24/7 Run & Support', path: '/services#run-support' },
 ];
 
 const COMPANY = [
   { label: 'About us', path: '/about' },
-  { label: 'Our Work', path: '/case-studies' },
+  { label: 'Selected Work', path: '/case-studies' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -94,15 +93,15 @@ export default function Footer() {
 
             {/* Links Columns */}
             <div className="footer__links-col">
-              <h4 className="footer__col-title">Sectors</h4>
-              {SECTORS.map((item) => (
+              <h4 className="footer__col-title">Industries</h4>
+              {INDUSTRIES.map((item) => (
                 <Link key={item.label} to={item.path} className="footer__link">{item.label}</Link>
               ))}
             </div>
 
             <div className="footer__links-col">
-              <h4 className="footer__col-title">Services</h4>
-              {SERVICES.map((item) => (
+              <h4 className="footer__col-title">Engineering Foundation</h4>
+              {FOUNDATION.map((item) => (
                 <Link key={item.label} to={item.path} className="footer__link">{item.label}</Link>
               ))}
             </div>
