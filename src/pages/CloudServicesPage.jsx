@@ -253,6 +253,7 @@ export default function CloudServicesPage() {
           <div className="cloud-architecture__center">
             <img 
               src="/images/cloud/cloud-arch-diagram.jpg" 
+              onError={(e) => { e.currentTarget.src = '/images/cloud/cloud-arch-diagram.png'; }}
               alt="Globally distributed cloud architecture with multi-region load balancing" 
               className="cloud-architecture__diagram-img"
             />

@@ -53,7 +53,8 @@ export default function MiningPage() {
           <div className="mining-hero__right">
             <div className="mining-hero__visual-wrap">
               <img 
-                src="/images/mining/mining-hero-panorama.png" 
+                src="/images/mining/mining-hero-panorama.jpg" 
+                onError={(e) => { e.currentTarget.src = '/images/mining/mining-hero-panorama.png'; }}
                 alt="Mining open pit operations with real-time telemetry HUD overlay" 
                 className="mining-hero__image"
               />
@@ -463,7 +464,8 @@ export default function MiningPage() {
         <div className="container">
           <div className="mining-cta__banner">
             <img 
-              src="/images/mining/mining-cta-banner.png" 
+              src="/images/mining/mining-cta-banner.jpg" 
+              onError={(e) => { e.currentTarget.src = '/images/mining/mining-cta-banner.png'; }}
               alt="Mountain open pit mine at dusk" 
               className="mining-cta__bg-img"
             />
