@@ -116,6 +116,13 @@ export default function CloudServicesPage() {
           <div className="cloud-capabilities__grid">
             {/* Card 1: AWS & Azure Multi-Region */}
             <div className="cloud-cap-split-card">
+              <div className="cloud-cap-split-card__visual">
+                <img 
+                  src="/images/cloud/cloud-card-01-multiregion.png" 
+                  alt="AWS and Azure Multi-Region global connectivity map" 
+                  className="cloud-cap-split-card__image"
+                />
+              </div>
               <div className="cloud-cap-split-card__content">
                 <div>
                   <div 
@@ -124,7 +131,7 @@ export default function CloudServicesPage() {
                   >
                     <Server size={22} strokeWidth={2.2} />
                   </div>
-                  <h3 className="cloud-cap-split-card__title">AWS & Azure Multi-Region</h3>
+                  <h3 className="cloud-cap-split-card__title">AWS &amp; Azure Multi-Region</h3>
                   <p className="cloud-cap-split-card__desc">
                     Resilient cloud topologies with auto-scaling groups, global load balancing, and edge caching for sub-second latency.
                   </p>
@@ -133,17 +140,17 @@ export default function CloudServicesPage() {
                   Learn more <ArrowRight size={14} />
                 </Link>
               </div>
-              <div className="cloud-cap-split-card__visual">
-                <img 
-                  src="/images/cloud/cloud-card-01-multiregion.png" 
-                  alt="AWS and Azure Multi-Region global connectivity map" 
-                  className="cloud-cap-split-card__image"
-                />
-              </div>
             </div>
 
             {/* Card 2: Extreme Concurrency */}
             <div className="cloud-cap-split-card">
+              <div className="cloud-cap-split-card__visual">
+                <img 
+                  src="/images/cloud/cloud-card-02-concurrency.png" 
+                  alt="Extreme concurrency handling 50,000+ concurrent requests" 
+                  className="cloud-cap-split-card__image"
+                />
+              </div>
               <div className="cloud-cap-split-card__content">
                 <div>
                   <div 
@@ -161,17 +168,17 @@ export default function CloudServicesPage() {
                   Learn more <ArrowRight size={14} />
                 </Link>
               </div>
-              <div className="cloud-cap-split-card__visual">
-                <img 
-                  src="/images/cloud/cloud-card-02-concurrency.png" 
-                  alt="Extreme concurrency handling 50,000+ concurrent requests" 
-                  className="cloud-cap-split-card__image"
-                />
-              </div>
             </div>
 
             {/* Card 3: Private & Hybrid Cloud */}
             <div className="cloud-cap-split-card">
+              <div className="cloud-cap-split-card__visual">
+                <img 
+                  src="/images/cloud/cloud-card-03-privatehybrid.png" 
+                  alt="Private and hybrid cloud secure infrastructure" 
+                  className="cloud-cap-split-card__image"
+                />
+              </div>
               <div className="cloud-cap-split-card__content">
                 <div>
                   <div 
@@ -180,7 +187,7 @@ export default function CloudServicesPage() {
                   >
                     <ShieldCheck size={22} strokeWidth={2.2} />
                   </div>
-                  <h3 className="cloud-cap-split-card__title">Private & Hybrid Cloud</h3>
+                  <h3 className="cloud-cap-split-card__title">Private &amp; Hybrid Cloud</h3>
                   <p className="cloud-cap-split-card__desc">
                     Dedicated private datacenter setups and air-gapped options for institutions and government bodies requiring strict data residency.
                   </p>
@@ -189,17 +196,17 @@ export default function CloudServicesPage() {
                   Learn more <ArrowRight size={14} />
                 </Link>
               </div>
-              <div className="cloud-cap-split-card__visual">
-                <img 
-                  src="/images/cloud/cloud-card-03-privatehybrid.png" 
-                  alt="Private and hybrid cloud secure infrastructure" 
-                  className="cloud-cap-split-card__image"
-                />
-              </div>
             </div>
 
             {/* Card 4: Disaster Recovery & Failover */}
             <div className="cloud-cap-split-card">
+              <div className="cloud-cap-split-card__visual">
+                <img 
+                  src="/images/cloud/cloud-card-04-failover.png" 
+                  alt="Disaster recovery and automated failover between primary and secondary regions" 
+                  className="cloud-cap-split-card__image"
+                />
+              </div>
               <div className="cloud-cap-split-card__content">
                 <div>
                   <div 
@@ -208,7 +215,7 @@ export default function CloudServicesPage() {
                   >
                     <RefreshCcw size={22} strokeWidth={2.2} />
                   </div>
-                  <h3 className="cloud-cap-split-card__title">Disaster Recovery & Failover</h3>
+                  <h3 className="cloud-cap-split-card__title">Disaster Recovery &amp; Failover</h3>
                   <p className="cloud-cap-split-card__desc">
                     Automated point-in-time backups, multi-zone replication, and zero-data-loss failover protocols.
                   </p>
@@ -216,13 +223,6 @@ export default function CloudServicesPage() {
                 <Link to="/contact" className="cloud-cap-split-card__link">
                   Learn more <ArrowRight size={14} />
                 </Link>
-              </div>
-              <div className="cloud-cap-split-card__visual">
-                <img 
-                  src="/images/cloud/cloud-card-04-failover.png" 
-                  alt="Disaster recovery and automated failover between primary and secondary regions" 
-                  className="cloud-cap-split-card__image"
-                />
               </div>
             </div>
           </div>
@@ -252,7 +252,7 @@ export default function CloudServicesPage() {
           {/* Center Topology Diagram */}
           <div className="cloud-architecture__center">
             <img 
-              src="/images/cloud/cloud-arch-diagram.png" 
+              src="/images/cloud/cloud-arch-diagram.jpg" 
               alt="Globally distributed cloud architecture with multi-region load balancing" 
               className="cloud-architecture__diagram-img"
             />

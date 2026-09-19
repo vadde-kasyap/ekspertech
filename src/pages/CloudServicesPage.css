@@ -218,43 +218,60 @@
   gap: 28px;
 }
 
-/* Split Card (Content Left, Image Right) */
+/* Split Card (Wide Rectangle Image on Top, Content Below) */
 .cloud-cap-split-card {
   background: #FFFFFF;
   border-radius: 20px;
   border: 1px solid #E2E8F0;
   box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.05);
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  display: flex;
+  flex-direction: column;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cloud-cap-split-card:hover {
   border-color: #CBD5E1;
-  box-shadow: 0 12px 32px -6px rgba(15, 23, 42, 0.1);
-  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -6px rgba(15, 23, 42, 0.1);
+  transform: translateY(-3px);
+}
+
+.cloud-cap-split-card__visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 498 / 158;
+  background: #081024;
+  overflow: hidden;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.cloud-cap-split-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .cloud-cap-split-card__content {
-  padding: clamp(24px, 3vw, 32px);
+  padding: 24px 26px 26px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1;
 }
 
 .cloud-cap-split-card__icon-box {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .cloud-cap-split-card__title {
-  font-size: clamp(1.15rem, 1.4vw, 1.3rem);
+  font-size: clamp(1.15rem, 1.35vw, 1.3rem);
   font-weight: 800;
   color: #0F172A;
   line-height: 1.3;
@@ -265,8 +282,8 @@
 .cloud-cap-split-card__desc {
   font-size: 0.875rem;
   color: #64748B;
-  line-height: 1.55;
-  margin: 0 0 24px;
+  line-height: 1.6;
+  margin: 0 0 22px;
 }
 
 .cloud-cap-split-card__link {
@@ -278,27 +295,12 @@
   color: #0284C7;
   text-decoration: none;
   transition: gap 0.2s ease, color 0.2s ease;
+  margin-top: auto;
 }
 
 .cloud-cap-split-card__link:hover {
   color: #0369A1;
   gap: 12px;
-}
-
-.cloud-cap-split-card__visual {
-  position: relative;
-  background: #0A1124;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cloud-cap-split-card__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 /* ---------- 4. ARCHITECTURE SECTION ---------- */
@@ -609,12 +611,13 @@
 }
 
 @media (max-width: 640px) {
-  .cloud-cap-split-card {
+  .cloud-capabilities__grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .cloud-cap-split-card__visual {
-    min-height: 180px;
+  .cloud-cap-split-card__content {
+    padding: 20px 20px 22px;
   }
 
   .cloud-stack-strip__items {
