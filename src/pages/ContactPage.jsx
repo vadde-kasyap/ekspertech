@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Mail, Copy, Check, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, Copy, Check, ArrowUpRight } from 'lucide-react';
 import './ContactPage.css';
 
 export default function ContactPage() {
   const [copied, setCopied] = useState(false);
   const email = 'info@ekspertech.com';
+  const phone = '040 2355 4455';
+  const phoneTel = '+914023554455';
 
   const handleCopy = () => {
     navigator.clipboard?.writeText(email);
@@ -58,6 +60,14 @@ export default function ContactPage() {
                   </>
                 )}
               </button>
+            </div>
+
+            <div className="contact-alt-call">
+              <span className="contact-alt-call__label">Prefer to speak directly?</span>
+              <a href={`tel:${phoneTel}`} className="contact-alt-call__link">
+                <Phone size={16} />
+                <span>Call {phone}</span>
+              </a>
             </div>
           </div>
         </div>

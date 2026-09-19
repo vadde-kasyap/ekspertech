@@ -243,6 +243,25 @@
   flex: 1;
 }
 
+.services-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(226, 232, 240, 0.7);
+  transition: gap 0.2s ease, opacity 0.2s ease;
+}
+
+.services-card__link:hover {
+  gap: 12px;
+  opacity: 0.85;
+}
+
 /* ---------- 3. CTA BANNER SECTION ---------- */
 .services-cta-section {
   padding: 0 0 80px;

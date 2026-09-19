@@ -130,11 +130,11 @@ export default function HomePage() {
         <div className="hero-stats-bar">
           <div className="container hero-stats-bar__inner">
             <div className="hero-stat-box">
-              <strong className="hero-stat-val">20+</strong>
+              <strong className="hero-stat-val">25+</strong>
               <span className="hero-stat-lbl">Years of enterprise technology</span>
             </div>
             <div className="hero-stat-box">
-              <strong className="hero-stat-val">5,00,000+</strong>
+              <strong className="hero-stat-val">500,000+</strong>
               <span className="hero-stat-lbl">Users supported</span>
             </div>
             <div className="hero-stat-box">

@@ -9,10 +9,20 @@ const NAV_ITEMS = [
     path: '/services',
     children: [
       { label: 'Digital Transformation', desc: 'Modernising legacy systems into platforms that work', path: '/services#digital-transformation' },
-      { label: 'Data & AI', desc: 'Data platforms, analytics and operational AI', path: '/ai-healthcare' },
-      { label: 'Enterprise Platforms', desc: 'State e-Governance & institutional platforms', path: '/enterprise-platforms' },
-      { label: 'Cloud Infrastructure', desc: 'High-concurrency & mission-critical systems', path: '/cloud-services' },
-      { label: 'Mining Telemetry', desc: 'Weighbridge capture and dispatch logistics', path: '/mining' },
+      { label: 'Enterprise Platforms', desc: 'State e-Governance & institutional systems', path: '/enterprise-platforms' },
+      { label: 'Cloud Infrastructure', desc: 'High-concurrency autoscaling & mission-critical resilience', path: '/cloud-services' },
+      { label: 'Data & AI', desc: 'Data engineering, analytics and operational intelligence', path: '/services#data-ai' },
+      { label: 'Run & Support', desc: 'Continuous engineering, 24/7 reliability & SLAs', path: '/services#run-support' },
+    ]
+  },
+  {
+    label: 'Industries',
+    path: '/#where-we-work',
+    children: [
+      { label: 'Government & Public Sector', desc: 'State directorates and citizen-scale platforms', path: '/enterprise-platforms' },
+      { label: 'Higher Education', desc: 'Centralized admissions, examination & campus ERP', path: '/enterprise-platforms#education' },
+      { label: 'Energy & Mining', desc: 'Rugged telemetry, weighbridge automation & logistics', path: '/mining' },
+      { label: 'Healthcare & Life Sciences', desc: 'FHIR data integration and clinical workflows', path: '/ai-healthcare' },
     ]
   },
   { label: 'Our Work', path: '/case-studies' },

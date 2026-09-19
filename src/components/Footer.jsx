@@ -1,22 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
 const SECTORS = [
-  { label: 'Government & e-Governance', path: '/#where-we-work' },
-  { label: 'Education', path: '/#where-we-work' },
-  { label: 'Mining', path: '/mining' },
-  { label: 'Energy', path: '/#where-we-work' },
-  { label: 'Healthcare', path: '/ai-healthcare' },
+  { label: 'Government & Public Sector', path: '/enterprise-platforms' },
+  { label: 'Higher Education', path: '/enterprise-platforms#education' },
+  { label: 'Energy & Mining', path: '/mining' },
+  { label: 'Healthcare & Life Sciences', path: '/ai-healthcare' },
 ];
 
 const SERVICES = [
-  { label: 'Digital Transformation', path: '/services' },
-  { label: 'Data & AI', path: '/ai-healthcare' },
+  { label: 'Digital Transformation', path: '/services#digital-transformation' },
   { label: 'Enterprise Platforms', path: '/enterprise-platforms' },
   { label: 'Cloud Infrastructure', path: '/cloud-services' },
-  { label: 'Mining Telemetry', path: '/mining' },
+  { label: 'Data & AI', path: '/services#data-ai' },
+  { label: 'Run & Support', path: '/services#run-support' },
 ];
 
 const COMPANY = [
@@ -26,26 +25,42 @@ const COMPANY = [
   { label: 'Contact', path: '/contact' },
 ];
 
+const PAGES_WITH_CUSTOM_CTA = [
+  '/enterprise-platforms',
+  '/cloud-services',
+  '/mining',
+  '/ai-healthcare',
+  '/services',
+  '/contact'
+];
+
 export default function Footer() {
+  const location = useLocation();
+  const hasCustomCta = PAGES_WITH_CUSTOM_CTA.some(
+    p => location.pathname === p || (p !== '/' && location.pathname.startsWith(p))
+  );
+
   return (
     <footer className="footer">
-      {/* CTA Band */}
-      <div className="footer__cta">
-        <div className="container">
-          <div className="footer__cta-inner">
-            <div className="footer__cta-text">
-              <h2>Digital transformation, powered by AI.</h2>
-              <p>25+ years building mission-critical systems for government, education, mining, energy and healthcare.</p>
-            </div>
-            <div className="footer__cta-actions">
-              <Link to="/contact" className="btn btn--white btn--lg">
-                Talk to us
-                <ArrowRight size={16} />
-              </Link>
+      {/* CTA Band: only rendered on pages that don't already have their own custom CTA banner */}
+      {!hasCustomCta && (
+        <div className="footer__cta">
+          <div className="container">
+            <div className="footer__cta-inner">
+              <div className="footer__cta-text">
+                <h2>Digital transformation, powered by AI.</h2>
+                <p>25+ years building mission-critical systems for government, education, mining, energy and healthcare.</p>
+              </div>
+              <div className="footer__cta-actions">
+                <Link to="/contact" className="btn btn--white btn--lg">
+                  Talk to us
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main Footer */}
       <div className="footer__main">

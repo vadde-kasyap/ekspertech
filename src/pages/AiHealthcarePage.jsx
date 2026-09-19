@@ -107,7 +107,7 @@ export default function AiHealthcarePage() {
         <div className="container">
           <div className="healthcare-trust-strip__eyebrow">
             <span className="healthcare-trust-strip__eyebrow-text">
-              Healthcare Systems & Payers Built On Our Architecture
+              Platforms &amp; Engineering Delivered For Leading Healthcare Organisations
             </span>
           </div>
           <div className="healthcare-trust-strip__logos">

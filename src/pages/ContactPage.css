@@ -87,3 +87,34 @@
     width: 100%;
   }
 }
+
+.contact-alt-call {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--stone-200);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-alt-call__label {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.contact-alt-call__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0284C7;
+  text-decoration: none;
+  transition: color var(--t-fast);
+}
+
+.contact-alt-call__link:hover {
+  color: #0369A1;
+}

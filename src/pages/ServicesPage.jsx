@@ -19,6 +19,8 @@ const SERVICES = [
       'Database cleansing and schema consolidation',
       'Statutory compliance & audit logging',
     ],
+    link: '/contact',
+    linkLabel: 'Discuss your transformation',
   },
   {
     id: 'data-ai',
@@ -35,6 +37,8 @@ const SERVICES = [
       'Embedded analytical dashboards',
       'Domain-specific machine learning models',
     ],
+    link: '/ai-healthcare',
+    linkLabel: 'Explore Data & AI solutions',
   },
   {
     id: 'enterprise-platforms',
@@ -51,6 +55,8 @@ const SERVICES = [
       'CAG-compliant double-entry financial ledgers and statutory tracking',
       'Large-scale multi-department operational orchestration',
     ],
+    link: '/enterprise-platforms',
+    linkLabel: 'Explore Enterprise Platforms',
   },
   {
     id: 'run-support',
@@ -67,6 +73,8 @@ const SERVICES = [
       'Continuous security patching and audit readiness',
       'Preventative maintenance and SLAs',
     ],
+    link: '/contact',
+    linkLabel: 'Discuss operations & SLAs',
   },
   {
     id: 'cloud',
@@ -83,6 +91,8 @@ const SERVICES = [
       'Disaster recovery and automated failover',
       'Private datacenter & hybrid architectures',
     ],
+    link: '/cloud-services',
+    linkLabel: 'Explore Cloud Infrastructure',
   },
   {
     id: 'mining-telemetry',
@@ -99,6 +109,8 @@ const SERVICES = [
       'Electronic transport passes with QR verification',
       'Direct statutory compliance reporting',
     ],
+    link: '/mining',
+    linkLabel: 'Explore Mining Telemetry',
   },
 ];
 
@@ -181,6 +193,10 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  <Link to={s.link} className="services-card__link" style={{ color: s.color }}>
+                    <span>{s.linkLabel}</span>
+                    <ArrowRight size={14} />
+                  </Link>
                 </div>
               </article>
             ))}
