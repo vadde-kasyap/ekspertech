@@ -1,8 +1,48 @@
+# ----------------------------------------------------------------------
+# Eksper Technologies - GoDaddy Web Hosting (cPanel / Apache) Config
+# Single-Page Application (SPA) Routing & Performance Optimization
+# ----------------------------------------------------------------------
+
+# 1. Disable MultiViews so Apache does not try to guess file extensions
+Options -MultiViews -Indexes
+
+# 2. Ensure index.html is the primary directory index
+<IfModule mod_dir.c>
+  DirectoryIndex index.html
+</IfModule>
+
+# 3. React SPA Client-Side Routing via mod_rewrite
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Pass Authorization headers if needed
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+  # Never rewrite requests that are already for index.html
   RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # If requested path is an existing file, serve it directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  # If requested path is an existing directory, serve it directly
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # All other routes (e.g. /services, /contact, /mining) route to index.html
   RewriteRule . /index.html [L]
+</IfModule>
+
+# 4. Correct MIME Types for modern JavaScript modules and assets
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
+  AddType application/json .json
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+</IfModule>
+
+# 5. Gzip / Deflate Compression for faster page loads
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
 </IfModule>
